@@ -134,3 +134,26 @@ small {
     width: auto;
     height: 35px;
 }
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: #fff;
+    font-weight: 600;
+    background-color: #1877F2;
+    border-color: #1877F2 #1877F2 #1877F2;
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid;
+    border-color: #d8dbe0 #d8dbe0 #c4c9d0;
+    color: #000;
+    font-weight: 600;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.nav-tabs .nav-item {
+    margin: 0px 10px 10px 0px;
+}
