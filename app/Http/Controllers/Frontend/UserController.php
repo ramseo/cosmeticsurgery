@@ -393,7 +393,7 @@ class UserController extends Controller
         $userprofiles['name'] = $data['name'];
         $userprofiles['first_name'] = $data['first_name'];
         $userprofiles['last_name'] = $data['last_name'];
-        $userprofiles['username'] = $data['username'];
+        $userprofiles['username'] = strtolower($request->first_name . "-" . $request->last_name);
         $userprofiles['address'] = $data['address'];
         $userprofiles['mobile'] = $data['mobile'];
         $userprofiles['gender'] = $data['gender'];

@@ -388,12 +388,14 @@ class UserController extends Controller
         $filename = $$module_name_singular->avatar;
 
         // Handle Avatar upload
-        if ($request->hasFile('avatar')) {
+        if ($request->file('avatar')) {
             if ($$module_name_singular->getMedia($module_name)->first()) {
                 $$module_name_singular->getMedia($module_name)->first()->delete();
             }
-            $media = $$module_name_singular->addMediaFromRequest('avatar')->toMediaCollection($module_name);
-            $$module_name_singular->avatar = $media->getUrl();
+            // $media = $$module_name_singular->addMediaFromRequest('avatar')->toMediaCollection($module_name);
+            // $$module_name_singular->avatar = $media->getUrl();
+            $file_image = fileUpload($request, 'avatar', 'user/profile/');
+            $$module_name_singular->avatar = $file_image;
         }
 
         $$module_name_singular->email = $request->email;
