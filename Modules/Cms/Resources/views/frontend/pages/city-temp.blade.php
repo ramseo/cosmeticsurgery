@@ -123,7 +123,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid city-cls">
     <div class="container">
         <div class="col padd-null">
             <p class="identity">COSMETIC SURGERY COST IN <?= $city ?></p>

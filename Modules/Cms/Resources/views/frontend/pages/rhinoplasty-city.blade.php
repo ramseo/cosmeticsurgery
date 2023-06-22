@@ -132,7 +132,7 @@ if ($getAssignedDoctors->isNotEmpty()) {
 <?php } ?>
 <!-- Doctors Listing -->
 
-<div class="container-fluid">
+<div class="container-fluid city-surgery-cls">
     <div class="container">
         <?php if ($surgery_str == "rhinoplasty") { ?>
             <div class="col padd-null">
