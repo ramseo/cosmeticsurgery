@@ -1083,6 +1083,11 @@
         font-size: 15px;
     }
 
+    #accordion .card-body ul li a {
+        color: #1877F2;
+        font-weight: 600;
+    }
+
 }
 
 @media(min-width: 768px) and (max-width: 1199px) {
