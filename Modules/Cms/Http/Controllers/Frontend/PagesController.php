@@ -151,8 +151,8 @@ class PagesController extends Controller
             $template_view = "city-temp";
             $surgery_str = "";
             $$module_name_singular = (object) array(
-                'meta_title' => "Best Plastic Surgeon Clinic in" . " " . ucwords(str_replace("-", " ", $uc_city)) . " " . "| Cosmetic Surgery Cost",
-                'meta_description' => "Top Cosmetic Surgery Clinics in $uc_city. Book your appointment with Board Certified Plastic Surgeons to get the right opinion for your treatment.",
+                "meta_title" => "Best Plastic Surgeon Clinic in" . " " . ucwords(str_replace("-", " ", $uc_city)) . " " . "| Cosmetic Surgery Cost",
+                'meta_description' => "Top Cosmetic Surgery Clinic in $uc_city. Book your appointment with Board Certified Plastic Surgeon to get the right opinion for your treatment.",
                 'meta_keywords' => "",
                 'name' => "Find the best Cosmetic Surgeon in $uc_city",
             );
