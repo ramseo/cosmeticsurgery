@@ -138,7 +138,7 @@ class PagesController extends Controller
                 $uc_surgery_str = ucwords($surgery_str);
                 $uc_city = ucwords($city);
 
-                // dddddd
+                // META TAGS
                 if ($surgery_str == "rhinoplasty") {
                     $meta_title = "Rhinoplasty Clinic in $uc_city | Nose Surgery Cost | Nose Job";
                     $meta_description = "Board certified surgeons for Rhinoplasty in $uc_city. Visit the cost-effective Cosmetic surgery clinic for nose surgery or nose job today.";
@@ -221,7 +221,7 @@ class PagesController extends Controller
                     $meta_title = "";
                     $meta_description = "";
                 }
-                // dddddd
+                // META TAGS
 
                 $$module_name_singular = (object) array(
                     'meta_title' => $meta_title,
