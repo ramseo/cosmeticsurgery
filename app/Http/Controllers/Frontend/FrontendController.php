@@ -154,7 +154,8 @@ class FrontendController extends Controller
             'meta_title' => "Top Cosmetic Surgery Clinics in India | Best Plastic Surgeons",
             'meta_description' => "Find the best cosmetic surgery clinic in your city. Book your appointment with Board Certified Cosmetic Surgeon across India.",
             'meta_keywords' => "",
-            'name' => "Find A Surgeon",
+            'name' => "Cosmetic Surgery Procedures 
+            ",
         );
 
         return view('frontend.procedures', compact('body_class', 'module_name_singular', "$module_name_singular"));
