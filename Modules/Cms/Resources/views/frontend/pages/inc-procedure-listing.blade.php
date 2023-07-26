@@ -84,7 +84,7 @@
                         <img src="<?= asset('img/breast.jpg') ?>" style="width:100%">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="row">
+                        <div class="row odd-series">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
@@ -101,10 +101,12 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="breast-implant-removal-<?= strtolower($city) ?>">Breast Implant Removal</a>
+                                        <a href="breast-implant-removal-<?= strtolower($city) ?>">Breast Implant
+                                            Removal</a>
                                     </li>
                                     <li>
-                                        <a href="breast-implant-revision-<?= strtolower($city) ?>">Breast Implant Revision</a>
+                                        <a href="breast-implant-revision-<?= strtolower($city) ?>">Breast Implant
+                                            Revision</a>
                                     </li>
                                     <li>
                                         <a href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
@@ -177,7 +179,8 @@
                                         <a href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
                                     </li>
                                     <li>
-                                        <a href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic Surgery</a>
+                                        <a href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic
+                                            Surgery</a>
                                     </li>
                                 </ul>
                             </div>
@@ -202,7 +205,8 @@
                                         <a href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
                                     </li>
                                     <li>
-                                        <a href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic Surgery</a>
+                                        <a href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic
+                                            Surgery</a>
                                     </li>
                                 </ul>
                             </div>
@@ -227,7 +231,8 @@
                                         <a href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
                                     </li>
                                     <li>
-                                        <a href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic Surgery</a>
+                                        <a href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic
+                                            Surgery</a>
                                     </li>
                                 </ul>
                             </div>

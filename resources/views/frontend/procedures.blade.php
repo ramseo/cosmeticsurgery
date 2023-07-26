@@ -3,8 +3,7 @@
 @section('title') {{$$module_name_singular->meta_title}} @endsection
 
 @section('site-meta-tags')
-<meta name="description"
-    content="{{ $$module_name_singular->meta_description ? $$module_name_singular->meta_description : setting('meta_keyword') }}">
+<meta name="description" content="{{ $$module_name_singular->meta_description ? $$module_name_singular->meta_description : setting('meta_keyword') }}">
 @endsection
 
 
@@ -43,9 +42,9 @@
                                 <img src="img/Breast-Augmentation-1-1024x683.jpg" style="width:100%">
                             </div>
                             <div class="col-lg-9 col-md-9 col-sm-9">
-                                <p class="small-heading">Breast</p>
+                                <p class="small-heading pt-3">Breast</p>
                                 <div class="border"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/breast-augmentation">Breast
                                                 Augmentation</a></p>
@@ -59,7 +58,7 @@
                                 </div>
                                 <div class="kpborder"></div>
 
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/breast-implant-revision">Breast Implant
                                                 Revision</a></p>
@@ -71,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/breast-reduction">Breast Reduction</a>
                                         </p>
@@ -92,20 +91,19 @@
                             <div class="col-lg-9 col-md-12 col-sm-9 pt-3">
                                 <p class="small-heading">Fat Reduction</p>
                                 <div class="border"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/liposuction">Liposuction</a></p>
                                         <small>Surgical Fat Reduction</small>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <p class="proc"><a
-                                                href="<?= url('/') ?>/liposuction-laser-ultrasound-assisted">Liposuction-Assisted</a>
+                                        <p class="proc"><a href="<?= url('/') ?>/liposuction-laser-ultrasound-assisted">Liposuction-Assisted</a>
                                         </p>
                                         <small>Laser/Ultrasound Assisted</small>
                                     </div>
                                 </div>
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/non-surgical-fat-reduction">Nonsurgical
                                                 Fat Reduction</a></p>
@@ -121,7 +119,7 @@
                             <div class="col-lg-9 col-md-12 col-sm-9 pt-3">
                                 <p class="small-heading">Body Lifts</p>
                                 <div class="border"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/arm-lift">Arm Lift</a></p>
                                         <small>Brachioplasty</small>
@@ -134,7 +132,7 @@
                                 </div>
                                 <div class="kpborder"></div>
 
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/body-lift">Body Lift</a></p>
                                         <small>Improving Shape and Tone</small>
@@ -148,7 +146,7 @@
 
 
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/mommy-makeover">Mommy Makeover</a></p>
                                         <small>Get Your Pre-Baby Body Back</small>
@@ -160,7 +158,7 @@
                                     </div>
                                 </div>
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/tummy-tuck">Tummy Tuck</a></p>
                                         <small>Abdominoplasty</small>
@@ -175,7 +173,7 @@
                             <div class="col-lg-9 col-md-12 col-sm-9 pt-3">
                                 <p class="small-heading">FACE & NECK</p>
                                 <div class="border"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/brow-lift">Brow Lift</a></p>
                                         <small>Forehead Lift</small>
@@ -188,7 +186,7 @@
                                 </div>
                                 <div class="kpborder"></div>
 
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/cheek-augmentation">Cheek
                                                 Augmentation</a></p>
@@ -201,7 +199,7 @@
                                     </div>
                                 </div>
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/ear-surgery">Ear surgery</a></p>
                                         <small>Otoplasty</small>
@@ -213,7 +211,7 @@
                                     </div>
                                 </div>
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/facial-implants">Facial Implants</a>
                                         </p>
@@ -225,7 +223,7 @@
                                     </div>
                                 </div>
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/rhinoplasty">Rhinoplasty</a></p>
                                         <small>Nose Surgery</small>
@@ -244,7 +242,7 @@
                             <div class="col-lg-9 col-md-12 col-sm-9 pt-3">
                                 <p class="small-heading">MINIMALLY INVASIVE</p>
                                 <div class="border"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/botox">Botulinum Toxin</a></p>
                                         <small>Botox</small>
@@ -255,7 +253,7 @@
                                     </div>
                                 </div>
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/dermal-fillers">Dermal Fillers</a></p>
                                         <small>Minimally invasive Procedures</small>
@@ -268,20 +266,19 @@
                                 </div>
 
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/laser-skin-resurfacing">Laser Skin
                                                 Resurfacing</a></p>
                                         <small>Skin Care Procedure</small>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <p class="proc"><a
-                                                href="<?= url('/') ?>/microdermabrasion">Microdermabrasion</a></p>
+                                        <p class="proc"><a href="<?= url('/') ?>/microdermabrasion">Microdermabrasion</a></p>
                                         <small>Minimally Invasive Procedure</small>
                                     </div>
                                 </div>
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/skin-rejuvenation-and-resurfacing">Skin
                                                 Reuvenataion and Resurfacing</a></p>
@@ -295,7 +292,7 @@
                                 </div>
 
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/tattoo-removal">Tattoo Removal</a></p>
                                         <small>Eliminate Unwanted Tattoos</small>
@@ -311,7 +308,7 @@
                             <div class="col-lg-9 col-md-12 col-sm-9 pt-3">
                                 <p class="small-heading">MALE-SPECIFIC PLASTIC SURGERY</p>
                                 <div class="border"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/gynecomastia">Gynecomastia Surgery</a>
                                         </p>
@@ -324,7 +321,7 @@
                                     </div>
                                 </div>
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/body-lift">Body Lift</a></p>
                                         <small>Improving Shape and Tone</small>
@@ -345,7 +342,7 @@
                             <div class="col-lg-9 col-md-12 col-sm-9 pt-3">
                                 <p class="small-heading">VAGINAL REJUVENATION </p>
                                 <div class="border"></div>
-                                <div class="row">
+                                <div class="row even">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/hymenoplasty">Hymenoplasty</a></p>
                                         <small>Hymen Reconstruction Surgical Options</small>
@@ -358,14 +355,13 @@
                                 </div>
 
                                 <div class="kpborder"></div>
-                                <div class="row">
+                                <div class="row odd">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/labiaplasty">Labiaplasty</a></p>
                                         <small>Reshaping Surgical Options</small>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <p class="proc"><a
-                                                href="<?= url('/') ?>/non-surgical-vaginal-rejuvenation">Nonsurgical
+                                        <p class="proc"><a href="<?= url('/') ?>/non-surgical-vaginal-rejuvenation">Nonsurgical
                                                 Vaginal Rejuvenation</a></p>
                                         <small>Minimally Invasive Options</small>
                                     </div>
@@ -376,7 +372,7 @@
                     <div id="menu1" class="container tab-pane fade">
                         <div class="row">
                             <div class="col-lg-12 col-md-6 col-sm-6">
-                                <div class="row tabo">
+                                <div class="row tabo alphabect-tab">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p class="proc"><a href="<?= url('/') ?>/arm-lift">Arm Lift</a></p>
                                         <small>Brachioplasty</small>
@@ -462,16 +458,14 @@
                                         <p class="proc"><a href="<?= url('/') ?>/liposuction">Liposuction</a></p>
                                         <small>Surgical Fat Reduction</small>
 
-                                        <p class="proc"><a
-                                                href="<?= url('/') ?>/liposuction-laser-ultrasound-assisted">Liposuction
+                                        <p class="proc"><a href="<?= url('/') ?>/liposuction-laser-ultrasound-assisted">Liposuction
                                                 & Assisted</a></p>
                                         <small>Laser / Ultrasound Assisted</small>
                                         <p class="proc"><a href="<?= url('/') ?>/men-and-plastic-surgery">Men and
                                                 Plastic Surgery</a></p>
                                         <small>Male-Specific Considerations</small>
 
-                                        <p class="proc"><a
-                                                href="<?= url('/') ?>/microdermabrasion">Microdermabrasion</a></p>
+                                        <p class="proc"><a href="<?= url('/') ?>/microdermabrasion">Microdermabrasion</a></p>
                                         <small>Minimally Invasive Procedure</small>
                                         <p class="proc"><a href="<?= url('/') ?>/mommy-makeover">Mommy Makeover</a></p>
                                         <small>Get Your Pre-Baby Body Back</small>
@@ -482,8 +476,7 @@
                                                 Fat Reduction</a></p>
                                         <small>Minimally Invasive Procedures</small>
 
-                                        <p class="proc"><a
-                                                href="<?= url('/') ?>/non-surgical-vaginal-rejuvenation">Nonsurgical
+                                        <p class="proc"><a href="<?= url('/') ?>/non-surgical-vaginal-rejuvenation">Nonsurgical
                                                 Vaginal Rejuvenation</a></p>
                                         <small>Minimally Invasive Options</small>
                                         <p class="proc"><a href="<?= url('/') ?>/rhinoplasty">Rhinoplasty</a></p>

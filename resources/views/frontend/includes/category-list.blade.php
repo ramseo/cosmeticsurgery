@@ -2,7 +2,7 @@
 <div class="container-fluid mtab pt-4 pb-4" style="background-color:#f8f8f8">
     <div class="container">
         <p class="identity m-auto" style="width:fit-content">
-            Find Your Cosmetic Surgery Procedure 
+            Find Your Cosmetic Surgery Procedure
         </p>
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item default-active-cls active">
@@ -10,24 +10,26 @@
                     Face Procedures
                 </a>
             </li>
-            <li class="nav-item remove-default-active-cls">
+            <li class="nav-item remove-default-active-cls ml-2">
                 <a class="nav-link ancr" data-toggle="tab" href="#menu1" aria-expanded="false">
                     Breast Procedures
                 </a>
             </li>
-            <li class="nav-item remove-default-active-cls">
+            <li class="nav-item remove-default-active-cls ml-2">
                 <a class="nav-link ancr" data-toggle="tab" href="#menu2" aria-expanded="false">
                     Body Procedures
                 </a>
             </li>
-            <li class="nav-item remove-default-active-cls">
+            <li class="nav-item remove-default-active-cls ml-2">
                 <a class="nav-link ancr" data-toggle="tab" href="#menu3" aria-expanded="false">
                     Male Specific Procedures
                 </a>
             </li>
         </ul>
 
-        <p> <!-- Tab panes --></p>
+        <p>
+            <!-- Tab panes -->
+        </p>
 
         <div class="tab-content">
             <div id="home" class="container default-active-cls tab-pane active in">
