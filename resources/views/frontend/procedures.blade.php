@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row tabo my-2">
+                        <div class="row tabo my-3">
                             <div class="col-lg-3 col-md-3 col-sm-3 pt-3 pb-0">
                                 <img src="img/Liposuction-1-1024x683.jpg" style="width:100%">
                             </div>
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row tabo my-2">
+                        <div class="row tabo my-3">
                             <div class="col-lg-3 col-md-12 col-sm-3 pt-3 pb-0">
                                 <img src="img/Arm-Lift-2-1024x683.jpg" style="width:100%">
                             </div>
@@ -166,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row tabo my-2">
+                        <div class="row tabo my-3">
                             <div class="col-lg-3 col-md-12 col-sm-3 pt-3 pb-0">
                                 <img src="img/Brow-Lift-Browplasty-0-1024x819.jpg" style="width:100%">
                             </div>
@@ -235,7 +235,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row tabo my-2">
+                        <div class="row tabo my-3">
                             <div class="col-lg-3 col-md-12 col-sm-3 pt-3 pb-0">
                                 <img src="img/Botulinum-Toxin-BOTOX-2-1024x734.jpg" style="width:100%">
                             </div>
@@ -301,7 +301,7 @@
                             </div>
                         </div>
 
-                        <div class="row tabo my-2">
+                        <div class="row tabo my-3">
                             <div class="col-lg-3 col-md-12 col-sm-3 pt-3 pb-0">
                                 <img src="img/Gynecomastia-1-1024x683.jpg" style="width:100%">
                             </div>
