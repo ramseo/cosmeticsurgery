@@ -9,7 +9,7 @@
                     Face Procedures
                 </a>
             </li>
-            <li class="nav-item remove-default-active-cls">
+            <li class="nav-item remove-default-active-cls px-2">
                 <a class="nav-link ancr" data-toggle="tab" href="#menu1" aria-expanded="false">
                     Breast Procedures
                 </a>
@@ -19,7 +19,7 @@
                     Body Procedures
                 </a>
             </li>
-            <li class="nav-item remove-default-active-cls">
+            <li class="nav-item remove-default-active-cls px-2">
                 <a class="nav-link ancr" data-toggle="tab" href="#menu3" aria-expanded="false">
                     Male Specific Procedures
                 </a>
