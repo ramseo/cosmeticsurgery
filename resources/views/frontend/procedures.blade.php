@@ -41,7 +41,7 @@
                             <div class="col-lg-3 col-md-12 col-sm-3 pt-3">
                                 <img src="img/Breast-Augmentation-1-1024x683.jpg" style="width:100%">
                             </div>
-                            <div class="col-lg-9 col-md-9 col-sm-9">
+                            <div class="col-lg-9 col-md-9 col-sm-9 mb-3">
                                 <p class="small-heading pt-3 pb-0">Breast</p>
                                 <!-- <div class="border"></div> -->
                                 <div class="row even">
