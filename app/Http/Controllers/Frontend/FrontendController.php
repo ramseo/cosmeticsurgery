@@ -20,9 +20,11 @@ class FrontendController extends Controller
             return \Redirect::to(url('/'), 301);
         }
 
+        $uri_string = "homepage";
+        $table = "pages";
+        $column_index = "slug";
         $body_class = '';
-
-        return view('frontend.index', compact('body_class'));
+        return view('frontend.index', compact('body_class', 'uri_string', 'table', 'column_index'));
     }
 
     public function home()

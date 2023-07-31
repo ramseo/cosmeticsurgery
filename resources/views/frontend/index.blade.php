@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title') {{app_name()}} @endsection
+@section('title') {{browser_title($uri_string,$table,$column_index)}} @endsection 
 
 @section('content')
 @php
