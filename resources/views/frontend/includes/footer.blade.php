@@ -146,140 +146,149 @@
 </div>
 
 <!-- LEAD FORM CODE -->
-<div class="sidebar-form">
-   <div class="call-action">
-      <span>Enquiry Form</span>
-      <span>
-         <i id="chevron-icon" class="fa fa-chevron-up"></i>
-      </span>
+<?php
+if (\Request::getRequestUri() != "/book-an-appointment") {
+?>
+   <div class="sidebar-form">
+      <div class="call-action">
+         <span>Enquiry Form</span>
+         <span>
+            <i id="chevron-icon" class="fa fa-chevron-up"></i>
+         </span>
+      </div>
+      <form style="box-shadow:none; background:none; padding:0;" id="google-sheet" method="post" name="google-sheet">
+         <div class="form-group margin-bottom-5">
+
+            <div class="position-relative">
+               <i class="fa fa-user icon" aria-hidden="true"></i>
+            </div>
+            <input type="text" name="name" class="form-controler name-cls" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Patient's Name*">
+            <div class="name-err"></div>
+         </div>
+
+
+         <div class="form-group margin-bottom-5">
+            <div class="position-relative">
+               <i class="fa fa-phone icon" aria-hidden="true"></i>
+            </div>
+            <input type="number" name="phone" class="form-controler phone-cls" id="exampleInputPhone" placeholder="Phone Number*">
+            <div class="phone-err"></div>
+         </div>
+
+         <div class="form-group margin-bottom-5">
+            <div class="position-relative">
+               <i class="fa fa-envelope icon" aria-hidden="true"></i>
+            </div>
+            <input type="text" name="email" class="form-controler email-cls" id="exampleInputEmail" placeholder="Email Address*">
+            <div class="email-err"></div>
+         </div>
+
+         <div class="form-group margin-bottom-5">
+            <div class="position-relative">
+               <i class="fa fa-map-marker icon" aria-hidden="true"></i>
+            </div>
+            <select id="city" name="location" class="form-controler1">
+               <option value="">City Location*</option>
+               <?php
+               $citiesArr = citiesArr();
+               foreach ($citiesArr as $item) {
+               ?>
+                  <option value="<?= ucwords($item) ?>">
+                     <?= ucwords($item) ?>
+                  </option>
+               <?php } ?>
+               <option value="Other Cities">Other Cities</option>
+               <option value="Other Countries">Other Countries</option>
+            </select>
+            <div class="city-err"></div>
+         </div>
+
+         <div class="form-group margin-bottom-5">
+            <div class="position-relative">
+               <i class="fa fa-id-badge icon" aria-hidden="true"></i>
+            </div>
+            <input type="text" name="age" class="form-controler age-cls" id="exampleInputAge" placeholder="Age in Years*">
+            <div class="age-err"></div>
+         </div>
+
+         <div class="form-group d-flex margin-bottom-5">
+            <div class="position-relative">
+               <i class="fa fa-venus-mars icon" aria-hidden="true"></i>
+            </div>
+            <span class="gender-contact">Gender*</span>
+            <div class="px-3">
+               <input type="radio" value="male" id="male" name="gender" checked />
+               <label for="male" class="radio radioo_icon ">Male</label>
+            </div>
+            <div>
+               <input type="radio" value="female" id="female" name="gender" />
+               <label for="female" class="radio radioo_icon ">Female</label>
+            </div>
+         </div>
+
+         <div class="form-group margin-bottom-5">
+
+            <div class="position-relative">
+               <i class="fa fa-user-md icon" aria-hidden="true"></i>
+            </div>
+            <select id="appointment_for" name="appointment_for" class="form-controler1">
+               <option value="">Select Treatment*</option>
+               <?php
+               $popular_surgeries = popular_cities_surgeries("all", $skip = false, $take = false);
+               foreach ($popular_surgeries as $item) {
+               ?>
+                  <option value="<?= $item->title ?>">
+                     <?= $item->title ?>
+                  </option>
+               <?php } ?>
+            </select>
+            <div class="appointment-err"></div>
+         </div>
+
+         <div class="form-group margin-bottom-5">
+
+            <div class="position-relative">
+               <i class="fa fa-comment icon" aria-hidden="true"></i>
+            </div>
+
+            <textarea maxlength="3000" name="message" class="form-controler message-cls" id="exampleFormControlTextarea1" rows="1" placeholder="Message*"></textarea>
+            <div class="msg-err"></div>
+
+         </div>
+         <div class="form-group margin-bottom-5">
+            <div class="g-recaptcha" data-theme="light" data-sitekey="<?= env('DATA_SITEKEY_V2') ?>"></div>
+            <div class="captcha-err"></div>
+         </div>
+
+         <?php
+         function browser_url()
+         {
+            return sprintf(
+               "%s://%s%s",
+               isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+               $_SERVER['SERVER_NAME'],
+               $_SERVER['REQUEST_URI']
+            );
+         }
+
+         date_default_timezone_set('Asia/Kolkata');
+         $current_time = date('H:i:s A');
+         ?>
+
+         <input type="hidden" name="city_url" value="<?= browser_url() ?>">
+         <input type="hidden" name="url" value="<?= browser_url() ?>">
+         <input type="hidden" name="time" value="<?= $current_time ?>">
+         <button type="submit" name="submit" class="submit-button-contact">
+            Submit
+         </button>
+      </form>
    </div>
-   <form style="box-shadow:none; background:none; padding:0;" id="google-sheet" method="post" name="google-sheet">
-      <div class="form-group margin-bottom-5">
-
-         <div class="position-relative">
-            <i class="fa fa-user icon" aria-hidden="true"></i>
-         </div>
-         <input type="text" name="name" class="form-controler name-cls" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Patient's Name*">
-         <div class="name-err"></div>
-      </div>
-
-
-      <div class="form-group margin-bottom-5">
-         <div class="position-relative">
-            <i class="fa fa-phone icon" aria-hidden="true"></i>
-         </div>
-         <input type="number" name="phone" class="form-controler phone-cls" id="exampleInputPhone" placeholder="Phone Number*">
-         <div class="phone-err"></div>
-      </div>
-
-      <div class="form-group margin-bottom-5">
-         <div class="position-relative">
-            <i class="fa fa-envelope icon" aria-hidden="true"></i>
-         </div>
-         <input type="text" name="email" class="form-controler email-cls" id="exampleInputEmail" placeholder="Email Address*">
-         <div class="email-err"></div>
-      </div>
-
-      <div class="form-group margin-bottom-5">
-         <div class="position-relative">
-            <i class="fa fa-map-marker icon" aria-hidden="true"></i>
-         </div>
-         <select id="city" name="location" class="form-controler1">
-            <option value="">City Location*</option>
-            <?php
-            $citiesArr = citiesArr();
-            foreach ($citiesArr as $item) {
-            ?>
-               <option value="<?= ucwords($item) ?>">
-                  <?= ucwords($item) ?>
-               </option>
-            <?php } ?>
-            <option value="Other Cities">Other Cities</option>
-            <option value="Other Countries">Other Countries</option>
-         </select>
-         <div class="city-err"></div>
-      </div>
-
-      <div class="form-group margin-bottom-5">
-         <div class="position-relative">
-            <i class="fa fa-id-badge icon" aria-hidden="true"></i>
-         </div>
-         <input type="text" name="age" class="form-controler age-cls" id="exampleInputAge" placeholder="Age in Years*">
-         <div class="age-err"></div>
-      </div>
-
-      <div class="form-group d-flex margin-bottom-5">
-         <div class="position-relative">
-            <i class="fa fa-venus-mars icon" aria-hidden="true"></i>
-         </div>
-         <span class="gender-contact">Gender*</span>
-         <div class="px-3">
-            <input type="radio" value="male" id="male" name="gender" checked />
-            <label for="male" class="radio radioo_icon ">Male</label>
-         </div>
-         <div>
-            <input type="radio" value="female" id="female" name="gender" />
-            <label for="female" class="radio radioo_icon ">Female</label>
-         </div>
-      </div>
-
-      <div class="form-group margin-bottom-5">
-
-         <div class="position-relative">
-            <i class="fa fa-user-md icon" aria-hidden="true"></i>
-         </div>
-         <select id="appointment_for" name="appointment_for" class="form-controler1">
-            <option value="">Select Treatment*</option>
-            <?php
-            $popular_surgeries = popular_cities_surgeries("all", $skip = false, $take = false);
-            foreach ($popular_surgeries as $item) {
-            ?>
-               <option value="<?= $item->title ?>">
-                  <?= $item->title ?>
-               </option>
-            <?php } ?>
-         </select>
-         <div class="appointment-err"></div>
-      </div>
-
-      <div class="form-group margin-bottom-5">
-
-         <div class="position-relative">
-            <i class="fa fa-comment icon" aria-hidden="true"></i>
-         </div>
-
-         <textarea maxlength="3000" name="message" class="form-controler message-cls" id="exampleFormControlTextarea1" rows="1" placeholder="Message*"></textarea>
-         <div class="msg-err"></div>
-
-      </div>
-      <div class="form-group margin-bottom-5">
-         <div class="g-recaptcha" data-theme="light" data-sitekey="<?= env('DATA_SITEKEY_V2') ?>"></div>
-         <div class="captcha-err"></div>
-      </div>
-
-      <?php
-      function browser_url()
-      {
-         return sprintf(
-            "%s://%s%s",
-            isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
-            $_SERVER['SERVER_NAME'],
-            $_SERVER['REQUEST_URI']
-         );
-      }
-
-      date_default_timezone_set('Asia/Kolkata');
-      $current_time = date('H:i:s A');
-      ?>
-
-      <input type="hidden" name="city_url" value="<?= browser_url() ?>">
-      <input type="hidden" name="url" value="<?= browser_url() ?>">
-      <input type="hidden" name="time" value="<?= $current_time ?>">
-      <button type="submit" name="submit" class="submit-button-contact">
-         Submit
-      </button>
-   </form>
-</div>
+   <div id="chatbutton">
+      <a href="https://wa.me/919888550489" target="_blank" class="chat-cls">
+         <img src="<?= asset('images/whatsapp-6273368_960_720.webp') ?>">
+      </a>
+   </div>
+<?php } ?>
 <!-- LEAD FORM CODE -->
 
 

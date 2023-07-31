@@ -215,4 +215,18 @@ class FrontendController extends Controller
 
         return view('frontend.before-after-result-details', compact('body_class', 'module_name_singular', "$module_name_singular", 'slug', 'name', 'result_images'));
     }
+
+    public function appointment()
+    {
+        $body_class = '';
+        $module_name_singular = Str::singular("pages");
+        $$module_name_singular = (object) array(
+            'meta_title' => "Book An Appointment",
+            'meta_description' => "Book An Appointment",
+            'meta_keywords' => "",
+            'name' => "Book An Appointment",
+        );
+
+        return view('frontend.book-an-appointment', compact('body_class', 'module_name_singular', "$module_name_singular"));
+    }
 }

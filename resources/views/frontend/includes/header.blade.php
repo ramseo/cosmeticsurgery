@@ -48,6 +48,14 @@ $city = getData('cities');
                         <?= Setting('email') ?>
                     </a>
                 </li>
+                <li class="verticle-line-cls">|</li>
+                <li class="nav-item">
+                    <button type="button" class="btn mt-1 kl btn-sm">
+                        <a class="color-white" href="<?= url('/') . '/' ?>book-an-appointment">
+                            Book an Appointment
+                        </a>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
