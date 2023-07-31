@@ -25,18 +25,20 @@
             if ($result_images->isNotEmpty()) {
                 foreach ($result_images as $img) {
                     $doctor_details = get_doctor($img->album_id);
+                    if ($doctor_details) {
             ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="spec">
-                            <a class="example-image-link" href="<?= asset('storage/album') . '/' . $img->album_id . '/' . $img->name ?>" data-lightbox="example-set" data-title="<?= $name ?>">
-                                <img class="example-image" src="<?= asset('storage/album') . '/' . $img->album_id . '/' . $img->name ?>" alt="<?= $name ?>" />
-                            </a>
-                            <p>
-                                <?= $name ?> Before & After Photo - Dr. <?= $doctor_details->first_name . " " . $doctor_details->last_name ?>
-                            </p>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="spec">
+                                <a class="example-image-link" href="<?= asset('storage/album') . '/' . $img->album_id . '/' . $img->name ?>" data-lightbox="example-set" data-title="<?= $name ?>">
+                                    <img class="example-image" src="<?= asset('storage/album') . '/' . $img->album_id . '/' . $img->name ?>" alt="<?= $name ?>" />
+                                </a>
+                                <p>
+                                    <?= $name ?> Before & After Photo - Dr. <?= $doctor_details->first_name . " " . $doctor_details->last_name ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
             <?php
+                    }
                 }
             }
             ?>
