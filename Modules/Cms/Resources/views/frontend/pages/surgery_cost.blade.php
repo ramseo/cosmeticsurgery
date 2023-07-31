@@ -103,7 +103,7 @@
         $doctors = DB::table('users')->select('*')->whereNotNull('city')->Where('is_active', 1)->orderBy("first_name")->get()->toArray();
         if ($doctors) {
         ?>
-            <p class="title">our surgeons:</p>
+            <p class="identity">our surgeons:</p>
             <div class="row">
                 <?php foreach ($doctors as $doc_item) { ?>
                     <div class="col-sm-2">
