@@ -1171,14 +1171,4 @@ if (!function_exists('date_today')) {
             return $data->name;
         }
     }
-
-    function browser_title($slug, $table, $column_index)
-    {
-        $data = DB::table($table)->where($column_index, $slug)->get()->first();
-        if ($data) {
-            return $data->meta_title;
-        } else {
-            return "";
-        }
-    }
 }

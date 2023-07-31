@@ -20,11 +20,19 @@ class FrontendController extends Controller
             return \Redirect::to(url('/'), 301);
         }
 
-        $uri_string = "homepage";
-        $table = "pages";
-        $column_index = "slug";
         $body_class = '';
-        return view('frontend.index', compact('body_class', 'uri_string', 'table', 'column_index'));
+
+        $data = DB::table("pages")->where('slug', "homepage")->get()->first();
+
+        $module_name_singular = Str::singular("pages");
+        $$module_name_singular = (object) array(
+            'meta_title' => $data->meta_title,
+            'meta_description' => $data->meta_description,
+            'meta_keywords' => "",
+            'name' => "Homepage",
+        );
+
+        return view('frontend.index', compact('body_class', 'module_name_singular', "$module_name_singular"));
     }
 
     public function home()
