@@ -267,7 +267,7 @@ a:hover {
 }
 
 .list-doctor {
-    width: 18%;
+    width: 100%; 
     float: left;
     margin: 9px 21px 26px 0px;
     box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;

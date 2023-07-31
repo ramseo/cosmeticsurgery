@@ -97,6 +97,40 @@
                 </div>
             </div>
         </div>
+
+        <!-- surgeons listing -->
+        <?php
+        $doctors = DB::table('users')->select('*')->whereNotNull('city')->Where('is_active', 1)->orderBy("first_name")->get()->toArray();
+        if ($doctors) {
+        ?>
+            <p class="title">our surgeons:</p>
+            <div class="row">
+                <?php foreach ($doctors as $doc_item) { ?>
+                    <div class="col-sm-2">
+                        <a target="_blank" href="<?= url("surgeon/dr-$doc_item->username") ?>">
+                            <div class="list-doctor">
+                                <?php if (file_exists(public_path() . '/storage/user/profile/' . $doc_item->avatar)) { ?>
+                                    <img class="card-img-top" src="<?= asset('/storage/user/profile/' . $doc_item->avatar) ?>" alt="<?= $doc_item->first_name . ' ' . $doc_item->last_name ?>" style="width:100%" />
+                                <?php } else { ?>
+                                    <img class="card-img-top" src="<?= asset($doc_item->avatar) ?>" alt="<?= $doc_item->first_name . ' ' . $doc_item->last_name ?>" style="width:100%" />
+                                <?php } ?>
+                                <p>
+                                    Dr. <?= $doc_item->first_name . " " . $doc_item->last_name ?>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                <?php } ?>
+            </div>
+        <?php } ?>
+        <div class="clearfix"></div>
+        <!-- surgeons listing -->
+
+        <!-- bottom content -->
+        <div class="row">
+            <?= $$module_name_singular->bottom_content ?>
+        </div>
+        <!-- bottom content -->
     </div>
 </div>
 
