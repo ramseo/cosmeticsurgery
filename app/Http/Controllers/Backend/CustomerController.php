@@ -26,7 +26,7 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $vendors = User::select(['id', 'name', 'username', 'email', 'email_verified_at', 'updated_at', 'status'])->whereHas(
+            $vendors = User::select(['id', 'name', 'username', 'email', 'email_verified_at', 'updated_at', 'status', 'is_active'])->whereHas(
                 'roles',
                 function ($q) {
                     $q->where('name', 'user');
@@ -35,13 +35,45 @@ class CustomerController extends Controller
             return Datatables::of($vendors)
                 ->addIndexColumn()
                 ->addColumn('action', function ($vendor) {
-                    $btn = '<a href="' . route("backend.customer.edit", $vendor->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service"><i class="fas fa-wrench"></i></a>';
+                    if ($vendor->is_active == 1) {
+                        $checked = "checked";
+                    } else {
+                        $checked = "";
+                    }
+
+                    $btn = "";
+                    $btn .= "<div class='switch-flex-cls'>";
+                    $btn .= '<a href="' . route("backend.customer.edit", $vendor->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service"><i class="fas fa-wrench"></i></a>';
+                    $btn .= '<label class="switch">
+                    <input onclick="userIsActive(this)" user_id="' . $vendor->id . '" name="is_active" type="checkbox" ' . $checked . '>
+                    <span class="slider"></span>
+                    </label>';
+                    $btn .= "</div>";
                     return $btn;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
         return view('backend.customer.index');
+    }
+
+    function is_active(Request $request)
+    {
+        $is_active = $request->get('is_active');
+        $user_id = $request->get('user_id');
+
+        $status = DB::table('users')
+            ->where('id', $user_id)
+            ->update(array('is_active' => $is_active));
+
+        $response = [];
+        if ($status) {
+            $response['status'] = true;
+        } else {
+            $response['status'] = false;
+        }
+
+        echo json_encode($response);
     }
 
     /**
