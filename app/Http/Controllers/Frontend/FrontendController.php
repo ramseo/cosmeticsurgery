@@ -216,7 +216,7 @@ class FrontendController extends Controller
         return view('frontend.before-after-result-details', compact('body_class', 'module_name_singular', "$module_name_singular", 'slug', 'name', 'result_images'));
     }
 
-    public function appointment()
+    public function appointment() 
     {
         $body_class = '';
         $module_name_singular = Str::singular("pages");
@@ -229,4 +229,23 @@ class FrontendController extends Controller
 
         return view('frontend.book-an-appointment', compact('body_class', 'module_name_singular', "$module_name_singular"));
     }
+
+    public function blog_author($slug)
+    {
+        $slug = str_replace('-', ' ', ucwords($slug));
+
+        $body_class = '';
+        $module_name_singular = Str::singular("pages");
+        $$module_name_singular = (object) array(
+            'meta_title' => "Author" . ' ' . $slug,
+            'meta_description' => "",
+            'meta_keywords' => "",
+            'name' => "What You Need to Know About Traveling Abroad for Cosmetic Surgery",
+        );
+
+        $posts = DB::table('posts')->where('author', $slug)->select('*')->paginate(3);
+        return view('frontend.blog-author', compact('body_class', 'module_name_singular', "$module_name_singular", 'posts', 'slug'));
+    }
+
+    
 }

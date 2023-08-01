@@ -3627,3 +3627,12 @@ img {
     width: 50px;
     color: #3daf20;
 }
+
+.small-footer-parent {
+    background-color: #1a508b;
+    border-top: 1px dashed #fff;
+}
+
+.color-black {
+    color: #000;
+}

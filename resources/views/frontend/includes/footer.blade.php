@@ -129,7 +129,7 @@
    </div>
 </div>
 
-<div class="container-fluid" style="background-color:#1a508b; border-top:1px dashed #fff">
+<div class="container-fluid small-footer-parent">
    <div class="small-footer">
       <div class="floatt-left">
          <?= "Copyright ©" . " " . date('Y') . " - " . $_SERVER['SERVER_NAME'] . " - " . "All rights reserved" ?>

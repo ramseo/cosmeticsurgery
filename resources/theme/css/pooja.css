@@ -44,12 +44,12 @@
 }
 
 
-.post-item-wrap:hover {
+/* .post-item-wrap:hover {
     -webkit-transform: translateY(-30px);
     -ms-transform: translateY(-30px);
     transform: translateY(-30px);
     animation: moveVertical 1s ease forwards;
-}
+} */
 
 .post-item-wrap,
 .post-item-wrap:before {

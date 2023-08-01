@@ -20,11 +20,12 @@
             @foreach ($post_data as $item)
             @php
             $details_url = route("frontend.$module_name.show",[$item->slug]);
+            $author_url = str_replace(' ', '-', strtolower($item->author));
             @endphp
             <div class="col-md-4">
                 <div class="post-item-wrap">
                     <div class="common-card">
-                        <div class="card" data-label="<?= date('d', strtotime($item->published_at)) . " " . substr(date('F', strtotime($item->published_at)), 0, 3) . " " . date('Y', strtotime($item->published_at)) ?>">
+                        <div class="card">
                             <div class="img-col">
                                 <a href="{{$details_url}}">
                                     <img src="{{$item->featured_image}}" class="img-fluid" alt="<?= $item->alt ?>">
@@ -43,7 +44,9 @@
                                     <span>
                                         Author:
                                     </span>
-                                    <?= $item->author ?>
+                                    <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
+                                        <?= $item->author ?>
+                                    </a>
                                 </div>
                             </div>
                         </div>
