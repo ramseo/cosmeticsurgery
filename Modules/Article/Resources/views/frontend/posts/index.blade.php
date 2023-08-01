@@ -37,9 +37,9 @@
                                         <?= Str::words($item->name, 4) ?>
                                     </p>
                                 </a>
-                                <p class="text margin-null">
+                                <!-- <p class="text margin-null">
                                     {{Str::words($item->intro, '15')}}
-                                </p>
+                                </p> -->
                                 <div class="author">
                                     <span>
                                         Author:
