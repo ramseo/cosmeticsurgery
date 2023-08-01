@@ -371,7 +371,7 @@ if ($getMorePosts) {
                 <?php
                 foreach ($getMorePosts as $item) {
 
-                    $img = asset('img/default-vendor.jpg');
+                    $img = asset('img/default-avatar.jpg');
                     if ($item->featured_image) {
                         if (file_exists(public_path() . $item->featured_image)) {
                             $img = asset($item->featured_image);
@@ -388,7 +388,7 @@ if ($getMorePosts) {
                             </a>
                             <div class="item-name">
                                 <a href="<?= route("frontend.posts.show", [$item->slug]) ?>">
-                                    <?= Str::words($item->name, 4) ?>
+                                    <?= Str::words($item->name, 3) ?>
                                 </a>
                             </div>
                         </div>
