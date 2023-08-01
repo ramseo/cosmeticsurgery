@@ -92,7 +92,7 @@ class FrontendController extends Controller
     public function surgeon_profile($slug)
     {
         // get doctor & city
-        $doctor_details = DB::table('users')->select('*')->where('username', $slug)->get()->first();
+        $doctor_details = DB::table('users')->select('*')->Where('is_active', 1)->where('username', $slug)->get()->first();
         if (!$doctor_details) {
             return abort(404);
         }
@@ -159,7 +159,7 @@ class FrontendController extends Controller
             'name' => "Find A Surgeon",
         );
 
-        $doctors = DB::table('users')->select('*')->whereNotNull('city')->orderBy("first_name")->get()->toArray();
+        $doctors = DB::table('users')->select('*')->whereNotNull('city')->Where('is_active', 1)->orderBy("first_name")->get()->toArray();
 
         return view('frontend.surgeons', compact('body_class', 'module_name_singular', "$module_name_singular", 'doctors'));
     }
