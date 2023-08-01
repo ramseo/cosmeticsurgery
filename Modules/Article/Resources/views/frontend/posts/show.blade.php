@@ -23,6 +23,7 @@
         <div class="row">
             @php
             $post_details_url = route('frontend.posts.show',[encode_id($$module_name_singular->id), $$module_name_singular->slug]);
+            $author_url = str_replace(' ', '-', strtolower($$module_name_singular->author));
             @endphp
             <div class="col-xs-6 col-sm-6 blog-detail-content-col">
                 <div class="col-sm-12">
@@ -37,8 +38,10 @@
                 </h1>
                 <div class="blog-meta">
                     <span>
-                        <i class="fa fa-user"></i>
-                        <?= $$module_name_singular->author ?>
+                        <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
+                            <i class="fa fa-user"></i>
+                            <?= $$module_name_singular->author ?>
+                        </a>
                     </span>
                     &nbsp;
                     <span class="post-date">
