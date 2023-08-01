@@ -24,10 +24,18 @@ class FrontendController extends Controller
 
         $data = DB::table("pages")->where('slug', "homepage")->get()->first();
 
+        if ($data) {
+            $meta_title = $data->meta_title;
+            $meta_description = $data->meta_description;
+        } else {
+            $meta_title = "Cosmetic Surgery";
+            $meta_description = "Cosmetic Surgery";
+        }
+
         $module_name_singular = Str::singular("pages");
         $$module_name_singular = (object) array(
-            'meta_title' => $data->meta_title,
-            'meta_description' => $data->meta_description,
+            'meta_title' => $meta_title,
+            'meta_description' => $meta_description,
             'meta_keywords' => "",
             'name' => "Homepage",
         );
@@ -216,7 +224,7 @@ class FrontendController extends Controller
         return view('frontend.before-after-result-details', compact('body_class', 'module_name_singular', "$module_name_singular", 'slug', 'name', 'result_images'));
     }
 
-    public function appointment() 
+    public function appointment()
     {
         $body_class = '';
         $module_name_singular = Str::singular("pages");
@@ -246,6 +254,4 @@ class FrontendController extends Controller
         $posts = DB::table('posts')->where('author', $slug)->select('*')->paginate(6);
         return view('frontend.blog-author', compact('body_class', 'module_name_singular', "$module_name_singular", 'posts', 'slug'));
     }
-
-
 }
