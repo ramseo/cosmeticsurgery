@@ -3641,6 +3641,7 @@ img {
     padding: 10px 0 0 0;
 }
 
+.blog-index-cls .col-md-4,
 .blog-author-sec .col-md-4 {
     padding-bottom: 30px;
 }
