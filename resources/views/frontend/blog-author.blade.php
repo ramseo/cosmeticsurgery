@@ -24,7 +24,7 @@
             Author Archives: <?= $slug ?>
         </h3>
 
-        <section class="home-section paddingtop-80">
+        <section class="home-section blog-author-sec">
             <div class="row">
                 <?php
                 foreach ($posts as $item) {
