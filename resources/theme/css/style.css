@@ -892,7 +892,7 @@ img.lb-image {
 small {
     font-size: 16px !important;
     font-weight: 400 !important;
-    color: #766f6f;
+    color: #2c6bb9;
 }
 
 .small-heading {
@@ -3515,25 +3515,42 @@ p {
     text-align: justify;
 }
 
-.identity {
-    background-color: #1877F2;
-    color: #fff;
-    font-size: 23px;
-    padding: 9px 13px 11px 7.4px;
-    box-shadow: -4px 0px 0px #ccc;
-    text-transform: uppercase;
-}
-
-.identity p {
+.select_fg {
     text-align: center;
-    font-size: 27px;
-    margin-top: 14px;
-    margin-bottom: 20px;
+    padding: 20px 0px 0px 0px;
+    float: left;
+    width: 100%;
 }
 
-.identity select {
-    max-width: 428px!important;
-    margin: auto;
-    height: 40px;
-    font-size: 15px;
+.new_breat_f {
+    background: #1877F2!important;
+    margin: 20px 0px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.new_breat_f h5 {
+    float: left;
+    width: 100%;
+    font-size: 30px;
+    color: #fff;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+.cutome_sele_bg {
+    display: inline-block !important;
+    max-width: 300px;
+    background: #fff;
+    font-size: 18px;
+    color: #000;
+    border: solid 2px #fffaf9;
+    text-align: left;
+    height: 50px!important;
+}
+
+.item-middle .ico {
+    min-height: 180px;
+    max-height: 180px;
 }
