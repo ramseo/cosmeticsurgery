@@ -206,28 +206,32 @@ function accordion_elm(elm) {
 $(function () {
     var url = window.location.pathname;
     urlRegExp = new RegExp(url.replace(/\/$/, '') + "$");
-    // create regexp to match current url pathname and remove trailing slash if present as it could collide with the link in navigation in case trailing slash wasn't present there
-    // now grab every link from the navigation
-    $('#desktop-header-menu li a').each(function () {
-        // and test its normalized href against the url pathname regexp
-        if (window.location.href != base_url) {
-            if (urlRegExp.test(this.href.replace(/\/$/, ''))) {
-                $(this).addClass('active');
 
-                var parent_cls = $(this).parent().attr("class");
-                if (parent_cls == "dropdown-menu") {
-                    var main_parent = $(this).parent().parent();
-                    var target_item = $(main_parent).children('a');
-                    $(target_item).css(
-                        { 'color': '#1877F2', 'font-weight': '600' }
-                    );
+    if (url != "/procedures") {
+        // create regexp to match current url pathname and remove trailing slash if present as it could collide with the link in navigation in case trailing slash wasn't present there
+        // now grab every link from the navigation
+        $('#desktop-header-menu li a').each(function () {
+            // and test its normalized href against the url pathname regexp
+            if (window.location.href != base_url) {
+                if (urlRegExp.test(this.href.replace(/\/$/, ''))) {
+                    $(this).addClass('active');
+
+                    var parent_cls = $(this).parent().attr("class");
+                    if (parent_cls == "dropdown-menu") {
+                        var main_parent = $(this).parent().parent();
+                        var target_item = $(main_parent).children('a');
+                        $(target_item).css({
+                            'color': '#1877F2',
+                            'font-weight': '600'
+                        });
+                    }
                 }
-
+            } else {
+                $('.home-item-active-cls').addClass("active");
             }
-        } else {
-            $('.home-item-active-cls').addClass("active");
-        }
-    });
+        });
+    }
+
 });
 
 
