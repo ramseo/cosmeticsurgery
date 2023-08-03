@@ -50,6 +50,7 @@
                         Get popular among countless patients with your profile listing:
                     </h3>
                     <ul>
+                        <li>Get your name in the list of top cosmetic surgeons</li>
                         <li>Attract and engage new patients</li>
                         <li>Boost your online credibility and reputation</li>
                         <li>Acquire patients beyond expectation</li>
@@ -64,10 +65,10 @@
             <div class="col-lg-6">
                 <div class="specification">
                     <p class="title1">
-                        Patients are becoming impatient when they can’t find proper cosmetic surgeon, treatment and clinics.
+                        Patients feel perplexed when they struggle to find expert cosmetic surgeons, proper treatment, and reputed clinics.
                     </p>
                     <h3 class="star">
-                        Let us join together and guide patients toward the best decision.
+                        Join us and guide the toward making the best decision of their life
                     </h3>
                     <button type="button" class="btn btn-secondary btn-lg  butt-mob1" style="margin-top: 20px;">
                         <a href="<?= url('join-as-plastic-surgeon') ?>" style="color:#fff; text-decoration:none; font-size:15px; font-weight:500;">
