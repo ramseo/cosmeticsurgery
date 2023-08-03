@@ -63,7 +63,7 @@
 
                 <?php
                 $popular_surgeries1 = popular_cities_surgeries("popular-surgeries", $skip = 0, $take = 18);
-                $popular_surgeries2 = popular_cities_surgeries("popular-surgeries", $skip = 18, $take = 18);
+                $popular_surgeries2 = popular_cities_surgeries("popular-surgeries", $skip = 18, $take = 16);
                 ?>
 
                 <p class="identity text-center">Popular Surgeries</p>
