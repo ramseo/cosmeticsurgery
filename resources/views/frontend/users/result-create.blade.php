@@ -106,7 +106,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            {{ html()->button($text = "<i class='fa fa-plus-circle'></i>Create", $type = 'submit')->class('btn btn-success') }}
+                            {{ html()->button($text = "<i class='fa fa-plus-circle'></i> Create ", $type = 'submit')->class('btn btn-success') }}
                         </div>
                     </div>
                     <div class="col-6">
