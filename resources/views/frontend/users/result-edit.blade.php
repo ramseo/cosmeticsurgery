@@ -18,7 +18,9 @@
 <div class="header-space"></div>
 <div class="cit">
     <div class="container">
-        <p>My Profile</p>
+        <p>
+            Dr. <?= $user->first_name . " " . $user->last_name . " " . "Profile" ?>
+        </p>
     </div>
 </div>
 

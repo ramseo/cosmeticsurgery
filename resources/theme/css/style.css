@@ -3698,3 +3698,15 @@ p {
     min-height: 180px;
     max-height: 180px;
 }
+
+.password-container {
+    position: relative;
+}
+
+.mar-right-50 {
+    margin-right: 50px;
+}
+
+.profile-form-section .form-control.form-control-sm {
+    margin-right: 50px;
+}

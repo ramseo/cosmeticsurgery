@@ -1,9 +1,11 @@
 .bg-gradient-theme {
-    background: linear-gradient(
-        87deg
-        , #FA5170 0, #FA5170 100%) !important;
+    background: linear-gradient(87deg, #FA5170 0, #FA5170 100%) !important;
 }
 
-.navbar-theme{
+.navbar-theme {
     background-color: #FA5170;
+}
+
+.password-container {
+    position: relative;
 }

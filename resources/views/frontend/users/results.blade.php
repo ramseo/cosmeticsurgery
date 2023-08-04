@@ -18,7 +18,9 @@
 <div class="header-space"></div>
 <div class="cit">
     <div class="container">
-        <p>My Profile</p>
+        <p>
+            Dr. <?= $user->first_name . " " . $user->last_name . " " . "Profile" ?>
+        </p>
     </div>
 </div>
 <section class="profile-form-section">
@@ -28,22 +30,28 @@
                 @include('frontend.users.menu')
             </div>
             <div class="col-xs-12 col-sm-9">
-                <h4 class="card-title mb-0">
-                    <i class="c-icon cil-people"></i>
-                    Result Categories
-                    <small class="text-muted">
-                        Data Table
-                    </small>
-                </h4>
-                <div class="small text-muted">
-                    Categories Management Dashboard
+                <div class="row justify-content-between">
+                    <div class="one">
+                        <h4 class="card-title mb-0">
+                            <i class="c-icon cil-people"></i>
+                            Result Categories
+                            <small class="text-muted">
+                                Data Table
+                            </small>
+                        </h4>
+                        <div class="small text-muted">
+                            Categories Management Dashboard
+                        </div>
+                    </div>
+
+                    <div class="two mar-right-50">
+                        <a href='<?= route("frontend.results.create") ?>' class='btn btn-success btn-sm' data-toggle="tooltip" title="{{__('Create')}}">
+                            Create <i class="fa fa-plus-circle"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="float-right">
-                    <a href='<?= route("frontend.results.create") ?>' class='btn btn-success btn-sm' data-toggle="tooltip" title="{{__('Create')}}">
-                        <i class="fa fa-plus-circle"></i>
-                    </a>
-                </div>
+
                 <div class="row">
                     <!-- <div class="col-12"> -->
                     <div class="table-responsive">

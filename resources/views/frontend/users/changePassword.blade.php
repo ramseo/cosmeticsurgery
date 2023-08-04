@@ -4,7 +4,15 @@
 
 @section('content')
 
-<section id="breadcrumb-section">
+<div class="header-space"></div>
+<div class="cit">
+    <div class="container">
+        <p>
+            Dr. <?= $user->first_name . " " . $user->last_name . " " . "Profile" ?>
+        </p>
+    </div>
+</div>
+<!-- <section id="breadcrumb-section">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12">
@@ -17,7 +25,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section id="user-profile-section">
     <div class="container-fluid">
@@ -45,7 +53,7 @@
             <div class="col-xs-12 col-sm-9">
                 @include('backend.includes.errors')
                 <div class="card bg-white border-light shadow-soft flex-md-row no-gutters p-4">
-                <!-- <div class="card-body d-flex flex-column justify-content-between col-auto py-4 p-lg-5"> -->
+                    <!-- <div class="card-body d-flex flex-column justify-content-between col-auto py-4 p-lg-5"> -->
                     <div class="card-body d-flex flex-column justify-content-between col-auto">
                         <div class="row mt-4 mb-4">
                             <div class="col">
