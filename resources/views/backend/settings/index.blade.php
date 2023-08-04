@@ -32,12 +32,12 @@
         </div>
         <!--/.row-->
 
-        <div class="row mt-4">
+        <div class="row mt-4"> 
             <div class="col">
                 <form method="post" action="{{ route('backend.settings.store') }}" class="form-horizontal" role="form">
                     {!! csrf_field() !!}
 
-                    @if(count(config('setting_fields', [])) )
+                    @if(count(config('setting_fields', [])) ) 
 
                         @foreach(config('setting_fields') as $section => $fields)
                         <div class="card card-accent-primary">

@@ -17,6 +17,12 @@
 
 @section('content')
 
+@if(Session::has('flash_success'))
+<p class="alert alert-info">
+    {{ Session::get('flash_success') }}
+</p>
+@endif
+
 <div class="card">
     <div class="card-body">
 

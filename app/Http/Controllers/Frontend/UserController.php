@@ -529,7 +529,7 @@ class UserController extends Controller
 
         $$module_name_singular->update($request_data);
 
-        return redirect()->route('frontend.users.profile', auth()->user()->id)->with('flash_success', 'Update successful!');
+        return redirect()->route('frontend.users.profileEdit', auth()->user()->id)->with('flash_success', 'Password updated successfully!');
     }
 
     /**

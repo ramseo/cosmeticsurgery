@@ -29,6 +29,12 @@
     </div>
 </div>
 
+@if(Session::has('flash_success'))
+<p class="alert alert-info">
+    {{ Session::get('flash_success') }}
+</p>
+@endif
+
 <section class="profile-form-section">
     <div class="container-fluid">
         <div class="row">
