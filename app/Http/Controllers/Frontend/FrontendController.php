@@ -172,7 +172,7 @@ class FrontendController extends Controller
             'meta_title' => "Top Cosmetic Surgery Clinics in India | Best Plastic Surgeons",
             'meta_description' => "Find the best cosmetic surgery clinic in your city. Book your appointment with Board Certified Cosmetic Surgeon across India.",
             'meta_keywords' => "",
-            'name' => "Cosmetic Surgery Procedures 
+            'name' => "Cosmetic Surgeries 
             ",
         );
 
