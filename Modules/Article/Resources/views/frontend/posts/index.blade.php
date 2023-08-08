@@ -14,6 +14,100 @@
 </div>
 
 @if(count($post_data))
+
+<section class="blog-list-half section-padding sub-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="item mb-50">
+                    <div class="row">
+                        <div class="col-md-5 img">
+                            <img src="<?php echo asset("images/h4.jpg") ?>" alt="">
+                        </div>
+                        <div class="col-md-7 main-bg cont valign">
+                            <div class="full-width">
+                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">August 6, 2022</span>
+                                <h5>
+                                    <a href="blog-details.html">Business meeting 2023 in San Francisco.</a>
+                                </h5>
+                                <div class="tags colorbg mt-15">
+                                    <a href="blog-list.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="item mb-50">
+                    <div class="row">
+                        <div class="col-md-5 img">
+                            <img src="<?php echo asset("images/h4.jpg") ?>" alt="">
+                        </div>
+                        <div class="col-md-7 main-bg cont valign">
+                            <div class="full-width">
+                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">August 6, 2022</span>
+                                <h5>
+                                    <a href="blog-details.html">Business meeting 2023 in San Francisco.</a>
+                                </h5>
+                                <div class="tags colorbg mt-15">
+                                    <a href="blog-list.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="myspac"></div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="item mb-50">
+                    <div class="row">
+                        <div class="col-md-5 img">
+                            <img src="<?php echo asset("images/h4.jpg") ?>" alt="">
+                        </div>
+                        <div class="col-md-7 main-bg cont valign">
+                            <div class="full-width">
+                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">August 6, 2022</span>
+                                <h5>
+                                    <a href="blog-details.html">Business meeting 2023 in San Francisco.</a>
+                                </h5>
+                                <div class="tags colorbg mt-15">
+                                    <a href="blog-list.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="item mb-50">
+                    <div class="row">
+                        <div class="col-md-5 img">
+                            <img src="<?php echo asset("images/h4.jpg") ?>" alt="">
+                        </div>
+                        <div class="col-md-7 main-bg cont valign">
+                            <div class="full-width">
+                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">August 6, 2022</span>
+                                <h5>
+                                    <a href="blog-details.html">Business meeting 2023 in San Francisco.</a>
+                                </h5>
+                                <div class="tags colorbg mt-15">
+                                    <a href="blog-list.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 <section class="listing-section blog-index-cls">
     <div class="container">
         <div class="row">
@@ -68,37 +162,37 @@
 @push('before-scripts')
 <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js"></script>
 <script>
-    $(document).ready(function() {
-        var owl = $('.posts-categories');
+$(document).ready(function() {
+    var owl = $('.posts-categories');
 
-        owl.owlCarousel({
-            items: 6,
-            dots: false,
-            nav: true,
-            navText: ["<i class='fas fa-arrow-left'></i>", "<i class='fas fa-arrow-right'></i>"],
-            loop: $('.posts-categories .owl-item').length > 6 ? true : false,
-            margin: 5,
-            autoplay: $('.posts-categories .owl-item').length > 6 ? true : false,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 2,
-                    loop: $('.posts-categories .owl-item').length > 2 ? true : false,
-                },
-                600: {
-                    items: 4,
-                    loop: $('.posts-categories .owl-item').length > 4 ? true : false,
-                },
-                1000: {
-                    items: 6,
-                    loop: $('.posts-categories .owl-item').length > 6 ? true : false,
-                }
+    owl.owlCarousel({
+        items: 6,
+        dots: false,
+        nav: true,
+        navText: ["<i class='fas fa-arrow-left'></i>", "<i class='fas fa-arrow-right'></i>"],
+        loop: $('.posts-categories .owl-item').length > 6 ? true : false,
+        margin: 5,
+        autoplay: $('.posts-categories .owl-item').length > 6 ? true : false,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 2,
+                loop: $('.posts-categories .owl-item').length > 2 ? true : false,
+            },
+            600: {
+                items: 4,
+                loop: $('.posts-categories .owl-item').length > 4 ? true : false,
+            },
+            1000: {
+                items: 6,
+                loop: $('.posts-categories .owl-item').length > 6 ? true : false,
             }
-        });
-
-
+        }
     });
+
+
+});
 </script>
 
 @endpush
