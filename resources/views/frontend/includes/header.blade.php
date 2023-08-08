@@ -10,6 +10,10 @@ $city = getData('cities');
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 Mail us
             </a>
+            <a href="<?= url('book-an-appointment') ?>">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                Appointment
+            </a>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg desk kc" style="background-color:#1877F2;">

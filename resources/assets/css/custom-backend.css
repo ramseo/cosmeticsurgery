@@ -157,3 +157,26 @@ small {
 .nav-tabs .nav-item {
     margin: 0px 10px 10px 0px;
 }
+
+.gallery-img-col {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-action-col,
+.gallery-action-col:hover {
+    background: #1877F2;
+    text-decoration: none;
+}
+
+.gallery-action-col a,
+.gallery-action-col a:hover {
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    text-decoration: none !important;
+}

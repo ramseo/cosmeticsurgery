@@ -11,6 +11,10 @@ use App\Models\UserProvider;
 use App\Models\UserQuotation;
 // user models
 
+use App\Models\Album;
+use App\Models\Image;
+use Storage;
+
 use Log;
 use Flash;
 use DB;
@@ -134,4 +138,147 @@ class CustomerController extends Controller
 
         return redirect("admin/customer");
     }
+
+    // REVIEW FUNCTIONS
+
+    public function profileResults(Request $request, $doc_id)
+    {
+        $userprofile = Userprofile::where('user_id', $doc_id)->first();
+
+        if ($request->ajax()) {
+            $albums = DB::table('albums')->where('vendor_id', $doc_id)->select(['id', 'name', 'status'])->orderBy('id', 'desc');
+            return Datatables::of($albums)
+                ->addIndexColumn()
+                ->editColumn('name', function ($album) {
+                    return '<strong>' . $album->name . '</strong>';
+                })
+                ->editColumn('status', function ($album) {
+                    return ($album->status == 1) ? "Enabled" : "Disabled";
+                })
+                ->addColumn('action', function ($album) {
+                    $btn = "";
+                    $btn .= '<div class="album-flex-cls">';
+                    $btn .= '<a href="' . route("backend.customer.results.edit", $album->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service"><i class="fa fa-wrench"></i></a>';
+                    $btn .= '<a href="' . route("backend.customer.results.image.index", $album->id) . '" class="btn btn-sm btn-success mt-1" data-toggle="tooltip" title="Album Gallery"><i class="fa fa-file-image"></i></a>';
+                    $btn .= '<a href="' . route("backend.customer.results.delete", $album->id) . '" class="btn btn-sm btn-danger mt-1 del-link" data-toggle="tooltip" title="Album Delete"><i class="fa fa-trash"></i></a>';
+                    $btn .= '</div>';
+                    return $btn;
+                })
+                ->rawColumns(['action', 'name', 'status'])
+                ->make(true);
+        }
+        return view("frontend.users.results", compact('user', 'userprofile'));
+    }
+
+    public function results_store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+        ]);
+
+        $data = $request->all();
+
+        if ($request->file('image')) {
+            $file_image = fileUpload($request, 'image', 'album/image');
+            $data = array_merge($data, ['image' => $file_image]);
+        }
+
+        $album = Album::create($data);
+
+        Flash::success("<i class='fas fa-check'></i> New Album Added")->important();
+        Log::info(label_case('Category Store | ' . $album->name . '(ID:' . $album->id . ')  by User:' . auth()->user()->name . '(ID:' . auth()->user()->id . ')'));
+        return redirect("profile/results");
+    }
+
+    public function results_edit($id)
+    {
+        $album = Album::findOrFail($id);
+        $get_user_id_by_album = get_user_id_by_album($id, 'albums');
+
+        $user = User::findOrFail($get_user_id_by_album->vendor_id);
+
+        Log::info(label_case('Service Edit | ' . $album->name . '(ID:' . $album->id . ')  by User:' . auth()->user()->name . '(ID:' . auth()->user()->id . ')'));
+        return view('backend.users.result-edit', compact('album', 'user'));
+    }
+
+    public function results_update($id, Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+        ]);
+
+        $album = Album::findOrFail($id);
+        $get_user_id_by_album = get_user_id_by_album($id, 'albums');
+
+        $user = User::findOrFail($get_user_id_by_album->vendor_id);
+
+        $data = $request->all();
+
+        if ($request->file('image')) {
+            $file_image = fileUpload($request, 'image', 'album/image/');
+            $data = array_merge($data, ['image' => $file_image]);
+        }
+
+        $album->update($data);
+        Flash::success("<i class='fas fa-check'></i> Album Updated Successfully")->important();
+        Log::info(label_case('Service Update | ' . $album->name . '(ID:' . $album->id . ')  by User:' . auth()->user()->name . '(ID:' . auth()->user()->id . ')'));
+        return redirect("admin/users/profile/$user->id/edit");
+    }
+
+    public function results_delete($id)
+    {
+        $get_user_id_by_album = get_user_id_by_album($id, 'albums');
+        $user = User::findOrFail($get_user_id_by_album->vendor_id);
+
+        rrmdir(storage_path('app/public/album/' . $id));
+        Album::where(['id' => $id])->delete();
+        Image::where(['album_id' => $id])->delete();
+        Flash::success("<i class='fas fa-check'></i> Album Deleted")->important();
+        return redirect("admin/users/profile/$user->id/edit");
+    }
+
+    public function results_image($albumId, Request $request)
+    {
+        $get_user_id_by_album = get_user_id_by_album($albumId, 'albums');
+        $user = User::findOrFail($get_user_id_by_album->vendor_id);
+
+        $album = Album::findOrFail($albumId);
+        $images = Image::where('album_id', $albumId)->get();
+
+        return view('backend.users.result-images', compact('images', 'album', 'user'));
+    }
+
+    public function results_image_store(Request $request, $id)
+    {
+        $album_id = $id;
+        $fileName = fileUpload($request, 'file', "album/$album_id/", true);
+        $input['album_id'] = $album_id;
+        $input['name'] = $fileName;
+        $image = Image::create($input);
+        Log::info(label_case('Image Store | ' . $image->name . '(ID:' . $image->id . ')  by User:' . auth()->user()->name . '(ID:' . auth()->user()->id . ')'));
+        return response()->json(['success' => $image->id]);
+    }
+
+
+    public function results_image_remove(Request $request)
+    {
+        $name = $request->get('name');
+        $image = Image::where(['name' => $name])->first();
+        Storage::delete('album/$album_id/' . $image->name);
+        Image::where(['id' => $image->id])->delete();
+        return $name;
+    }
+
+    public function results_image_delete($id)
+    {
+        $image = Image::findorfail($id);
+        Storage::delete('album/$album_id/' . $image->name);
+        Image::where(['id' => $image->id])->delete();
+
+        Flash::success("<i class='fas fa-check'></i> Image Deleted")->important();
+
+        return redirect("admin/customer/results/image/$image->album_id");
+    }
+
+    // REVIEW FUNCTIONS
 }

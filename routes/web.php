@@ -225,6 +225,19 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.',
     Route::post('customer/update/{id}', 'CustomerController@update')->name('customer.update');
     Route::delete('customer/destroy/{id}', 'CustomerController@destroy')->name('customer.destroy');
 
+    // NEW BACKEND RESULTS 
+    Route::get('customer/results/{id}', 'CustomerController@profileResults')->name('customer.results.index');
+    Route::post('customer/results-store/', 'CustomerController@results_store')->name('customer.results.store');
+    Route::get('customer/results-edit/{id}', 'CustomerController@results_edit')->name('customer.results.edit');
+    Route::PATCH('customer/results-update/{id}', 'CustomerController@results_update')->name('customer.results.update');
+    Route::get('customer/results-delete/{id}', 'CustomerController@results_delete')->name('customer.results.delete');
+
+    Route::get('customer/results/image/{album}', 'CustomerController@results_image')->name('customer.results.image.index');
+    Route::post('customer/results/image/store/{album_id}', 'CustomerController@results_image_store')->name('customer.results.image.store');
+    Route::post('customer/results/image/remove', 'CustomerController@results_image_remove')->name('customer.results.image.remove');
+    Route::get('customer/results/image/delete/{id}', 'CustomerController@results_image_delete')->name('customer.results.image.delete');
+    // NEW BACKEND RESULTS
+
     Route::get('content', 'ContentController@index')->name('content.index');
     Route::get('content/create/', 'ContentController@create')->name('content.create');
     Route::post('content/store/', 'ContentController@store')->name('content.store');

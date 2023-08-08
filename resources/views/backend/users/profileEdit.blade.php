@@ -54,6 +54,11 @@
                     Profile Content
                 </a>
             </li>
+            <li class="nav-item remove-default-active-cls nav-switch">
+                <a class="nav-link ancr" data-toggle="tab" href="#doctor-results" aria-expanded="false">
+                    Results
+                </a>
+            </li>
         </ul>
 
         {{ html()->modelForm($userprofile, 'PATCH', route('backend.users.profileUpdate', $$module_name_singular->id))->class('form-horizontal')->attributes(['enctype'=>"multipart/form-data"])->open() }}
@@ -281,7 +286,22 @@
                     </div>
                 </div>
             </div>
-
+            <div id="doctor-results" class="container tab-pane fade">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table width="100%" id="datatable" class="table table-bordered table-hover table-responsive-sm">
+                            <thead>
+                                <th width="5%">#</th>
+                                <th width="20%">Name</th>
+                                <th width="60%">Status</th>
+                                <th width="15%">Action</th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         {{ html()->closeModelForm() }}
 
@@ -406,4 +426,46 @@
         document.getElementById('featured_image').value = $url;
     }
 </script>
+@endpush
+
+@push ('after-styles')
+<link rel="stylesheet" href="{{ asset('vendor/datatable/datatables.min.css') }}">
+@endpush
+
+@push ('after-scripts')
+<script type="text/javascript" src="{{ asset('vendor/datatable/datatables.min.js') }}"></script>
+
+<script type="text/javascript">
+    var table = $('#datatable').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('backend.customer.results.index',$user->id)}}",
+        columns: [{
+                data: 'id',
+                name: 'id'
+            },
+            {
+                data: 'name',
+                name: 'name'
+            },
+            {
+                data: 'status',
+                name: 'status'
+            },
+            {
+                data: 'action',
+                name: 'action',
+                orderable: false,
+                searchable: false
+            },
+        ],
+        columnDefs: [{
+            targets: [0, 1],
+        }],
+        "order": [
+            [1, 'desc']
+        ]
+    });
+</script>
+
 @endpush

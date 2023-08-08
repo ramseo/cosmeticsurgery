@@ -1220,4 +1220,12 @@ if (!function_exists('date_today')) {
 
         return $push_album_ids;
     }
+
+    function get_user_id_by_album($album_id, $table)
+    {
+        return DB::table($table)
+            ->select('vendor_id')
+            ->Where('id', $album_id)
+            ->get()->first();
+    }
 }
