@@ -882,11 +882,11 @@ img.lb-image {
 
 .proc {
     margin-bottom: 1px;
-    font-size: 21px;
 }
 
 .proc a {
     color: #000;
+    font-size: 21px;
 }
 
 small {
@@ -1915,9 +1915,6 @@ footer img {
     .margin-bottom-5 {
         margin-bottom: 8px !important;
     }
-    .container-fluid.mtab.pt-4.pb-4 {
-        display: none;
-    }
     .container-fluid.aco {
         display: block;
     }
@@ -2166,6 +2163,9 @@ footer img {
     }
     .calls h3 {
         font-size: 30px;
+    }
+    small {
+        font-size: 12px !important;
     }
 }
 
@@ -3641,4 +3641,8 @@ p {
 
 .myspac {
     margin-top: 28px;
+}
+
+.xg.soc {
+    flex-direction: row !important;
 }
