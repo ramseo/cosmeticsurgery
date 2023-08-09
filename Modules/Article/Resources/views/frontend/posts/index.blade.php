@@ -14,7 +14,6 @@
 </div>
 
 @if(count($post_data))
-
 <section class="blog-list-half section-padding sub-bg">
     <div class="container">
         <div class="row">
@@ -60,56 +59,13 @@
                     </div>
                 </div>
             <?php } ?>
-        </div>
-    </div>
-</section>
-
-<section class="listing-section blog-index-cls">
-    <div class="container">
-        <div class="row">
-            @foreach ($post_data as $item)
-            @php
-            $details_url = route("frontend.$module_name.show",[$item->slug]);
-            $author_url = str_replace(' ', '-', strtolower($item->author));
-            @endphp
-            <div class="col-md-4">
-                <div class="post-item-wrap">
-                    <div class="common-card">
-                        <div class="card">
-                            <div class="img-col">
-                                <a href="{{$details_url}}">
-                                    <img src="{{$item->featured_image}}" class="img-fluid" alt="<?= $item->alt ?>">
-                                </a>
-                            </div>
-                            <div class="text-col">
-                                <a href="{{$details_url}}">
-                                    <p class="title">
-                                        <?= Str::words($item->name, 4) ?>
-                                    </p>
-                                </a>
-                                <!-- <p class="text margin-null">
-                                    {{Str::words($item->intro, '15')}}
-                                </p> -->
-                                <div class="author">
-                                    <span>
-                                        Author:
-                                    </span>
-                                    <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
-                                        <?= $item->author ?>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="inner text-center">
+                <div class="d-flex justify-content-center w-100 mt-3">
+                    {{$post_data->links()}}
                 </div>
             </div>
-            @endforeach
         </div>
-        <div class="inner text-center">
-            <div class="d-flex justify-content-center w-100 mt-3">
-                {{$post_data->links()}}
-            </div>
-        </div>
+    </div>
 </section>
 @endif
 
