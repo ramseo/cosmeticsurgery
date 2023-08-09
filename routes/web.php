@@ -85,9 +85,16 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
         Route::get('profile/results/image/delete/{id}', 'UserController@results_image_delete')->name('results.image.delete');
         // get results routes
 
-        // get profile content 
+        // get profile content   
         Route::get('profile/content', 'UserController@profile_content')->name('content.index');
         Route::PATCH('profile/content-update/{id}', 'UserController@profile_content_update')->name('content.update');
+
+        Route::get('profile/posts', 'UserController@profile_posts')->name('profile_posts.index');
+        Route::get('profile/posts-create/', 'UserController@posts_create')->name('profile_posts.create');
+        Route::post('profile/posts-store/', 'UserController@posts_store')->name('profile_posts.store');
+        Route::get('profile/posts-edit/{id}', 'UserController@posts_edit')->name('profile_posts.edit');
+        Route::PATCH('profile/posts-update/{id}', 'UserController@posts_update')->name('profile_posts.update');
+        Route::get('profile/posts-delete/{id}', 'UserController@posts_delete')->name('profile_posts.delete');
         // get profile content
 
         Route::get("users/emailConfirmationResend/{id}", ['as' => "users.emailConfirmationResend", 'uses' => "UserController@emailConfirmationResend"]);
@@ -236,7 +243,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.',
     Route::post('customer/results/image/store/{album_id}', 'CustomerController@results_image_store')->name('customer.results.image.store');
     Route::post('customer/results/image/remove', 'CustomerController@results_image_remove')->name('customer.results.image.remove');
     Route::get('customer/results/image/delete/{id}', 'CustomerController@results_image_delete')->name('customer.results.image.delete');
-    // NEW BACKEND RESULTS
+    // NEW BACKEND RESULTS 
 
     Route::get('content', 'ContentController@index')->name('content.index');
     Route::get('content/create/', 'ContentController@create')->name('content.create');

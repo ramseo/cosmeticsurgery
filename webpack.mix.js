@@ -68,6 +68,7 @@ mix.styles(
         "resources/theme/css/justifiedGallery.min.css",
         // "resources/theme/css/owl.carousel.min.css",
         // "resources/theme/css/owl.theme.default.min.css",
+        "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
         "resources/theme/css/rateit.css",
         "resources/theme/css/pooja.css",
         "resources/theme/css/style.css",

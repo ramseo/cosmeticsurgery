@@ -77,6 +77,12 @@
                 Content
             </a>
         </li>
+        <li>
+            <a href="{{ route('frontend.profile_posts.index') }}" class="{{ Request::segment(2) == 'posts' ? 'active' : '' }}">
+                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                Posts
+            </a>
+        </li>
         <!-- <li data-toggle="collapse" data-target="#service" class="{{ Request::segment(1) == 'vendors' ? 'collapsed' : '' }} ">
             <a class="{{ Request::segment(1) == 'vendors' ? 'active' : '' }}" href="{{ route('frontend.vendors.slug')}}"><i class="fa fa-globe fa-lg"></i> My Vendors <span class="arrow"></span></a>
             <ul id="mainFeatures" class="sub-menu collapse {{ Request::segment(1) == 'vendors' ? 'show' : '' }}  ">

@@ -32,8 +32,8 @@ class PostsController extends Controller
      * @return Response
      */
     public function index()
-    { 
-        
+    {
+
         $module_title = $this->module_title;
         $module_name = $this->module_name;
         $module_path = $this->module_path;
@@ -43,10 +43,10 @@ class PostsController extends Controller
 
         $module_action = 'List';
 
-        $post_data = $module_model::latest()->with(['category', 'tags', 'comments'])->paginate(6);
+        $post_data = $module_model::latest()->Where('status', 1)->with(['category', 'tags', 'comments'])->paginate(6);
 
         return view(
-            "article::frontend.$module_path.index", 
+            "article::frontend.$module_path.index",
             compact('module_title', 'module_name', 'module_icon', 'module_action', 'module_name_singular', 'post_data')
         );
     }
