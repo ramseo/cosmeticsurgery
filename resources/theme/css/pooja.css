@@ -183,6 +183,7 @@
 
 .blog-detail-content-col img {
     border-radius: 10px 0px 0px 10px;
+    padding-right: 0;
     height: 320px;
     width: 100%;
 }
