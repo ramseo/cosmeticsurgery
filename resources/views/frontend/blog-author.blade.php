@@ -20,7 +20,7 @@
 
 <section class="blog-list-half section-padding sub-bg">
     <div class="container">
-        <h3 class="text-capitalize">
+        <h3 class="text-capitalize author-archive-cls">
             Author Archives: <?= $slug ?>
         </h3>
         <div class="row">
