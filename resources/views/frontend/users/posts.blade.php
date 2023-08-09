@@ -29,7 +29,7 @@
             <div class="col-xs-12 col-sm-3 avatar-menu-bar">
                 @include('frontend.users.menu')
             </div>
-            <div class="col-xs-12 col-sm-9">
+            <div class="col-xs-12 col-sm-9 user-posts-col">
                 <div class="row justify-content-between">
                     <div class="one">
                         <h4 class="card-title mb-0">

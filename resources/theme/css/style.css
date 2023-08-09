@@ -3793,3 +3793,11 @@ p {
 .user-posts>.justify-content-between {
     padding: 0px 0px 15px 15px;
 }
+
+.mar-right-50 {
+    margin-right: 50px;
+}
+
+.user-posts-col #datatable_filter input {
+    margin-right: 50px;
+}
