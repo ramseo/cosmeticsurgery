@@ -241,6 +241,7 @@ class FrontendController extends Controller
     public function blog_author($slug)
     {
         $slug = str_replace('-', ' ', ucwords($slug));
+        $slug1 = $val = str_replace(' ', '', $slug);
 
         $body_class = '';
         $module_name_singular = Str::singular("pages");
@@ -252,6 +253,6 @@ class FrontendController extends Controller
         );
 
         $posts = DB::table('posts')->where('author', $slug)->select('*')->paginate(6);
-        return view('frontend.blog-author', compact('body_class', 'module_name_singular', "$module_name_singular", 'posts', 'slug'));
+        return view('frontend.blog-author', compact('body_class', 'module_name_singular', "$module_name_singular", 'posts', 'slug', 'slug1'));
     }
 }
