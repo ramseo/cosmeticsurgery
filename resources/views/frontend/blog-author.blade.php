@@ -34,7 +34,7 @@
                         <div class="row">
                             <div class="col-md-5 img">
                                 <a href="<?= $details_url ?>">
-                                    <img src="<?= $item->featured_image ?>" alt="<?= $item->alt ?>">
+                                    <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>">
                                 </a>
                             </div>
                             <div class="col-md-7 main-bg cont valign">
@@ -43,7 +43,7 @@
                                         <?= date('F', strtotime($item->published_at)) . " " . date('d', strtotime($item->published_at)) . "," . " " . date('Y', strtotime($item->published_at)) ?>
                                     </span>
                                     <h5>
-                                        <a href="blog-details.html">
+                                        <a href="<?= $details_url ?>">
                                             <?= Str::words($item->name, 4) ?>
                                         </a>
                                     </h5>
