@@ -3801,3 +3801,7 @@ p {
 .user-posts-col #datatable_filter input {
     margin-right: 50px;
 }
+
+.padd-bottom-30 {
+    padding-bottom: 30px;
+}
