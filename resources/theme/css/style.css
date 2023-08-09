@@ -3714,3 +3714,7 @@ p {
 .bar a:hover {
     color: #fff;
 }
+
+.user-posts>.justify-content-between {
+    padding: 0px 0px 15px 15px;
+}

@@ -17,6 +17,9 @@ use App\Models\Quotation;
 use App\Models\Album;
 use App\Models\Image;
 
+use Modules\Article\Entities\Category;
+use Modules\Article\Events\PostCreated;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -25,6 +28,8 @@ use App\Models\Type;
 use App\Models\City;
 use App\Models\Vendor;
 use App\Rules\MatchOldPassword;
+use Modules\Article\Http\Requests\Backend\PostsRequest;
+use Modules\Article\Events\PostUpdated;
 
 use Log;
 use Flash;
@@ -149,7 +154,151 @@ class UserController extends Controller
         return redirect("profile/content");
     }
 
-    // results section start aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    // PROFILE POSTS START
+    public function profile_posts(Request $request)
+    {
+        if (Auth::check() == false) {
+            return redirect(base_url());
+        }
+        $user = Auth::user();
+        $user = User::findOrFail($user->id);
+
+        $userprofile = Userprofile::where('user_id', $user->id)->first();
+        $author = ucwords($user->first_name . " " . $user->last_name);
+
+        if ($request->ajax()) {
+            $albums = DB::table('posts')->Where('author', $author)->select(['id', 'name', 'status'])->orderBy('id', 'desc');
+            return Datatables::of($albums)
+                ->addIndexColumn()
+                ->editColumn('name', function ($album) {
+                    return '<strong>' . $album->name . '</strong>';
+                })
+                ->editColumn('status', function ($album) {
+                    return ($album->status == 1) ? "Enabled" : "Disabled";
+                })
+                ->addColumn('action', function ($album) {
+                    $btn = "";
+                    $btn .= '<div>';
+                    $btn .= '<a href="' . route("frontend.profile_posts.edit", $album->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service"><i class="fa fa-wrench"></i></a>';
+                    $btn .= '<a href="' . route("frontend.profile_posts.delete", $album->id) . '" class="btn btn-sm btn-danger mt-1 del-link" data-toggle="tooltip" title="Album Delete"><i class="fa fa-trash"></i></a>';
+                    $btn .= '</div>';
+                    return $btn;
+                })
+                ->rawColumns(['action', 'name', 'status'])
+                ->make(true);
+        }
+        return view("frontend.users.posts", compact('user', 'userprofile'));
+    }
+
+    public function posts_create()
+    {
+        if (Auth::check() == false) {
+            return redirect(base_url());
+        }
+        $user = Auth::user();
+        $user = User::findOrFail($user->id);
+
+        Log::info(label_case('Post Create | User:' . auth()->user()->name . '(ID:' . auth()->user()->id . ')'));
+        return view("frontend.users.post-create")->with('user', $user);
+    }
+
+    public function posts_store(PostsRequest $request)
+    {
+        $request->validate([
+            'name' => "required|max:191|unique:posts,name",
+        ]);
+
+        $module_title = "post";
+        $module_name = "posts";
+        $module_model = "Modules\Article\Entities\Post";
+        $module_name_singular = Str::singular($module_name);
+
+        $module_action = 'Store';
+
+        $data = $request->all();
+        $data['created_by_name'] = auth()->user()->name;
+
+        $module_name_singular = $module_model::create($data);
+
+        event(new PostCreated($module_name_singular));
+
+        Flash::success("<i class='fas fa-check'></i> New '" . Str::singular($module_title) . "' Added")->important();
+
+        Log::info(label_case($module_title . ' ' . $module_action) . " | '" . $module_name_singular->name . '(ID:' . $module_name_singular->id . ") ' by User:" . Auth::user()->name . '(ID:' . Auth::user()->id . ')');
+
+        return redirect("profile/posts");
+    }
+
+    public function posts_edit($id)
+    {
+        $module_title = "post";
+        $module_name = "posts";
+        $module_model = "Modules\Article\Entities\Post";
+        $module_name_singular_ac = Str::singular($module_name);
+
+        $module_action = 'Edit';
+
+        $module_name_singular = $module_model::findOrFail($id);
+
+        $categories = Category::pluck('name', 'id');
+
+        $user = Auth::user();
+        $user = User::findOrFail($user->id);
+
+        Log::info(label_case($module_title . ' ' . $module_action) . " | '" . $module_name_singular->name . '(ID:' . $module_name_singular->id . ") ' by User:" . Auth::user()->name . '(ID:' . Auth::user()->id . ')');
+
+        return view(
+            "frontend.users.post-edit",
+            compact('categories', 'module_title', 'module_name', 'module_name_singular', 'module_action', 'user')
+        );
+    }
+
+    public function posts_update(PostsRequest $request, $id)
+    {
+        $module_title = "Post";
+        $module_name = "posts";
+        $module_model = "Modules\Article\Entities\Post";
+        $module_name_singular = Str::singular($module_name);
+
+        $module_action = 'Update';
+
+        $module_name_singular = $module_model::findOrFail($id);
+
+        $module_name_singular->update($request->except('tag_ids'));
+
+        event(new PostUpdated($module_name_singular));
+
+        Flash::success("<i class='fas fa-check'></i>" . " " . Str::singular($module_title) . " " . "Updated Successfully")->important();
+
+        Log::info(label_case($module_title . ' ' . $module_action) . " | '" . $module_name_singular->name . '(ID:' . $module_name_singular->id . ") ' by User:" . Auth::user()->name . '(ID:' . Auth::user()->id . ')');
+
+        return redirect("profile/posts");
+    }
+
+    public function posts_delete($id)
+    {
+        $module_title = "Post";
+        $module_name = "posts";
+        $module_model = "Modules\Article\Entities\Post";
+        $module_name_singular = Str::singular($module_name);
+
+        $module_action = 'destroy';
+
+        $$module_name_singular = $module_model::findOrFail($id);
+
+        DB::table($module_name)->where('id', $id)->delete();
+
+        Flash::success('<i class="fas fa-check"></i> ' . label_case($module_name_singular) . ' Deleted Successfully!')->important();
+
+        Log::info(label_case($module_title . ' ' . $module_action) . " | '" . $$module_name_singular->name . ', ID:' . $$module_name_singular->id . " ' by User:" . Auth::user()->name . '(ID:' . Auth::user()->id . ')');
+
+        return redirect("profile/posts");
+    }
+
+
+    // PROFILE POSTS FINISH
+
+    // results section start
 
     public function profileResults(Request $request)
     {
