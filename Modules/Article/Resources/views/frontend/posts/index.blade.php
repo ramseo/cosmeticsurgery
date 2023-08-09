@@ -59,10 +59,10 @@
                     </div>
                 </div>
             <?php } ?>
-            <div class="inner text-center">
-                <div class="d-flex justify-content-center w-100 mt-3">
-                    {{$post_data->links()}}
-                </div>
+        </div>
+        <div class="inner text-center">
+            <div class="d-flex justify-content-center w-100 mt-3">
+                {{$post_data->links()}}
             </div>
         </div>
     </div>
