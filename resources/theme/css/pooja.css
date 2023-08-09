@@ -5,7 +5,7 @@
 }
 
 .post-social-icon {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-left: 0px;
 }
 
@@ -183,15 +183,21 @@
 
 .blog-detail-content-col img {
     border-radius: 10px 0px 0px 10px;
+    height: 320px;
+    width: 100%;
 }
 
 .blog-detail-main-col {
     background: #2abfb7;
     border-radius: 0px 10px 10px 0px;
+    height: 320px;
 }
 
 .blog-detail-title {
     color: #fff;
+    font-size: 36px;
+    padding: 20px 0px;
+    margin-bottom: 0;
 }
 
 .blog-meta .color-black {
@@ -204,5 +210,10 @@
 
 .posts-next-prev i,
 .post-prev {
+    color: #fff;
+}
+
+.posts-next-prev i,
+.post-next {
     color: #fff;
 }
