@@ -45,7 +45,7 @@
                                             Author:
                                         </span>
                                         <a class="color-white" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
-                                            <?= $item->author ?>
+                                            <?= ($item->author == "Super Admin") ? $item->author : "Dr." . " " . $item->author ?>
                                         </a>
                                     </div>
                                     <div class="tags colorbg mt-15">
