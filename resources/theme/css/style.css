@@ -3176,12 +3176,12 @@ img {
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    background: #1877F2;
+    background: #ffffff;
     position: relative;
 }
 
 .post-social-icon li i {
-    color: #fff;
+    color: #2abfb7;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -3196,7 +3196,10 @@ img {
 }
 
 .post-social-icon li:first-child i {
-    color: #000;
+    color: #ffffff;
+    border-radius: 32px;
+    border: 1px solid #fff;
+    padding: 10px 0px;
 }
 
 .maim-more-post {
