@@ -3385,7 +3385,8 @@ img {
     padding-right: 5px;
 }
 
-.color-white {
+.color-white,
+.color-white:hover {
     color: #fff;
 }
 

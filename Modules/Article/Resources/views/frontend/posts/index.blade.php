@@ -34,7 +34,7 @@
                             <div class="col-md-7 main-bg cont valign">
                                 <div class="full-width">
                                     <span class="date fz-12 ls1 text-u opacity-7 mb-15">
-                                        August 6, 2022
+                                        <?= date('F', strtotime($item->published_at)) . " " . date('d', strtotime($item->published_at)) . "," . " " . date('Y', strtotime($item->published_at)) ?>
                                     </span>
                                     <h5>
                                         <a href="blog-details.html">
@@ -60,73 +60,7 @@
                     </div>
                 </div>
             <?php } ?>
-            <!-- <div class="col-lg-6">
-                <div class="item mb-50">
-                    <div class="row">
-                        <div class="col-md-5 img">
-                            <img src="<?php echo asset("images/h4.jpg") ?>" alt="">
-                        </div>
-                        <div class="col-md-7 main-bg cont valign">
-                            <div class="full-width">
-                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">August 6, 2022</span>
-                                <h5>
-                                    <a href="blog-details.html">Business meeting 2023 in San Francisco.</a>
-                                </h5>
-                                <div class="tags colorbg mt-15">
-                                    <a href="blog-list.html">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
-
-        <!-- <div class="myspac"></div> -->
-
-        <!-- <div class="row">
-            <div class="col-lg-6">
-                <div class="item mb-50">
-                    <div class="row">
-                        <div class="col-md-5 img">
-                            <img src="<?php echo asset("images/h4.jpg") ?>" alt="">
-                        </div>
-                        <div class="col-md-7 main-bg cont valign">
-                            <div class="full-width">
-                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">August 6, 2022</span>
-                                <h5>
-                                    <a href="blog-details.html">Business meeting 2023 in San Francisco.</a>
-                                </h5>
-                                <div class="tags colorbg mt-15">
-                                    <a href="blog-list.html">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="item mb-50">
-                    <div class="row">
-                        <div class="col-md-5 img">
-                            <img src="<?php echo asset("images/h4.jpg") ?>" alt="">
-                        </div>
-                        <div class="col-md-7 main-bg cont valign">
-                            <div class="full-width">
-                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">August 6, 2022</span>
-                                <h5>
-                                    <a href="blog-details.html">Business meeting 2023 in San Francisco.</a>
-                                </h5>
-                                <div class="tags colorbg mt-15">
-                                    <a href="blog-list.html">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
     </div>
 </section>
 
