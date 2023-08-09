@@ -21,7 +21,11 @@
 <section class="blog-list-half section-padding sub-bg">
     <div class="container">
         <h3 class="text-capitalize author-archive-cls">
-            Author Archives: <?= $slug ?>
+            <?php if ($slug == "Super Admin") {  ?>
+                Author Archives: <?= $slug ?>;
+            <?php } else { ?>
+                Author Archives: <?= "Dr." . " " . $slug ?>;
+            <?php } ?>
         </h3>
         <div class="row">
             <?php
