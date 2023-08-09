@@ -32,9 +32,17 @@
             $field_lable = __("article::$module_name.$field_name");
             $field_placeholder = "Author Name";
             $required = "required";
+
+            $author = "Super Admin";
+            if (isset($module_name_singular->author)) {
+                if ($module_name_singular->author) {
+                    $author = $module_name_singular->author;
+                }
+            }
+
             ?>
             {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
-            {{ html()->text($field_name)->value('Super Admin')->placeholder($field_placeholder)->class('form-control')->attributes(["$required",'readonly']) }}
+            {{ html()->text($field_name)->value($author)->placeholder($field_placeholder)->class('form-control')->attributes(["$required",'readonly']) }}
         </div>
     </div>
 </div>
