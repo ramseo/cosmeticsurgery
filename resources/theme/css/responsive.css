@@ -1,1413 +1,1163 @@
-@media(min-width: 1200px) and (max-width: 1700px) {
-    body {
-        font-size: 15px;
+    @media(min-width: 1200px) and (max-width: 1700px) {
+        body {
+            font-size: 15px;
+        }
+        .search-header .head {
+            font-size: 40px;
+            font-weight: 400;
+        }
+        .search-header .text {
+            font-size: 35px;
+        }
+        .search-form-col .form-control,
+        .search-form-col .btn {
+            height: 50px;
+        }
+        .search-form-col .btn {
+            font-size: 17px;
+        }
+        .common-heading .shadow-text {
+            font-size: 65px;
+            line-height: 80px;
+        }
+        .common-heading .head {
+            font-size: 35px;
+            margin: -50px 0 0 0;
+        }
+        .single-category-col .head {
+            font-size: 20px;
+        }
+        .common-card .title {
+            font-size: 16px;
+        }
+        .common-card .text-col .text {
+            font-size: 14px;
+        }
+        .vendor-card .price span {
+            font-size: 18px;
+        }
+        .common-slider .owl-nav button {
+            height: 105px;
+            width: 105px;
+        }
+        .common-slider .owl-nav .owl-prev {
+            left: -55px;
+        }
+        .common-slider .owl-nav .owl-next {
+            right: -55px;
+        }
+        .footer-head {
+            font-size: 32px;
+        }
+        .footer-col img {
+            max-width: 200px;
+        }
+        .footer-text-col .footer-bold {
+            font-size: 16px;
+        }
+        #footer {
+            font-size: 14px;
+        }
+        .btn {
+            font-size: 14px;
+        }
+    }
+    
+    @media(max-width: 767px) {
+        body {
+            font-size: 13px;
+        }
+        .search-header .text {
+            font-size: 15px;
+            line-height: 15px;
+            margin-top: 5px;
+        }
+        .search-header .head {
+            font-size: 20px;
+        }
+        .search-form-col .form-control {
+            font-size: 12px;
+            padding: 0 5px;
+            width: 100%;
+        }
+        .search-form-col .form-control,
+        .search-form-col .btn {
+            height: 30px;
+        }
+        .search-form-col .form-list {
+            border-radius: 0;
+        }
+        .search-form-col .btn {
+            font-size: 14px;
+            padding: 0 15px;
+        }
+        .search-form-col li {
+            margin: 0 0px !important;
+            width: 50%;
+        }
+        .header-logo-col img {
+            max-width: 105px;
+        }
+        .search-links {
+            display: none;
+        }
+        .common-heading .shadow-text {
+            font-size: 20px;
+            line-height: 50px;
+        }
+        .common-heading .head {
+            font-size: 20px;
+            margin: -40px 0 0 0;
+        }
+        .search-form-col .form-list ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 10px;
+        }
+        .search-form-col {
+            margin: 10px 0 0 0;
+        }
+        .search-form-col li:last-child {
+            margin: 10px auto 0 !important;
+        }
+        .search-form-col .btn {
+            font-size: 13px;
+            padding: 0 10px;
+        }
+        #page-banner img {
+            width: 100%;
+            margin: auto;
+        }
+        #category-section,
+        #photographers-section,
+        #latest-reviews {
+            margin: 10px 0 10px;
+        }
+        .single-category-col .head {
+            font-size: 13px;
+        }
+        .single-category-col .img-col .text-col {
+            left: 12px;
+        }
+        .single-category-col {
+            margin-bottom: 12px;
+        }
+        .category-main-row {
+            margin-top: 15px;
+        }
+        #about-us {
+            padding: 20px 0;
+        }
+        .btn {
+            padding: 6px 15px;
+            font-size: inherit;
+        }
+        #wedding-stries {
+            margin: 10px 0;
+        }
+        .common-slider .owl-nav button {
+            height: 50px;
+            width: 50px;
+        }
+        .common-slider .owl-nav .owl-prev {
+            left: -25px;
+        }
+        .common-slider .owl-nav .owl-next {
+            right: -25px;
+        }
+        .common-card .text-col {
+            padding: 12px 15px;
+        }
+        .common-card .title {
+            font-size: 13px;
+        }
+        .common-card .text-col .text {
+            font-size: 13px;
+        }
+        .common-card .text-col .date {
+            font-size: 13px;
+        }
+        #featured-vendors {
+            padding: 10px 0 20px 0;
+        }
+        #featured-vendors .card-listing-col {
+            padding: 0;
+        }
+        .vendor-card .price span {
+            font-size: 15px;
+        }
+        .vendor-card .price {
+            font-size: 13px;
+        }
+        #latest-blogs {
+            padding: 10px 0 0 0;
+        }
+        #footer {
+            padding: 20px 0 0;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        .footer-head {
+            font-size: 20px;
+        }
+        .footer-col img {
+            max-width: 130px;
+        }
+        .footer-col .list-inline-item {
+            margin-bottom: 10px;
+        }
+        .footer-col {
+            margin-bottom: 5px;
+            border: none;
+        }
+        .footer-text-col .footer-bold {
+            font-size: 13px;
+            margin: 0 0 5px 0;
+        }
+        .footer-small-text {
+            font-size: 13px;
+        }
+        .footer-color-list>li {
+            border-right: solid 1px #1877F2;
+            height: 13px;
+            line-height: 13px;
+            margin: 0 0 7px 0 !important;
+            padding: 0 10px;
+        }
+        .footer-col {
+            padding-bottom: 10px;
+        }
+        .footer-contact-list a {
+            padding: 6px 15px;
+        }
+        .footer-contact-list li {
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .newsletter-group input,
+        .newsletter-group .btn {
+            height: 35px;
+            font-size: 14px;
+        }
+        .vendor-location-links .btn {
+            min-width: 1px;
+            margin-bottom: 3px;
+            font-size: 11px;
+            padding: 4px 10px;
+            width: 100%;
+        }
+        .vendor-location-links p {
+            display: none;
+        }
+        #page-banner .breadcrumb {
+            padding: 0 0 5px 0;
+            font-size: 12px;
+        }
+        .vendor-location-links {
+            margin-top: 15px;
+            position: relative;
+            bottom: 0;
+        }
+        .search-header .text {
+            font-size: 20px !important;
+        }
+        .search-header .head+.text {
+            font-size: 15px !important;
+        }
+        .common-heading .text {
+            max-width: 100%;
+            font-size: 13px;
+        }
+        .vendor-rating,
+        .vendor-card-col .grey-text {
+            font-size: 12px;
+        }
+        .vendor-list-row .common-card {
+            margin-bottom: 20px;
+        }
+        .reviews-list-col {
+            max-width: 100%;
+            padding: 0;
+        }
+        .single-review {
+            font-size: 12px;
+            margin: 10px 0px;
+        }
+        .text-header .head {
+            font-size: 15px;
+        }
+        #text-only-section {
+            font-size: 12px;
+            padding: 15px 0;
+        }
+        .vendor-list-row+.load-more-col {
+            margin: 0 0 20px 0;
+        }
+        .mt-section {
+            margin-top: 10px;
+        }
+        .text-header .text {
+            margin: 0 0 15px 0;
+        }
+        #breadcrumb-section .breadcrumb {
+            margin: 15px 0 0 0;
+            font-size: 12px;
+        }
+        .album-header {
+            font-size: 15px;
+        }
+        .vendor-detail-img-col .img-col {
+            margin-bottom: 15px;
+        }
+        .tab-img-menu {
+            width: 60px;
+            height: 60px;
+        }
+        .photo-album-col .nav-tabs .nav-link {
+            font-size: 12px;
+        }
+        .photo-album-col .nav-tabs .nav-link {
+            font-size: 12px;
+            padding: 0 0px;
+            /* padding: 0 10px; */
+        }
+        #vendor-detail-section .tab-pane {
+            padding: 0;
+        }
+        .vendor-detail-cols .head {
+            font-size: 14px;
+        }
+        .vendor-detail-cols {
+            font-size: 13px;
+        }
+        .vendor-detail-cols ul {
+            margin-bottom: 0;
+        }
+        .detail-review-header .review {
+            font-size: 20px;
+        }
+        .rate-plugin li {
+            font-size: 20px;
+            margin-right: 5px !important;
+        }
+        .vendor-detail-text-col .title {
+            font-size: 18px;
+        }
+        .vendor-detail-text-col .inner-col .grey-text {
+            font-size: 12px;
+        }
+        .vendor-detail-text-col .inner-col {
+            padding: 15px;
+            /* padding: 10px; */
+        }
+        .vendor-detail-text-col .price {
+            font-size: 18px;
+        }
+        .vendor-detail-text-col .actions-ul {
+            font-size: 12px;
+            text-align: center;
+        }
+        .common-left-heading .head {
+            font-size: 16px;
+        }
+        .vendor-list-row {
+            margin-top: 20px;
+        }
+        .site-main-menu {
+            border-right: none;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 100%;
+            z-index: 11;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            transition: 0.2s;
+        }
+        .site-main-menu>li {
+            margin: 0;
+            display: block;
+            width: 100%;
+        }
+        .site-main-menu a {
+            padding: 5px 0;
+        }
+        #menuCloser {
+            display: block !important;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            font-size: 20px;
+        }
+        .site-main-menu.active {
+            left: 0px;
+        }
+        .user-menu li:first-child {
+            display: none;
+        }
+        .header-main-col {
+            flex-wrap: nowrap;
+            padding: 0px 0;
+        }
+        #header li>a,
+        #header li>a:hover,
+        #header li>a:focus {
+            padding: 0;
+            font-size: 13px;
+            outline: none;
+            font-weight: 600;
+        }
+        .user-menu li img {
+            width: 20px;
+        }
+        #menuOpener {
+            display: block !important;
+            font-size: 20px;
+            margin: 0 10px 0 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+        .site-main-menu a {
+            font-size: 15px !important;
+        }
+        .single-category-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 100%;
+        }
+        .menuDropDown .dropdown-content {
+            width: 300px;
+            left: 15px;
+            border-radius: 10px;
+            top: 45px;
+        }
+        .menuDropDown .dropdown-content a {
+            width: 100% !important;
+            font-size: 13px !important;
+            padding: 5px 10px;
+        }
+        .single-city-col {
+            margin-bottom: 20px;
+            width: 50%;
+        }
+        .vendor-list-row {
+            display: flex;
+            flex-wrap: wrap;
+            /* flex-wrap: nowrap; */
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .vendor-card-col .img-col {
+            height: 150px;
+        }
+        .vendor-list-row .col-xs-12.col-sm-4 {
+            min-width: 250px;
+            /* width: 250px; */
+            /* padding-right: 0; */
+        }
+        .vendor-card-col .vendor-card li {
+            display: block;
+            width: 100%;
+            text-align: left !important;
+        }
+        .vendor-card-col .vendor-card {
+            display: block;
+        }
+        .common-card .text-col .space-list {
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        .common-card .text-col .space-list li {
+            width: 100%;
+            text-align: left !important;
+        }
+        .vendor-rating,
+        .vendor-card-col .grey-text {
+            margin: 0 0 5px 0;
+        }
+        .common-card .space-list li.text-right {
+            display: flex;
+        }
+        .common-card .space-list li.text-right a {
+            margin-right: 3px;
+        }
+        .vendor-location-links li {
+            margin: 0 0px 5px -3px !important;
+            width: 50%;
+            display: inline-block;
+            padding: 0 3px;
+        }
+        .header-title {
+            font-size: 30px;
+            line-height: 30px;
+        }
+        .header-text {
+            font-size: 14px;
+        }
+        .mat-group .form-control {
+            min-height: 42px;
+            padding: 0 15px;
+            font-size: 13px;
+        }
+        .mat-group label {
+            top: -10px;
+            left: 10px;
+            font-size: 13px;
+        }
+        .custom-control-label span,
+        .custom-control-label a {
+            font-size: 13px;
+        }
+        .submit-group .btn {
+            padding: 8px 10px;
+            font-size: 15px;
+        }
+        .alternate-text-group,
+        .alternate-text-group * {
+            font-size: 13px;
+        }
+        #text-only-section {
+            margin-top: 10px !important;
+        }
+        #filter-main-col {
+            height: 100%;
+        }
+        .filter-form-col .single-filter-col {
+            width: 100%;
+        }
+        .filter-form-col {
+            display: block;
+            max-height: 340px;
+            overflow: auto;
+        }
+        .filter-body-col .container {
+            padding: 0;
+        }
+        .filter-form-col .single-filter-col {
+            width: 100%;
+            padding: 0;
+        }
+        .filter-col-header {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .filter-col-body .filter-list li {
+            margin-bottom: 3px;
+        }
+        .filter-top-bar li {
+            width: 100%;
+            text-align: center;
+            margin: 0 !important;
+        }
+        .filter-top-bar .form-control {
+            border-radius: 300px;
+            width: 100%;
+        }
+        .filter-top-bar li p {
+            color: #000;
+            margin: 10px 0 5px 0;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .filter-top-bar {
+            margin: -15px 0 10px 0;
+        }
+        .filter-footer-col {
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background: white;
+        }
+        #quotation-section>.container>.row {
+            margin: 0;
+        }
+        .q-service-title p,
+        .bugdet-field-col>p {
+            font-size: 13px;
+        }
+        .q-service-col p {
+            font-size: 13px;
+        }
+        #quotation-section>.container>.row>.col-12 {
+            padding: 0;
+        }
+        .quotation-vendor-info {
+            padding: 10px 10px !important;
+        }
+        .quotation-vendor-info .title {
+            font-size: 14px;
+        }
+        .quotation-vendor-info .grey-text {
+            font-size: 12px;
+        }
+        #quotationForm {
+            margin: 0;
+        }
+        #quotationForm>div {
+            padding: 0px;
+        }
+        #quotationForm .col-xs-12.col-sm-4 {
+            margin-top: 20px;
+        }
+        .q-custom-label .q-box {
+            height: 30px;
+            width: 65px;
+            font-size: 13px;
+        }
+        .q-quantity-box .form-control {
+            max-width: 65px;
+            padding: 0px 15px;
+            font-size: 13px;
+            height: 30px;
+        }
+        #quotation-section {
+            margin-top: 20px;
+        }
+        #quotation-section label {
+            font-size: 13px;
+        }
+        /* code */
+        .profile-form-section {
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .avatar-ul {
+            margin-bottom: 0;
+        }
+        .avatar-save {
+            width: 100px;
+        }
+        .req-mob-cls .req-name {
+            font-size: 14px;
+        }
+        .req-mob-cls .req-days {
+            font-size: 14px;
+        }
+        .avatar-menu-bar {
+            padding-bottom: 15px;
+        }
+        .rgst-vndr .btn {
+            font-size: 10px;
+        }
+        .on-selection .rgst-vndr {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .button {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .button .icon {
+            width: 40px;
+            height: 40px;
+        }
+        .button:hover {
+            width: 150px;
+        }
+        .button .icon i {
+            line-height: 40px;
+        }
+        .button span {
+            line-height: 40px;
+        }
+        .social-icons-footer a {
+            padding-right: 10px;
+        }
+        .footer .footer-brand {
+            font-size: 15px;
+            padding-top: 5px;
+        }
+        .vendor-img {
+            height: auto;
+            overflow: revert;
+        }
+        .vendor-img-home {
+            margin-top: 50px;
+        }
+        .min-height-img img {
+            min-height: 150px;
+        }
+        .mob-content p {
+            font-size: 15px;
+        }
+        .vendor-detail-main-col {
+            padding-top: 50px;
+            /* padding-top: 0; */
+        }
+        .bg-white-custom {
+            margin: 15px 0 15px 0;
+        }
+        .vendor-img-min-height {
+            min-height: 250px;
+        }
+        .blog-detail-main-col h1 {
+            margin: 10px 0 10px 0px;
+            font-size: 20px;
+        }
+        .desc-top p {
+            font-size: 13px;
+        }
+        .blog-intro {
+            font-size: 13px;
+        }
+        .blog-comments-col {
+            margin: 0px 0 0 0;
+        }
+        .blog-comments-col .mb-4 {
+            margin-bottom: 1rem !important;
+        }
+        .margin-register {
+            margin-top: 100px;
+        }
+        .margin-login {
+            margin-top: 0;
+        }
+        .alternate-text-group {
+            margin-bottom: 100px;
+        }
+        .posts-cat-flex-cls .owl-item {
+            width: calc(100% / 2);
+        }
+        #posts-categories .item h5 {
+            font-size: 10px;
+        }
+        .mob-visible-item {
+            display: block;
+        }
+        .desktop-visible-item {
+            display: none;
+        }
+        .blog-body {
+            padding: 0px 0 0px 0;
+        }
+        .blog-title a {
+            font-size: 13px;
+        }
+        .blog-by span {
+            font-size: 12px;
+        }
+        #latest-reviews .text-col {
+            text-align: left;
+        }
+        #featured-vendors .container-fluid {
+            max-width: 90%;
+        }
+        .album-cls span {
+            font-size: 13px;
+            width: 100px;
+            padding: 8px 0;
+        }
+        .album-count-cls {
+            padding-right: 5px;
+            font-size: 15px;
+        }
+        .list-inline.share-ul {
+            text-align: center;
+        }
+        .share-ul li {
+            margin-right: 30px !important;
+            margin-left: 30px;
+        }
+        .list-inline-item:not(:last-child) {
+            margin-right: 30px;
+        }
+        /* fancybox css */
+        .fancybox__slide {
+            padding-right: 0 !important;
+        }
+        button.carousel__button.is-next {
+            right: 0 !important;
+        }
+        .fancybox__caption {
+            position: inherit !important;
+            top: 0 !important;
+            right: 0px !important;
+            z-index: inherit !important;
+            background: white;
+            width: auto !important;
+            height: auto !important;
+            left: initial !important;
+            bottom: initial !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: inherit !important;
+            padding: 10px !important;
+        }
+        .fancybox__slide {
+            padding: 40px 0px 40px 0px !important;
+        }
+        .caption-col.new-caption-col .inner-col {
+            text-align: center;
+        }
+        /* fancybox css */
+        .faq-head-cls {
+            font-size: 20px;
+        }
+        .faq-cls h4 {
+            font-size: 16px;
+        }
+        /* code */
+        #best-matching .head {
+            text-align: center;
+        }
+        #best-matching-form {
+            justify-content: center;
+        }
+        .bridal-matching-form-content div {
+            display: grid;
+            justify-content: center;
+            padding: 10px 0 10px 0;
+        }
+        .bridal-matching-form-content .bridal-matching-text {
+            font-size: 12px;
+        }
+        .bridal-matching-form-content .icon-img img {
+            width: 35px;
+        }
+        .err-div.text-center {
+            padding: 15px 0 0 0;
+        }
+        .cat-a-cls .d-flex.align-items-center.my-4 {
+            display: flex !important;
+            align-items: center !important;
+        }
+        .d-flex.justify-content-center.w-100.mt-3 {
+            padding: 5px 0 5px 0;
+        }
+        .d-flex.justify-content-center.w-100.mt-3 .pagination {
+            justify-content: center;
+        }
+        .post-item-wrap {
+            padding: 20px 0 20px 0;
+        }
+        .post-social-icon {
+            padding-top: 15px;
+            text-align: center;
+        }
+        .footer-list {
+            padding: 0;
+        }
+        .small-footer a {
+            padding: 3px 3px;
+            font-size: 15px;
+        }
+        #accordion .card-body ul li a {
+            color: #1877F2;
+            font-weight: 600;
+        }
+        .city-cls ul,
+        .city-surgery-cls ul {
+            padding: 0 0 0 15px;
+        }
+        #home .row {
+            margin-right: 0px!important;
+            margin-left: 0px!important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .tabo .col-lg-3 {
+            top: 50px !important;
+        }
+        .tabo img {
+            height: 131px;
+        }
+        .mtab {
+            padding: 0;
+        }
+        .mtab .nav-link.ancr {
+            margin: 0px;
+        }
+    }
+    
+    @media(min-width: 768px) and (max-width: 1199px) {
+        .search-header .head {
+            font-size: 40px;
+        }
+        .search-header .text {
+            font-size: 25px;
+        }
+        .search-form-col .form-control {
+            width: 240px;
+            font-size: 14px;
+            padding: 0 20px;
+        }
+        .search-form-col .form-control,
+        .search-form-col .btn {
+            height: 42px;
+        }
+        .header-logo-col img {
+            max-width: 115px;
+        }
+        body {
+            font-size: 13px;
+        }
+        .site-main-menu {
+            padding-right: 0;
+            /* padding-right: 30px; */
+        }
+        .user-menu {
+            margin-left: 15px !important;
+        }
+        .site-menu a {
+            padding: 10px 0;
+            /*padding: 20px 0; */
+        }
+        .user-menu li img {
+            width: 15px;
+        }
+        .search-form-col .btn {
+            font-size: 15px;
+            padding: 0 25px;
+        }
+        .common-heading .shadow-text {
+            font-size: 60px;
+            line-height: 70px;
+        }
+        .common-heading .head {
+            font-size: 35px;
+            margin: -50px 0 0 0;
+        }
+        .single-category-col .head {
+            font-size: 153px;
+        }
+        .single-category-col .img-col .text-col {
+            left: 15px;
+        }
+        #about-us {
+            padding: 35px 0;
+        }
+        .btn {
+            padding: 8px 20px;
+            font-size: 13px;
+        }
+        #wedding-stries {
+            margin: 20px 0;
+        }
+        .common-slider .owl-nav button {
+            height: 80px;
+            width: 80px;
+        }
+        .common-card .title {
+            font-size: 14px;
+        }
+        .common-card .text-col .text {
+            font-size: 13px;
+        }
+        .common-card .text-col {
+            padding: 15px;
+        }
+        #featured-vendors .container-fluid {
+            max-width: 90%;
+        }
+        .common-slider .owl-nav .owl-next {
+            right: -40px;
+        }
+        .common-slider .owl-nav .owl-prev {
+            left: -40px;
+        }
+        .vendor-card .price span {
+            font-size: 16px;
+        }
+        .vendor-card .price {
+            font-size: 13px;
+        }
+        #footer {
+            padding: 35px 0 0;
+            margin-top: 30px;
+            font-size: 13px;
+        }
+        .footer-head {
+            font-size: 30px;
+        }
+        .footer-col li img {
+            max-width: 190px;
+        }
+        .footer-col>img {
+            max-width: 140px;
+        }
+        .footer-text-col .footer-bold {
+            font-size: 15px;
+        }
+        .footer-small-text {
+            font-size: 13px;
+        }
+        .footer-col {
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        #wedding-stries>.container-fluid,
+        #latest-blogs>.container-fluid {
+            padding: 0 30px;
+        }
+        .vendor-location-links .btn {
+            min-width: 105px;
+        }
+        .vendor-location-links {
+            margin-top: 10px;
+        }
+        #page-banner .breadcrumb {
+            font-size: 12px;
+        }
+        .vendor-list-row {
+            margin-top: 20px;
+        }
+        .vendor-list-row .col-xs-12.col-sm-4 {
+            max-width: 50%;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+        }
+        .single-review {
+            font-size: 13px;
+        }
+        .text-header .head {
+            font-size: 18px;
+        }
+        .vendor-rating {
+            font-size: 13px;
+        }
+        #text-only-section {
+            font-size: 13px;
+            padding: 30px 0;
+        }
+        .mt-section {
+            margin-top: 15px;
+        }
+        .vendor-detail-text-col .title {
+            font-size: 25px;
+        }
+        .vendor-detail-text-col,
+        .vendor-detail-img-col {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        .vendor-detail-text-col .inner-col .grey-text {
+            font-size: 13px;
+        }
+        .vendor-detail-text-col .price {
+            font-size: 25px;
+        }
+        .album-header {
+            font-size: 18px;
+        }
+        .tab-img-menu {
+            width: 60px;
+            height: 60px;
+        }
+        .photo-album-col .nav-tabs .nav-link {
+            font-size: 13px;
+        }
+        .vendor-detail-cols .head {
+            font-size: 16px;
+        }
+        .vendor-detail-cols {
+            font-size: 13px;
+        }
+        .detail-review-header .review {
+            font-size: 25px;
+        }
+        .rate-plugin li {
+            font-size: 20px;
+            margin-right: 5px !important;
+        }
+        .common-left-heading .head {
+            font-size: 20px;
+        }
+        .vendor-list-row .common-card {
+            margin-bottom: 30px;
+        }
+        .vendor-list-row+.load-more-col {
+            margin-top: 0px;
+        }
+        /* code */
+        .site-main-menu>li {
+            margin: 0 0 0 15px;
+        }
+        .vendor-img {
+            margin-top: 56px;
+        }
+        .vendor-img-home {
+            margin-top: 56px;
+        }
+        .menu-child-item {
+            top: 48px;
+        }
+        .menu-child-item li a {
+            font-size: 10px;
+        }
+        .hr-cls {
+            margin: 5px 0 5px 0;
+        }
+        .menu-child-item li {
+            width: auto;
+        }
+        /*pooja tab css start*/
+        .menuDropDown .dropdown-content {
+            width: 510px;
+            padding-left: 20px;
+        }
+        /*pooja tab css end*/
+        .menuDropDown .dropdown-content a>i {
+            height: 15px;
+            padding-top: 0;
+        }
+        /* code */
+    }
+    
+    @media(min-width: 1023px) and (max-width: 1199px) {
+        .vendor-list-row .col-xs-12.col-sm-4 {
+            max-width: 33%;
+            -ms-flex: 0 0 33.333%;
+            flex: 0 0 33.333%;
+        }
+    }
+    
+    @media(min-width: 320px) and (max-width: 575px) {
+        .proc a {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        small {
+            font-size: 14px !important;
+        }
+        .tabo .col-lg-3 {
+            top: 0!important;
+        }
+        .tabo .small-heading {
+            padding-top: 0px!important;
+            padding-bottom: 10px!important;
+        }
+        ul.nav.nav-tabs {
+            text-align: center;
+            justify-content: center;
+        }
+        .tabo img {
+            padding-right: 15px;
+        }
+    }
+    
+    @media (max-width:992px) {
+        .navbar-nav {
+            flex-direction: row !important;
+        }
+        .navbar-nav .nav-link {
+            padding: 0px 8px !important;
+        }
+        .tabo .col-lg-3 {
+            flex: 0 0 25% !important;
+        }
     }
-
-    .search-header .head {
-        font-size: 40px;
-        font-weight: 400;
-    }
-
-    .search-header .text {
-        font-size: 35px;
-    }
-
-    .search-form-col .form-control,
-    .search-form-col .btn {
-        height: 50px;
-    }
-
-    .search-form-col .btn {
-        font-size: 17px;
-    }
-
-    .common-heading .shadow-text {
-        font-size: 65px;
-        line-height: 80px;
-    }
-
-    .common-heading .head {
-        font-size: 35px;
-        margin: -50px 0 0 0;
-    }
-
-    .single-category-col .head {
-        font-size: 20px;
-    }
-
-    .common-card .title {
-        font-size: 16px;
-    }
-
-    .common-card .text-col .text {
-        font-size: 14px;
-    }
-
-    .vendor-card .price span {
-        font-size: 18px;
-    }
-
-    .common-slider .owl-nav button {
-        height: 105px;
-        width: 105px;
-    }
-
-    .common-slider .owl-nav .owl-prev {
-        left: -55px;
-    }
-
-    .common-slider .owl-nav .owl-next {
-        right: -55px;
-    }
-
-    .footer-head {
-        font-size: 32px;
-    }
-
-    .footer-col img {
-        max-width: 200px;
-    }
-
-    .footer-text-col .footer-bold {
-        font-size: 16px;
-    }
-
-    #footer {
-        font-size: 14px;
-    }
-
-    .btn {
-        font-size: 14px;
-    }
-}
-
-@media(max-width: 767px) {
-    body {
-        font-size: 13px;
-    }
-
-    .search-header .text {
-        font-size: 15px;
-        line-height: 15px;
-        margin-top: 5px;
-    }
-
-    .search-header .head {
-        font-size: 20px;
-    }
-
-    .search-form-col .form-control {
-        font-size: 12px;
-        padding: 0 5px;
-        width: 100%;
-    }
-
-    .search-form-col .form-control,
-    .search-form-col .btn {
-        height: 30px;
-    }
-
-    .search-form-col .form-list {
-        border-radius: 0;
-    }
-
-    .search-form-col .btn {
-        font-size: 14px;
-        padding: 0 15px;
-    }
-
-    .search-form-col li {
-        margin: 0 0px !important;
-        width: 50%;
-    }
-
-    .header-logo-col img {
-        max-width: 105px;
-    }
-
-    .search-links {
-        display: none;
-    }
-
-    .common-heading .shadow-text {
-        font-size: 20px;
-        line-height: 50px;
-    }
-
-    .common-heading .head {
-        font-size: 20px;
-        margin: -40px 0 0 0;
-    }
-
-    .search-form-col .form-list ul {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0 10px;
-    }
-
-    .search-form-col {
-        margin: 10px 0 0 0;
-    }
-
-    .search-form-col li:last-child {
-        margin: 10px auto 0 !important;
-    }
-
-    .search-form-col .btn {
-        font-size: 13px;
-        padding: 0 10px;
-    }
-
-    #page-banner img {
-        width: 100%;
-        margin: auto;
-    }
-
-    #category-section,
-    #photographers-section,
-    #latest-reviews {
-        margin: 10px 0 10px;
-    }
-
-    .single-category-col .head {
-        font-size: 13px;
-    }
-
-    .single-category-col .img-col .text-col {
-        left: 12px;
-    }
-
-    .single-category-col {
-        margin-bottom: 12px;
-    }
-
-    .category-main-row {
-        margin-top: 15px;
-    }
-
-    #about-us {
-        padding: 20px 0;
-    }
-
-    .btn {
-        padding: 6px 15px;
-        font-size: inherit;
-    }
-
-    #wedding-stries {
-        margin: 10px 0;
-    }
-
-    .common-slider .owl-nav button {
-        height: 50px;
-        width: 50px;
-    }
-
-    .common-slider .owl-nav .owl-prev {
-        left: -25px;
-    }
-
-    .common-slider .owl-nav .owl-next {
-        right: -25px;
-    }
-
-    .common-card .text-col {
-        padding: 12px 15px;
-    }
-
-    .common-card .title {
-        font-size: 13px;
-    }
-
-    .common-card .text-col .text {
-        font-size: 13px;
-    }
-
-    .common-card .text-col .date {
-        font-size: 13px;
-    }
-
-    #featured-vendors {
-        padding: 10px 0 20px 0;
-    }
-
-    #featured-vendors .card-listing-col {
-        padding: 0;
-    }
-
-    .vendor-card .price span {
-        font-size: 15px;
-    }
-
-    .vendor-card .price {
-        font-size: 13px;
-    }
-
-    #latest-blogs {
-        padding: 10px 0 0 0;
-    }
-
-    #footer {
-        padding: 20px 0 0;
-        margin-top: 15px;
-        font-size: 13px;
-    }
-
-    .footer-head {
-        font-size: 20px;
-    }
-
-    .footer-col img {
-        max-width: 130px;
-    }
-
-    .footer-col .list-inline-item {
-        margin-bottom: 10px;
-    }
-
-    .footer-col {
-        margin-bottom: 5px;
-        border: none;
-    }
-
-    .footer-text-col .footer-bold {
-        font-size: 13px;
-        margin: 0 0 5px 0;
-    }
-
-    .footer-small-text {
-        font-size: 13px;
-    }
-
-    .footer-color-list>li {
-        border-right: solid 1px #1877F2;
-        height: 13px;
-        line-height: 13px;
-        margin: 0 0 7px 0 !important;
-        padding: 0 10px;
-    }
-
-    .footer-col {
-        padding-bottom: 10px;
-    }
-
-    .footer-contact-list a {
-        padding: 6px 15px;
-    }
-
-    .footer-contact-list li {
-        margin-bottom: 15px;
-        font-size: 12px;
-    }
-
-    .newsletter-group input,
-    .newsletter-group .btn {
-        height: 35px;
-        font-size: 14px;
-    }
-
-    .vendor-location-links .btn {
-        min-width: 1px;
-        margin-bottom: 3px;
-        font-size: 11px;
-        padding: 4px 10px;
-        width: 100%;
-    }
-
-    .vendor-location-links p {
-        display: none;
-    }
-
-    #page-banner .breadcrumb {
-        padding: 0 0 5px 0;
-        font-size: 12px;
-    }
-
-    .vendor-location-links {
-        margin-top: 15px;
-        position: relative;
-        bottom: 0;
-    }
-
-    .search-header .text {
-        font-size: 20px !important;
-    }
-
-    .search-header .head+.text {
-        font-size: 15px !important;
-    }
-
-    .common-heading .text {
-        max-width: 100%;
-        font-size: 13px;
-    }
-
-    .vendor-rating,
-    .vendor-card-col .grey-text {
-        font-size: 12px;
-    }
-
-    .vendor-list-row .common-card {
-        margin-bottom: 20px;
-    }
-
-    .reviews-list-col {
-        max-width: 100%;
-        padding: 0;
-    }
-
-    .single-review {
-        font-size: 12px;
-        margin: 10px 0px;
-    }
-
-    .text-header .head {
-        font-size: 15px;
-    }
-
-    #text-only-section {
-        font-size: 12px;
-        padding: 15px 0;
-    }
-
-    .vendor-list-row+.load-more-col {
-        margin: 0 0 20px 0;
-    }
-
-    .mt-section {
-        margin-top: 10px;
-    }
-
-    .text-header .text {
-        margin: 0 0 15px 0;
-    }
-
-    #breadcrumb-section .breadcrumb {
-        margin: 15px 0 0 0;
-        font-size: 12px;
-    }
-
-    .album-header {
-        font-size: 15px;
-    }
-
-    .vendor-detail-img-col .img-col {
-        margin-bottom: 15px;
-    }
-
-    .tab-img-menu {
-        width: 60px;
-        height: 60px;
-    }
-
-    .photo-album-col .nav-tabs .nav-link {
-        font-size: 12px;
-    }
-
-    .photo-album-col .nav-tabs .nav-link {
-        font-size: 12px;
-        padding: 0 0px;
-        /* padding: 0 10px; */
-    }
-
-    #vendor-detail-section .tab-pane {
-        padding: 0;
-    }
-
-    .vendor-detail-cols .head {
-        font-size: 14px;
-    }
-
-    .vendor-detail-cols {
-        font-size: 13px;
-    }
-
-    .vendor-detail-cols ul {
-        margin-bottom: 0;
-    }
-
-    .detail-review-header .review {
-        font-size: 20px;
-    }
-
-    .rate-plugin li {
-        font-size: 20px;
-        margin-right: 5px !important;
-    }
-
-    .vendor-detail-text-col .title {
-        font-size: 18px;
-    }
-
-    .vendor-detail-text-col .inner-col .grey-text {
-        font-size: 12px;
-    }
-
-    .vendor-detail-text-col .inner-col {
-        padding: 15px;
-        /* padding: 10px; */
-    }
-
-    .vendor-detail-text-col .price {
-        font-size: 18px;
-    }
-
-    .vendor-detail-text-col .actions-ul {
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .common-left-heading .head {
-        font-size: 16px;
-    }
-
-    .vendor-list-row {
-        margin-top: 20px;
-    }
-
-    .site-main-menu {
-        border-right: none;
-        padding: 0 20px;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        height: 100%;
-        width: 100%;
-        z-index: 11;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        flex-direction: column;
-        transition: 0.2s;
-    }
-
-    .site-main-menu>li {
-        margin: 0;
-        display: block;
-        width: 100%;
-    }
-
-    .site-main-menu a {
-        padding: 5px 0;
-    }
-
-    #menuCloser {
-        display: block !important;
-        position: absolute;
-        top: 5px;
-        right: 15px;
-        font-size: 20px;
-    }
-
-    .site-main-menu.active {
-        left: 0px;
-    }
-
-    .user-menu li:first-child {
-        display: none;
-    }
-
-    .header-main-col {
-        flex-wrap: nowrap;
-        padding: 0px 0;
-    }
-
-    #header li>a,
-    #header li>a:hover,
-    #header li>a:focus {
-        padding: 0;
-        font-size: 13px;
-        outline: none;
-        font-weight: 600;
-    }
-
-    .user-menu li img {
-        width: 20px;
-    }
-
-    #menuOpener {
-        display: block !important;
-        font-size: 20px;
-        margin: 0 10px 0 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0;
-    }
-
-    .site-main-menu a {
-        font-size: 15px !important;
-    }
-
-    .single-category-col {
-        flex: 0 0 100%;
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .menuDropDown .dropdown-content {
-        width: 300px;
-        left: 15px;
-        border-radius: 10px;
-        top: 45px;
-    }
-
-    .menuDropDown .dropdown-content a {
-        width: 100% !important;
-        font-size: 13px !important;
-        padding: 5px 10px;
-    }
-
-    .single-city-col {
-        margin-bottom: 20px;
-        width: 50%;
-    }
-
-    .vendor-list-row {
-        display: flex;
-        flex-wrap: wrap;
-        /* flex-wrap: nowrap; */
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .vendor-card-col .img-col {
-        height: 150px;
-    }
-
-    .vendor-list-row .col-xs-12.col-sm-4 {
-        min-width: 250px;
-        /* width: 250px; */
-        /* padding-right: 0; */
-    }
-
-    .vendor-card-col .vendor-card li {
-        display: block;
-        width: 100%;
-        text-align: left !important;
-    }
-
-    .vendor-card-col .vendor-card {
-        display: block;
-    }
-
-    .common-card .text-col .space-list {
-        flex-wrap: wrap;
-        text-align: left;
-    }
-
-    .common-card .text-col .space-list li {
-        width: 100%;
-        text-align: left !important;
-    }
-
-    .vendor-rating,
-    .vendor-card-col .grey-text {
-        margin: 0 0 5px 0;
-    }
-
-    .common-card .space-list li.text-right {
-        display: flex;
-    }
-
-    .common-card .space-list li.text-right a {
-        margin-right: 3px;
-    }
-
-    .vendor-location-links li {
-        margin: 0 0px 5px -3px !important;
-        width: 50%;
-        display: inline-block;
-        padding: 0 3px;
-    }
-
-    .header-title {
-        font-size: 30px;
-        line-height: 30px;
-    }
-
-    .header-text {
-        font-size: 14px;
-    }
-
-    .mat-group .form-control {
-        min-height: 42px;
-        padding: 0 15px;
-        font-size: 13px;
-    }
-
-    .mat-group label {
-        top: -10px;
-        left: 10px;
-        font-size: 13px;
-    }
-
-    .custom-control-label span,
-    .custom-control-label a {
-        font-size: 13px;
-    }
-
-    .submit-group .btn {
-        padding: 8px 10px;
-        font-size: 15px;
-    }
-
-    .alternate-text-group,
-    .alternate-text-group * {
-        font-size: 13px;
-    }
-
-    #text-only-section {
-        margin-top: 10px !important;
-    }
-
-    #filter-main-col {
-        height: 100%;
-    }
-
-    .filter-form-col .single-filter-col {
-        width: 100%;
-    }
-
-    .filter-form-col {
-        display: block;
-        max-height: 340px;
-        overflow: auto;
-    }
-
-    .filter-body-col .container {
-        padding: 0;
-    }
-
-    .filter-form-col .single-filter-col {
-        width: 100%;
-        padding: 0;
-    }
-
-    .filter-col-header {
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    .filter-col-body .filter-list li {
-        margin-bottom: 3px;
-    }
-
-    .filter-top-bar li {
-        width: 100%;
-        text-align: center;
-        margin: 0 !important;
-    }
-
-    .filter-top-bar .form-control {
-        border-radius: 300px;
-        width: 100%;
-    }
-
-    .filter-top-bar li p {
-        color: #000;
-        margin: 10px 0 5px 0;
-        font-weight: 500;
-        font-size: 14px;
-    }
-
-    .filter-top-bar {
-        margin: -15px 0 10px 0;
-    }
-
-    .filter-footer-col {
-        text-align: center;
-        padding: 10px 0;
-        position: absolute;
-        bottom: 0px;
-        left: 0;
-        width: 100%;
-        z-index: 1;
-        background: white;
-    }
-
-    #quotation-section>.container>.row {
-        margin: 0;
-    }
-
-    .q-service-title p,
-    .bugdet-field-col>p {
-        font-size: 13px;
-    }
-
-    .q-service-col p {
-        font-size: 13px;
-    }
-
-    #quotation-section>.container>.row>.col-12 {
-        padding: 0;
-    }
-
-    .quotation-vendor-info {
-        padding: 10px 10px !important;
-    }
-
-    .quotation-vendor-info .title {
-        font-size: 14px;
-    }
-
-    .quotation-vendor-info .grey-text {
-        font-size: 12px;
-    }
-
-    #quotationForm {
-        margin: 0;
-    }
-
-    #quotationForm>div {
-        padding: 0px;
-    }
-
-    #quotationForm .col-xs-12.col-sm-4 {
-        margin-top: 20px;
-    }
-
-    .q-custom-label .q-box {
-        height: 30px;
-        width: 65px;
-        font-size: 13px;
-    }
-
-    .q-quantity-box .form-control {
-        max-width: 65px;
-        padding: 0px 15px;
-        font-size: 13px;
-        height: 30px;
-    }
-
-    #quotation-section {
-        margin-top: 20px;
-    }
-
-    #quotation-section label {
-        font-size: 13px;
-    }
-
-    /* code */
-    .profile-form-section {
-        padding-top: 0;
-        margin-top: 0;
-    }
-
-    .avatar-ul {
-        margin-bottom: 0;
-    }
-
-    .avatar-save {
-        width: 100px;
-    }
-
-    .req-mob-cls .req-name {
-        font-size: 14px;
-    }
-
-    .req-mob-cls .req-days {
-        font-size: 14px;
-    }
-
-    .avatar-menu-bar {
-        padding-bottom: 15px;
-    }
-
-    .rgst-vndr .btn {
-        font-size: 10px;
-    }
-
-    .on-selection .rgst-vndr {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .button {
-        width: 40px;
-        height: 40px;
-        margin-right: 10px;
-    }
-
-    .button .icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .button:hover {
-        width: 150px;
-    }
-
-    .button .icon i {
-        line-height: 40px;
-    }
-
-    .button span {
-        line-height: 40px;
-    }
-
-    .social-icons-footer a {
-        padding-right: 10px;
-    }
-
-    .footer .footer-brand {
-        font-size: 15px;
-        padding-top: 5px;
-    }
-
-    .vendor-img {
-        height: auto;
-        overflow: revert;
-    }
-
-    .vendor-img-home {
-        margin-top: 50px;
-    }
-
-
-    .min-height-img img {
-        min-height: 150px;
-    }
-
-    .mob-content p {
-        font-size: 15px;
-    }
-
-    .vendor-detail-main-col {
-        padding-top: 50px;
-        /* padding-top: 0; */
-    }
-
-    .bg-white-custom {
-        margin: 15px 0 15px 0;
-    }
-
-    .vendor-img-min-height {
-        min-height: 250px;
-    }
-
-    .blog-detail-main-col h1 {
-        margin: 10px 0 10px 0px;
-        font-size: 20px;
-    }
-
-    .desc-top p {
-        font-size: 13px;
-    }
-
-    .blog-intro {
-        font-size: 13px;
-    }
-
-    .blog-comments-col {
-        margin: 0px 0 0 0;
-    }
-
-    .blog-comments-col .mb-4 {
-        margin-bottom: 1rem !important;
-    }
-
-    .margin-register {
-        margin-top: 100px;
-    }
-
-    .margin-login {
-        margin-top: 0;
-    }
-
-    .alternate-text-group {
-        margin-bottom: 100px;
-    }
-
-    .posts-cat-flex-cls .owl-item {
-        width: calc(100% / 2);
-    }
-
-    #posts-categories .item h5 {
-        font-size: 10px;
-    }
-
-    .mob-visible-item {
-        display: block;
-    }
-
-    .desktop-visible-item {
-        display: none;
-    }
-
-    .blog-body {
-        padding: 0px 0 0px 0;
-    }
-
-    .blog-title a {
-        font-size: 13px;
-    }
-
-    .blog-by span {
-        font-size: 12px;
-    }
-
-    #latest-reviews .text-col {
-        text-align: left;
-    }
-
-    #featured-vendors .container-fluid {
-        max-width: 90%;
-    }
-
-    .album-cls span {
-        font-size: 13px;
-        width: 100px;
-        padding: 8px 0;
-    }
-
-    .album-count-cls {
-        padding-right: 5px;
-        font-size: 15px;
-    }
-
-    .list-inline.share-ul {
-        text-align: center;
-    }
-
-    .share-ul li {
-        margin-right: 30px !important;
-        margin-left: 30px;
-    }
-
-    .list-inline-item:not(:last-child) {
-        margin-right: 30px;
-    }
-
-    /* fancybox css */
-    .fancybox__slide {
-        padding-right: 0 !important;
-    }
-
-    button.carousel__button.is-next {
-        right: 0 !important;
-    }
-
-    .fancybox__caption {
-        position: inherit !important;
-        top: 0 !important;
-        right: 0px !important;
-        z-index: inherit !important;
-        background: white;
-        width: auto !important;
-        height: auto !important;
-        left: initial !important;
-        bottom: initial !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: inherit !important;
-        padding: 10px !important;
-    }
-
-    .fancybox__slide {
-        padding: 40px 0px 40px 0px !important;
-    }
-
-    .caption-col.new-caption-col .inner-col {
-        text-align: center;
-    }
-
-    /* fancybox css */
-
-    .faq-head-cls {
-        font-size: 20px;
-    }
-
-    .faq-cls h4 {
-        font-size: 16px;
-    }
-
-    /* code */
-
-    #best-matching .head {
-        text-align: center;
-    }
-
-    #best-matching-form {
-        justify-content: center;
-    }
-
-    .bridal-matching-form-content div {
-        display: grid;
-        justify-content: center;
-        padding: 10px 0 10px 0;
-    }
-
-    .bridal-matching-form-content .bridal-matching-text {
-        font-size: 12px;
-    }
-
-    .bridal-matching-form-content .icon-img img {
-        width: 35px;
-    }
-
-    .err-div.text-center {
-        padding: 15px 0 0 0;
-    }
-
-    .cat-a-cls .d-flex.align-items-center.my-4 {
-        display: flex !important;
-        align-items: center !important;
-    }
-
-    .d-flex.justify-content-center.w-100.mt-3 {
-        padding: 5px 0 5px 0;
-    }
-
-    .d-flex.justify-content-center.w-100.mt-3 .pagination {
-        justify-content: center;
-    }
-
-    .post-item-wrap {
-        padding: 20px 0 20px 0;
-    }
-
-    .post-social-icon {
-        padding-top: 15px;
-        text-align: center;
-    }
-
-    .footer-list {
-        padding: 0;
-    }
-
-    .small-footer a {
-        padding: 3px 3px;
-        font-size: 15px;
-    }
-
-    #accordion .card-body ul li a {
-        color: #1877F2;
-        font-weight: 600;
-    }
-
-    .city-cls ul,
-    .city-surgery-cls ul {
-        padding: 0 0 0 15px;
-    }
-
-}
-
-@media(min-width: 768px) and (max-width: 1199px) {
-    .search-header .head {
-        font-size: 40px;
-    }
-
-
-    .search-header .text {
-        font-size: 25px;
-    }
-
-    .search-form-col .form-control {
-        width: 240px;
-        font-size: 14px;
-        padding: 0 20px;
-    }
-
-    .search-form-col .form-control,
-    .search-form-col .btn {
-        height: 42px;
-    }
-
-    .header-logo-col img {
-        max-width: 115px;
-    }
-
-    body {
-        font-size: 13px;
-    }
-
-    .site-main-menu {
-        padding-right: 0;
-        /* padding-right: 30px; */
-    }
-
-    .user-menu {
-        margin-left: 15px !important;
-    }
-
-    .site-menu a {
-
-        padding: 10px 0;
-        /*padding: 20px 0; */
-    }
-
-    .user-menu li img {
-        width: 15px;
-    }
-
-    .search-form-col .btn {
-        font-size: 15px;
-        padding: 0 25px;
-    }
-
-    .common-heading .shadow-text {
-        font-size: 60px;
-        line-height: 70px;
-    }
-
-    .common-heading .head {
-        font-size: 35px;
-        margin: -50px 0 0 0;
-    }
-
-    .single-category-col .head {
-        font-size: 153px;
-    }
-
-    .single-category-col .img-col .text-col {
-        left: 15px;
-    }
-
-    #about-us {
-        padding: 35px 0;
-    }
-
-    .btn {
-        padding: 8px 20px;
-        font-size: 13px;
-    }
-
-    #wedding-stries {
-        margin: 20px 0;
-    }
-
-    .common-slider .owl-nav button {
-        height: 80px;
-        width: 80px;
-    }
-
-    .common-card .title {
-        font-size: 14px;
-    }
-
-    .common-card .text-col .text {
-        font-size: 13px;
-    }
-
-    .common-card .text-col {
-        padding: 15px;
-    }
-
-    #featured-vendors .container-fluid {
-        max-width: 90%;
-    }
-
-    .common-slider .owl-nav .owl-next {
-        right: -40px;
-    }
-
-    .common-slider .owl-nav .owl-prev {
-        left: -40px;
-    }
-
-    .vendor-card .price span {
-        font-size: 16px;
-    }
-
-    .vendor-card .price {
-        font-size: 13px;
-    }
-
-    #footer {
-        padding: 35px 0 0;
-        margin-top: 30px;
-        font-size: 13px;
-    }
-
-    .footer-head {
-        font-size: 30px;
-    }
-
-    .footer-col li img {
-        max-width: 190px;
-    }
-
-    .footer-col>img {
-        max-width: 140px;
-    }
-
-    .footer-text-col .footer-bold {
-        font-size: 15px;
-    }
-
-    .footer-small-text {
-        font-size: 13px;
-    }
-
-    .footer-col {
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-    }
-
-    #wedding-stries>.container-fluid,
-    #latest-blogs>.container-fluid {
-        padding: 0 30px;
-    }
-
-    .vendor-location-links .btn {
-        min-width: 105px;
-    }
-
-    .vendor-location-links {
-        margin-top: 10px;
-    }
-
-    #page-banner .breadcrumb {
-        font-size: 12px;
-    }
-
-    .vendor-list-row {
-        margin-top: 20px;
-    }
-
-    .vendor-list-row .col-xs-12.col-sm-4 {
-        max-width: 50%;
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-    }
-
-    .single-review {
-        font-size: 13px;
-    }
-
-    .text-header .head {
-        font-size: 18px;
-    }
-
-    .vendor-rating {
-        font-size: 13px;
-    }
-
-    #text-only-section {
-        font-size: 13px;
-        padding: 30px 0;
-    }
-
-    .mt-section {
-        margin-top: 15px;
-    }
-
-    .vendor-detail-text-col .title {
-        font-size: 25px;
-    }
-
-    .vendor-detail-text-col,
-    .vendor-detail-img-col {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-
-    .vendor-detail-text-col .inner-col .grey-text {
-        font-size: 13px;
-    }
-
-    .vendor-detail-text-col .price {
-        font-size: 25px;
-    }
-
-    .album-header {
-        font-size: 18px;
-    }
-
-    .tab-img-menu {
-        width: 60px;
-        height: 60px;
-    }
-
-    .photo-album-col .nav-tabs .nav-link {
-        font-size: 13px;
-    }
-
-    .vendor-detail-cols .head {
-        font-size: 16px;
-    }
-
-    .vendor-detail-cols {
-        font-size: 13px;
-    }
-
-    .detail-review-header .review {
-        font-size: 25px;
-    }
-
-    .rate-plugin li {
-        font-size: 20px;
-        margin-right: 5px !important;
-    }
-
-    .common-left-heading .head {
-        font-size: 20px;
-    }
-
-    .vendor-list-row .common-card {
-        margin-bottom: 30px;
-    }
-
-    .vendor-list-row+.load-more-col {
-        margin-top: 0px;
-    }
-
-    /* code */
-    .site-main-menu>li {
-        margin: 0 0 0 15px;
-    }
-
-    .vendor-img {
-        margin-top: 56px;
-    }
-
-    .vendor-img-home {
-        margin-top: 56px;
-    }
-
-    .menu-child-item {
-        top: 48px;
-    }
-
-    .menu-child-item li a {
-        font-size: 10px;
-    }
-
-    .hr-cls {
-        margin: 5px 0 5px 0;
-    }
-
-    .menu-child-item li {
-        width: auto;
-    }
-
-    /*pooja tab css start*/
-
-    .menuDropDown .dropdown-content {
-        width: 510px;
-        padding-left: 20px;
-
-    }
-
-    /*pooja tab css end*/
-
-    .menuDropDown .dropdown-content a>i {
-        height: 15px;
-        padding-top: 0;
-    }
-
-
-    /* code */
-}
-
-@media(min-width: 1023px) and (max-width: 1199px) {
-    .vendor-list-row .col-xs-12.col-sm-4 {
-        max-width: 33%;
-        -ms-flex: 0 0 33.333%;
-        flex: 0 0 33.333%;
-    }
-}
