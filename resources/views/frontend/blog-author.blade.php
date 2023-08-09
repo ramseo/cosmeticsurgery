@@ -24,49 +24,56 @@
             Author Archives: <?= $slug ?>
         </h3>
 
-        <section class="home-section blog-author-sec">
-            <div class="row">
-                <?php
-                foreach ($posts as $item) {
-                    $details_url = route("frontend.posts.show", [$item->slug]);
-                    $author_url = str_replace(' ', '-', strtolower($item->author));
-                ?>
-                    <div class="col-md-4">
-                        <div class="post-item-wrap">
-                            <div class="common-card">
-                                <div class="card">
-                                    <div class="img-col">
-                                        <a href="{{$details_url}}">
-                                            <img src="{{$item->featured_image}}" class="img-fluid" alt="<?= $item->alt ?>">
+        <section class="blog-list-half section-padding sub-bg">
+            <div class="container">
+                <div class="row">
+                    <?php
+                    foreach ($posts as $item) {
+                        $details_url = route("frontend.posts.show", [$item->slug]);
+                        $author_url = str_replace(' ', '-', strtolower($item->author));
+                    ?>
+                        <div class="col-lg-6 padd-bottom-30">
+                            <div class="item mb-50">
+                                <div class="row">
+                                    <div class="col-md-5 img">
+                                        <a href="<?= $details_url ?>">
+                                            <img src="<?= $item->featured_image ?>" alt="<?= $item->alt ?>">
                                         </a>
                                     </div>
-                                    <div class="text-col">
-                                        <a href="{{$details_url}}">
-                                            <p class="title">
-                                                <?= Str::words($item->name, 4) ?>
-                                            </p>
-                                        </a>
-                                        <!-- <p class="text margin-null">
-                                            {{Str::words($item->intro, '15')}}
-                                        </p> -->
-                                        <div class="author">
-                                            <span>
-                                                Author:
+                                    <div class="col-md-7 main-bg cont valign">
+                                        <div class="full-width">
+                                            <span class="date fz-12 ls1 text-u opacity-7 mb-15">
+                                                <?= date('F', strtotime($item->published_at)) . " " . date('d', strtotime($item->published_at)) . "," . " " . date('Y', strtotime($item->published_at)) ?>
                                             </span>
-                                            <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
-                                                <?= $item->author ?>
-                                            </a>
+                                            <h5>
+                                                <a href="blog-details.html">
+                                                    <?= Str::words($item->name, 4) ?>
+                                                </a>
+                                            </h5>
+                                            <div class="author">
+                                                <span>
+                                                    Author:
+                                                </span>
+                                                <a class="color-white" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
+                                                    <?= $item->author ?>
+                                                </a>
+                                            </div>
+                                            <div class="tags colorbg mt-15">
+                                                <a href="<?= $details_url ?>">
+                                                    Read More
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    <?php } ?>
+                </div>
+                <div class="inner text-center">
+                    <div class="d-flex justify-content-center w-100 mt-3">
+                        {{$posts->links()}}
                     </div>
-                <?php } ?>
-            </div>
-            <div class="inner text-center">
-                <div class="d-flex justify-content-center w-100 mt-3">
-                    <?= $posts->links() ?>
                 </div>
             </div>
         </section>
