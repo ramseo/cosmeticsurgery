@@ -40,7 +40,7 @@
                     <span>
                         <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
                             <i class="fa fa-user"></i>
-                            <?= $$module_name_singular->author ?>
+                            <?= ($$module_name_singular->author == "Super Admin") ? $$module_name_singular->author : "Dr." . " " . $$module_name_singular->author ?>
                         </a>
                     </span>
                     &nbsp;
