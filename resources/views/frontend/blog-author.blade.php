@@ -21,10 +21,10 @@
 <section class="blog-list-half section-padding sub-bg">
     <div class="container">
         <h3 class="text-capitalize author-archive-cls">
-            <?php if ($slug == "Super Admin") {  ?>
-                Author Archives: <?= $slug ?>;
+            <?php if ($slug == "super-admin") {  ?>
+                Author Archives: <?= $slug ?>
             <?php } else { ?>
-                Author Archives: <?= "Dr." . " " . $slug ?>;
+                Author Archives: <?= "Dr." . " " . $slug ?>
             <?php } ?>
         </h3>
         <div class="row">
@@ -56,7 +56,7 @@
                                             Author:
                                         </span>
                                         <a class="color-white" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
-                                            <?= ($item->author == "Super Admin") ? $item->author : "Dr." . " " . $item->author ?>
+                                            <?= ($slug == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
                                         </a>
                                     </div>
                                     <div class="tags colorbg mt-15">
