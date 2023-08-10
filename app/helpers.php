@@ -1277,7 +1277,7 @@ if (!function_exists('date_today')) {
     function getDocPosts($doc_name)
     {
         return DB::table('posts')
-            ->select('id', 'name')
+            ->select("*")
             ->Where('status', 1)
             ->Where('author', ucwords($doc_name))
             ->limit(4)
