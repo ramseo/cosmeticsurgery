@@ -5,8 +5,8 @@
 }
 
 .post-social-icon {
-    padding-top: 20px;
-    padding-left: 0px;
+    padding: 30px 0px 0px;
+    margin: 0;
 }
 
 .bloggg {
@@ -182,19 +182,19 @@
 }
 
 .blog-detail-content-col {
-    padding-right: 0;
+    padding-right: 0!important;
 }
 
 .blog-detail-content-col img {
     border-radius: 10px 0px 0px 10px;
-    height: 320px;
+    height: 330px;
     width: 100%;
 }
 
 .blog-detail-main-col {
     background: #2abfb7;
     border-radius: 0px 10px 10px 0px;
-    height: 320px;
+    height: 330px;
 }
 
 .blog-detail-title {
