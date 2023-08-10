@@ -367,7 +367,7 @@ if ($getMorePosts) {
     <section id="more-blogs">
         <div class="container">
             <p class="identity">
-                Recent Posts
+                Related Posts
             </p>
 
             <div class="row">

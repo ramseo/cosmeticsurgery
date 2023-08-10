@@ -95,7 +95,7 @@ function setData($table, $column = null, $where = null)
 
 function getLatestBlogs()
 {
-    $data = DB::table('posts')->take(5)->orderBy('id', 'desc');
+    $data = DB::table('posts')->Where('status', 1)->take(5)->orderBy('id', 'desc');
     return $data->get();
 }
 
