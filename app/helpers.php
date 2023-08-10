@@ -1273,4 +1273,15 @@ if (!function_exists('date_today')) {
 
         return $Arr;
     }
+
+    function getDocPosts($doc_name)
+    {
+        return DB::table('posts')
+            ->select('id', 'name')
+            ->Where('status', 1)
+            ->Where('author', ucwords($doc_name))
+            ->limit(4)
+            ->orderBy('id', 'desc')
+            ->get();
+    }
 }

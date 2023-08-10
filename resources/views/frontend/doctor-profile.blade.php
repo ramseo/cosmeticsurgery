@@ -104,52 +104,6 @@
         <div class="row">
             <div class="col padd-null">
                 <?= $profile_data->content ?>
-
-                <!-- old content -->
-                <!-- <p class="identity">
-                    Specializations:
-                </p>
-                <ul>
-                    <li>Nose Surgery</li>
-                    <li>Facelift</li>
-                    <li>Breast Surgery</li>
-                    <li>Body Contouring</li>
-                    <li>Liposuction</li>
-                    <li>Tummy tuck</li>
-                    <li>Scar Removal</li>
-                    <li>Eyelid Surgery</li>
-                </ul>
-
-                <p class="identity">
-                    ABOUT DR. <? //= $doctor_details->first_name . " " . $doctor_details->last_name 
-                                ?>
-                </p>
-                <p>
-                    Renowned as one of the most reputed cosmetic surgeons in India, Dr. <? //= $doctor_details->first_name . " " . $doctor_details->last_name 
-                                                                                        ?> is a most-sought surgeon for people looking to improve their physical appearance through cosmetic surgeries. She has 19 years of experience in the field of cosmetic surgery, helping people to feel confident with their new and improved appearances.
-                </p>
-                <p>
-                    Dr. <? //= $doctor_details->first_name . " " . $doctor_details->last_name 
-                        ?> has worked on several patients looking to better their features including surgeries for victims of road accidents and burns, and people with physical deformities. She is a talented cosmetic surgeon in identifying and understanding the end results that the patient is looking for and takes a comprehensive approach to achieve the same. She is known for her skills in microvascular surgeries and is one of the widely demanded cosmetic surgeons in Hyderabad to perform many other similar reconstructive surgeries.
-                </p>
-                <p>
-                    Her in-depth knowledge of the cosmetic surgical procedures and the detailed analysis of the patient profile has time and again made her one of the most successful cosmetic surgeons.
-                </p>
-                <p class="identity">MEMBERSHIPS:</p>
-                <p>
-                    Dr. <? //= $doctor_details->first_name . " " . $doctor_details->last_name 
-                        ?> is a member of numerous national and international associations for plastic and cosmetic surgeons:
-                </p>
-                <ul>
-                    <li>International Society of Aesthetic Plastic Surgeons (ISAPS)</li>
-                    <li>American Society of Aesthetic Plastic Surgeons ( ASAPS)</li>
-                    <li>Indian Association of Aesthetic Plastic Surgeons (IAAPS)</li>
-                    <li>Association of Plastic Surgeons of India ( APSI)</li>
-                    <li>Indian Medical Association (IMA)</li>
-                    <li>American Society of Plastic Surgeons (ASPS)</li>
-                </ul> -->
-                <!-- old content -->
-
             </div>
         </div>
     </div>
@@ -382,6 +336,61 @@
     </section>
     <!-- before after results -->
 <?php } ?>
+
+<?php
+$getDocPosts = getDocPosts($doctor_details->first_name . " " . $doctor_details->last_name);
+?>
+<section class="blog-list-half section-padding sub-bg">
+    <div class="container">
+        <div class="row">
+            <?php
+            foreach ($getDocPosts as $item) {
+                $details_url = route("frontend.posts.show", [$item->slug]);
+                $author_url = str_replace(' ', '-', strtolower($item->author));
+            ?>
+                <div class="col-lg-6 padd-bottom-30">
+                    <div class="item mb-50">
+                        <div class="row">
+                            <div class="col-md-5 img">
+                                <a href="<?= $details_url ?>">
+                                    <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>">
+                                </a>
+                            </div>
+                            <div class="col-md-7 main-bg cont valign">
+                                <div class="full-width">
+                                    <span class="date fz-12 ls1 text-u opacity-7 mb-15">
+                                        <?= date('F', strtotime($item->published_at)) . " " . date('d', strtotime($item->published_at)) . "," . " " . date('Y', strtotime($item->published_at)) ?>
+                                    </span>
+                                    <h5>
+                                        <a href="<?= $details_url ?>">
+                                            <?= Str::words($item->name, 4) ?>
+                                        </a>
+                                    </h5>
+                                    <div class="author">
+                                        <span>
+                                            Author:
+                                        </span>
+                                        <a class="color-white" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
+                                            <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
+                                        </a>
+                                    </div>
+                                    <div class="tags colorbg mt-15">
+                                        <a href="<?= $details_url ?>">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+<?php // } 
+?>
+
 
 <div class="spacer">
     <div class="container-fluid">
