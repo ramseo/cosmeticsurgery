@@ -214,6 +214,60 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- ddddddddddddddddddddddddd -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group tags-group">
+                            <?php
+                            $field_name = 'related_posts[]';
+                            $field_name_label = 'related_posts';
+                            $field_lable = __("article::posts.$field_name_label");
+                            $required = "";
+
+                            $getRelatedlPostsArr = getRelatedlPostsArr();
+
+                            $getSelectedPostVal = [];
+                            if (isset($module_name_singular->related_posts)) {
+                                if ($module_name_singular->related_posts) {
+                                    $getSelectedPostVal = getSelectedRelatedPostsVal(json_decode($module_name_singular->related_posts));
+                                }
+                            }
+
+                            if (!$getSelectedPostVal) {
+                            ?>
+                                {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+                                {{ html()->select($field_name, $getRelatedlPostsArr)->class('form-control select2-related-posts')->attributes(["$required","multiple"]) }}
+                            <?php } else { ?>
+                                <label for="Related Posts">Related Posts</label>
+                                <select name="<?= $field_name ?>" class="form-control select2-related-posts" multiple>
+                                    <?php
+                                    $array_column = array_column($getSelectedPostVal, 'id');
+                                    // dd($array_column);
+
+                                    foreach ($getRelatedlPostsArr as $key => $item) {
+                                        if ($key == $module_name_singular->id) {
+                                            continue;
+                                        }
+
+                                        $select = "";
+                                        if (in_array($key, $array_column)) {
+                                            $select = "selected";
+                                        }
+                                    ?>
+                                        <option value="<?= $key ?>" <?= $select ?>>
+                                            <?= $item ?>
+                                        </option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+                <!-- dddddddddddddddddddddddd -->
+
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
@@ -363,4 +417,21 @@
         document.getElementById('featured_image').value = $url;
     }
 </script>
+@endpush
+
+@push ('after-scripts')
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.select2-related-posts').select2({
+            theme: "bootstrap",
+            multiple: true,
+            placeholder: '@lang("Select an option")',
+            minimumInputLength: 0,
+            allowClear: true,
+        });
+
+    });
+</script>
+
 @endpush

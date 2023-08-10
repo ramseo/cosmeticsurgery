@@ -99,6 +99,18 @@ function getLatestBlogs()
     return $data->get();
 }
 
+function getRelatedBlogs($related_posts)
+{
+    if (!$related_posts) {
+        return [];
+    }
+
+    $json_decode = json_decode($related_posts, true);
+
+    $data = DB::table('posts')->Where('status', 1)->WhereIn('id', $json_decode)->orderBy('id', 'desc');
+    return $data->get();
+}
+
 
 function custom_array_coloum($array, $key, $value, $default = '')
 {
@@ -852,6 +864,20 @@ if (!function_exists('date_today')) {
         return $array;
     }
 
+    function getSelectedRelatedPostsVal($posts)
+    {
+        if (!$posts) {
+            return;
+        }
+
+        $data = DB::table('posts');
+        $data->select('id', 'name', 'slug');
+        $data->whereIn('id', $posts);
+        $rr = $data->get()->toArray();
+        $array = json_decode(json_encode($rr), true);
+        return $array;
+    }
+
     function getPostsByTag($tagId)
     {
         $data = DB::table('posts')
@@ -1227,5 +1253,24 @@ if (!function_exists('date_today')) {
             ->select('vendor_id')
             ->Where('id', $album_id)
             ->get()->first();
+    }
+
+    function getRelatedlPostsArr()
+    {
+        $data = DB::table('posts')
+            ->select('id', 'name')
+            ->Where('status', 1)
+            ->orderBy('id', 'desc')
+            ->get()
+            ->toArray();
+
+        $Arr = [];
+        if ($data) {
+            foreach ($data as $item) {
+                $Arr[$item->id] = $item->name;
+            }
+        }
+
+        return $Arr;
     }
 }

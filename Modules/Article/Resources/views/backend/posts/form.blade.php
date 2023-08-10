@@ -191,6 +191,50 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-12">
+        <div class="form-group tags-group">
+            <?php
+            $field_name = 'related_posts[]';
+            $field_name_label = 'related_posts';
+            $field_lable = __("article::posts.$field_name_label");
+            $required = "";
+
+            $getRelatedlPostsArr = getRelatedlPostsArr();
+
+            $getSelectedPostVal = [];
+            if (isset($module_name_singular->related_posts)) {
+                if ($module_name_singular->related_posts) {
+                    $getSelectedPostVal = getSelectedRelatedPostsVal(json_decode($module_name_singular->related_posts));
+                }
+            }
+
+            if (!$getSelectedPostVal) {
+            ?>
+                {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+                {{ html()->select($field_name, $getRelatedlPostsArr)->class('form-control select2-related-posts')->attributes(["$required","multiple"]) }}
+            <?php } else { ?>
+                <label for="Related Posts">Related Posts</label>
+                <select name="<?= $field_name ?>" class="form-control select2-related-posts" multiple>
+                    <?php
+                    if ($getSelectedPostVal) {
+                        foreach ($getSelectedPostVal as $item) {
+                            if ($item['id'] == $module_name_singular->id) {
+                                continue;
+                            }
+                    ?>
+                            <option value="<?= $item['id'] ?>" selected>
+                                <?= $item['name'] ?>
+                            </option>
+                    <?php
+                        }
+                    }
+                    ?>
+                </select>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-6">
         <div class="form-group">
             <?php
@@ -304,8 +348,7 @@
             }
         });
 
-
-        $('.select2-tags').select2({
+        $('.select2-related-posts').select2({
             theme: "bootstrap",
             multiple: true,
             placeholder: '@lang("Select an option")',
@@ -316,7 +359,8 @@
                 dataType: 'json',
                 data: function(params) {
                     return {
-                        q: $.trim(params.term)
+                        q: $.trim(params.term),
+                        avoid: "<?= (isset($module_name_singular->id)) ? $module_name_singular->id : 0 ?>",
                     };
                 },
                 processResults: function(data) {

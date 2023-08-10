@@ -216,6 +216,12 @@ class UserController extends Controller
         $module_action = 'Store';
 
         $data = $request->all();
+        if ($data['related_posts']) {
+            $jsonEncodeTags = json_encode($data['related_posts']);
+            $data['related_posts'] = $jsonEncodeTags;
+        } else {
+            $data['related_posts'] = Null;
+        }
         $data['created_by_name'] = auth()->user()->name;
 
         $module_name_singular = $module_model::create($data);
@@ -263,6 +269,13 @@ class UserController extends Controller
         $module_action = 'Update';
 
         $module_name_singular = $module_model::findOrFail($id);
+        if ($request->input('related_posts') == null) {
+            $related_posts_list = Null;
+        } else {
+            $related_posts_list = json_encode($request->input('related_posts'));
+        }
+
+        $module_name_singular->related_posts = $related_posts_list;
 
         $module_name_singular->update($request->except('tag_ids'));
 

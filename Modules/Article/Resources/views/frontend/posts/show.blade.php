@@ -361,8 +361,8 @@
 </div>
 
 <?php
-$getMorePosts = getLatestBlogs();
-if ($getMorePosts) {
+$getRelatedBlogs = getRelatedBlogs($$module_name_singular->related_posts);
+if ($getRelatedBlogs) {
 ?>
     <section id="more-blogs">
         <div class="container">
@@ -372,7 +372,7 @@ if ($getMorePosts) {
 
             <div class="row">
                 <?php
-                foreach ($getMorePosts as $item) {
+                foreach ($getRelatedBlogs as $item) {
 
                     $img = asset('img/default-avatar.jpg');
                     if ($item->featured_image) {

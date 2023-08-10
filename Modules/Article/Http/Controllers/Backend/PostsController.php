@@ -203,15 +203,15 @@ class PostsController extends Controller
         $module_action = 'Store';
 
         $data = $request->all();
-        // $data = $request->except('tag_ids');
+        // $data = $request->except('related_posts');
         $data['created_by_name'] = auth()->user()->name;
 
-        // if ($data['tag_ids']) {
-        //     $jsonEncodeTags = json_encode($data['tag_ids']);
-        //     $data['tag_ids'] = $jsonEncodeTags;
-        // } else {
-        //     $data['tag_ids'] = Null;
-        // }
+        if ($data['related_posts']) {
+            $jsonEncodeTags = json_encode($data['related_posts']);
+            $data['related_posts'] = $jsonEncodeTags;
+        } else {
+            $data['related_posts'] = Null;
+        }
 
         $module_name_singular = $module_model::create($data);
         // $module_name_singular->tags()->attach($request->input('tag_ids'));
@@ -310,13 +310,13 @@ class PostsController extends Controller
 
         $module_name_singular = $module_model::findOrFail($id);
 
-        // if ($request->input('tag_ids') == null) {
-        //     $tags_list = Null;
-        // } else {
-        //     $tags_list = json_encode($request->input('tag_ids'));
-        // }
+        if ($request->input('related_posts') == null) {
+            $related_posts_list = Null;
+        } else {
+            $related_posts_list = json_encode($request->input('related_posts'));
+        }
 
-        // $module_name_singular->tag_ids = $tags_list;
+        $module_name_singular->related_posts = $related_posts_list;
         $module_name_singular->update($request->except('tag_ids'));
 
         // $module_name_singular->tags()->sync($tags_list);

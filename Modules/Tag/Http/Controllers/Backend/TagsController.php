@@ -68,30 +68,21 @@ class TagsController extends BackendBaseController
      */
     public function index_list(Request $request)
     {
-        $module_title = $this->module_title;
-        $module_name = $this->module_name;
-        $module_path = $this->module_path;
-        $module_icon = $this->module_icon;
-        $module_model = $this->module_model;
-        $module_name_singular = Str::singular($module_name);
-
-        $module_action = 'List';
+        $module_name = "posts";
 
         $term = trim($request->q);
+        $avoid = array($request->avoid);
 
         if (empty($term)) {
             return response()->json([]);
         }
 
-        $query_data = DB::table($module_name)->where('status', 1);
+        $query_data = DB::table($module_name)->whereNotIn('id', $avoid)->where('status', 1);
         $query_data->where(function ($query_data) use ($term) {
             $query_data->orWhere('name', 'LIKE', "%$term%");
             $query_data->orWhere('slug', 'LIKE', "%$term%");
         });
         $query_data_result = $query_data->get();
-        // $query_data = $module_model::where('name', 'LIKE', "%$term%")
-        //     ->orWhere('slug', 'LIKE', "%$term%")
-        //     ->orWhere('status', 1)->limit(7)->get();
 
         $$module_name = [];
 
@@ -99,7 +90,6 @@ class TagsController extends BackendBaseController
             $$module_name[] = [
                 'id'   => $row->id,
                 'text' => $row->name,
-                // 'text' => $row->name . ' (Slug: ' . $row->slug . ')',
             ];
         }
 

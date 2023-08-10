@@ -50,10 +50,7 @@
                         </a>
                     </div>
                 </div>
-
-
                 <div class="row">
-                    <!-- <div class="col-12"> -->
                     <div class="table-responsive">
                         <table id="datatable" class="table table-bordered table-hover table-responsive-sm">
                             <thead>
@@ -66,7 +63,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <!-- </div> -->
                 </div>
             </div>
         </div>
