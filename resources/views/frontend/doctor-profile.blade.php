@@ -339,57 +339,60 @@
 
 <?php
 $getDocPosts = getDocPosts($doctor_details->first_name . " " . $doctor_details->last_name);
+if ($getDocPosts) {
 ?>
-<section class="blog-list-half section-padding sub-bg">
-    <div class="container">
-        <div class="row">
-            <?php
-            foreach ($getDocPosts as $item) {
-                $details_url = route("frontend.posts.show", [$item->slug]);
-                $author_url = str_replace(' ', '-', strtolower($item->author));
-            ?>
-                <div class="col-lg-6 padd-bottom-30">
-                    <div class="item mb-50">
-                        <div class="row">
-                            <div class="col-md-5 img">
-                                <a href="<?= $details_url ?>">
-                                    <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>">
-                                </a>
-                            </div>
-                            <div class="col-md-7 main-bg cont valign">
-                                <div class="full-width">
-                                    <span class="date fz-12 ls1 text-u opacity-7 mb-15">
-                                        <?= date('F', strtotime($item->published_at)) . " " . date('d', strtotime($item->published_at)) . "," . " " . date('Y', strtotime($item->published_at)) ?>
-                                    </span>
-                                    <h5>
-                                        <a href="<?= $details_url ?>">
-                                            <?= Str::words($item->name, 4) ?>
-                                        </a>
-                                    </h5>
-                                    <div class="author">
-                                        <span>
-                                            Author:
+    <section class="blog-list-half section-padding sub-bg">
+        <div class="container">
+            <p class="identity text-center">
+                Dr. <?= $doctor_details->first_name . " " . $doctor_details->last_name . " " . ":" . " " . "Posts" ?>
+            </p>
+            <div class="row">
+                <?php
+                foreach ($getDocPosts as $item) {
+                    $details_url = route("frontend.posts.show", [$item->slug]);
+                    $author_url = str_replace(' ', '-', strtolower($item->author));
+                ?>
+                    <div class="col-lg-6 padd-bottom-30">
+                        <div class="item mb-50">
+                            <div class="row">
+                                <div class="col-md-5 img">
+                                    <a href="<?= $details_url ?>">
+                                        <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>">
+                                    </a>
+                                </div>
+                                <div class="col-md-7 main-bg cont valign">
+                                    <div class="full-width">
+                                        <span class="date fz-12 ls1 text-u opacity-7 mb-15">
+                                            <?= date('F', strtotime($item->published_at)) . " " . date('d', strtotime($item->published_at)) . "," . " " . date('Y', strtotime($item->published_at)) ?>
                                         </span>
-                                        <a class="color-white" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
-                                            <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
-                                        </a>
-                                    </div>
-                                    <div class="tags colorbg mt-15">
-                                        <a href="<?= $details_url ?>">
-                                            Read More
-                                        </a>
+                                        <h5>
+                                            <a href="<?= $details_url ?>">
+                                                <?= Str::words($item->name, 4) ?>
+                                            </a>
+                                        </h5>
+                                        <div class="author">
+                                            <span>
+                                                Author:
+                                            </span>
+                                            <a class="color-white" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
+                                                <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
+                                            </a>
+                                        </div>
+                                        <div class="tags colorbg mt-15">
+                                            <a href="<?= $details_url ?>">
+                                                Read More
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
         </div>
-    </div>
-</section>
-<?php // } 
-?>
+    </section>
+<?php } ?>
 
 
 <div class="spacer">
