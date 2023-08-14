@@ -3672,3 +3672,8 @@ p {
 .author-archive-cls {
     padding-bottom: 20px;
 }
+
+.dcim h4 {
+    text-align: center;
+    padding-top: 18px;
+}
