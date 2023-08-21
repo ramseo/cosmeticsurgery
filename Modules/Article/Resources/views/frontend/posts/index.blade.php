@@ -22,20 +22,19 @@
             <div class="col-lg-4 col-md-6 col-sm-12 col-section">
                 <div class="card">
                     <div class="card-header">
-                        <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
+                        <img src="https://dev.cosmeticsurgery.in/storage/files/Arm-Lift-2-746x560.jpg" alt="city" />
                     </div>
                     <div class="card-body">
                         <span class="tag tag-teal">Technology</span>
                         <h4>
-                            Why is the Tesla Cybertruck designed the way it is?
+                            Amazing benefits and potential.
                         </h4>
                         <p>
                             An exploration into the truck's polarising design
                         </p>
                         <div class="user">
                             <div>
-                                <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8sn9zF15pW59JIYiLgx3PQ3EyZLFp5Zqao906l=s32-c-mo"
-                                    alt="user" />
+                                <img src="https://dev.cosmeticsurgery.in/storage/files/Brow-Lift-Browplasty-746x560.jpg" alt="user" />
                                 <div class="user-info">
                                     <h5>Carrie Brewer</h5>
                                     <small>1w ago</small>
@@ -52,20 +51,19 @@
             <div class="col-lg-4 col-md-6 col-sm-12 col-section">
                 <div class="card">
                     <div class="card-header">
-                        <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
+                        <img src="https://dev.cosmeticsurgery.in/storage/files/Brow-Lift-Browplasty-746x560.jpg" alt="city" />
                     </div>
                     <div class="card-body">
                         <span class="tag tag-purple">Popular</span>
                         <h4>
-                            How to Keep Going When You Don’t Know What’s Next
+                            Amazing benefits and potential...
                         </h4>
                         <p>
                             The future can be scary, but there are ways to deal with that fear.
                         </p>
                         <div class="user">
                             <div>
-                                <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8sn9zF15pW59JIYiLgx3PQ3EyZLFp5Zqao906l=s32-c-mo"
-                                    alt="user" />
+                                <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8sn9zF15pW59JIYiLgx3PQ3EyZLFp5Zqao906l=s32-c-mo" alt="user" />
                                 <div class="user-info">
                                     <h5>Carrie Brewer</h5>
                                     <small>1w ago</small>
@@ -83,20 +81,19 @@
             <div class="col-lg-4 col-md-6 col-sm-12 col-section">
                 <div class="card">
                     <div class="card-header">
-                        <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
+                        <img src="https://dev.cosmeticsurgery.in/storage/files/Body-Lift-1-746x560.jpg" alt="city" />
                     </div>
                     <div class="card-body">
                         <span class="tag tag-pink">Design</span>
                         <h4>
-                            10 Rules of Dashboard Design
+                            Amazing benefits and potential...
                         </h4>
                         <p>
                             Dashboard Design Guidelines
                         </p>
                         <div class="user">
                             <div>
-                                <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8sn9zF15pW59JIYiLgx3PQ3EyZLFp5Zqao906l=s32-c-mo"
-                                    alt="user" />
+                                <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8sn9zF15pW59JIYiLgx3PQ3EyZLFp5Zqao906l=s32-c-mo" alt="user" />
                                 <div class="user-info">
                                     <h5>Carrie Brewer</h5>
                                     <small>1w ago</small>
@@ -172,37 +169,37 @@
 @push('before-scripts')
 <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js"></script>
 <script>
-$(document).ready(function() {
-    var owl = $('.posts-categories');
+    $(document).ready(function() {
+        var owl = $('.posts-categories');
 
-    owl.owlCarousel({
-        items: 6,
-        dots: false,
-        nav: true,
-        navText: ["<i class='fas fa-arrow-left'></i>", "<i class='fas fa-arrow-right'></i>"],
-        loop: $('.posts-categories .owl-item').length > 6 ? true : false,
-        margin: 5,
-        autoplay: $('.posts-categories .owl-item').length > 6 ? true : false,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        responsive: {
-            0: {
-                items: 2,
-                loop: $('.posts-categories .owl-item').length > 2 ? true : false,
-            },
-            600: {
-                items: 4,
-                loop: $('.posts-categories .owl-item').length > 4 ? true : false,
-            },
-            1000: {
-                items: 6,
-                loop: $('.posts-categories .owl-item').length > 6 ? true : false,
+        owl.owlCarousel({
+            items: 6,
+            dots: false,
+            nav: true,
+            navText: ["<i class='fas fa-arrow-left'></i>", "<i class='fas fa-arrow-right'></i>"],
+            loop: $('.posts-categories .owl-item').length > 6 ? true : false,
+            margin: 5,
+            autoplay: $('.posts-categories .owl-item').length > 6 ? true : false,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 2,
+                    loop: $('.posts-categories .owl-item').length > 2 ? true : false,
+                },
+                600: {
+                    items: 4,
+                    loop: $('.posts-categories .owl-item').length > 4 ? true : false,
+                },
+                1000: {
+                    items: 6,
+                    loop: $('.posts-categories .owl-item').length > 6 ? true : false,
+                }
             }
-        }
+        });
+
+
     });
-
-
-});
 </script>
 
 @endpush
