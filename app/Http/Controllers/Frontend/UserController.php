@@ -216,12 +216,15 @@ class UserController extends Controller
         $module_action = 'Store';
 
         $data = $request->all();
-        if ($data['related_posts']) {
-            $jsonEncodeTags = json_encode($data['related_posts']);
-            $data['related_posts'] = $jsonEncodeTags;
-        } else {
-            $data['related_posts'] = Null;
+
+        $data['related_posts'] = Null;
+        if (isset($data['related_posts'])) {
+            if ($data['related_posts']) {
+                $jsonEncodeTags = json_encode($data['related_posts']);
+                $data['related_posts'] = $jsonEncodeTags;
+            }
         }
+
         $data['created_by_name'] = auth()->user()->name;
 
         $module_name_singular = $module_model::create($data);
