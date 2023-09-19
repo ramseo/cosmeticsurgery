@@ -18,9 +18,7 @@
 <section class="blog-section">
     <div class="container">
         <div class="row">
-
             <?php
-            // dd($post_data->toArray());
 
             foreach ($post_data as $item) {
                 $details_url = route("frontend.$module_name.show", [$item->slug]);
@@ -36,10 +34,10 @@
                                 Technology
                             </span> -->
                             <h4>
-                                <?= Str::words($item->name, 4) ?>
+                                <?= substr($item->name, 0, 50) ?>
                             </h4>
                             <p>
-                                <?= strip_tags(Str::words($item->content, 6)); ?>
+                                <?= strip_tags(substr($item->content, 0, 50)) ?>
                             </p>
                             <div class="user">
                                 <div class="blog-author-flex">
@@ -67,64 +65,6 @@
                 </div>
             <?php  }  ?>
 
-            <!-- <div class="col-lg-4 col-md-6 col-sm-12 col-section">
-                <div class="card">
-                    <div class="card-header">
-                        <img src="https://dev.cosmeticsurgery.in/storage/files/Brow-Lift-Browplasty-746x560.jpg" alt="city" />
-                    </div>
-                    <div class="card-body">
-                        <span class="tag tag-purple">Popular</span>
-                        <h4>
-                            Amazing benefits and potential...
-                        </h4>
-                        <p>
-                            The future can be scary, but there are ways to deal with that fear.
-                        </p>
-                        <div class="user">
-                            <div>
-                                <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8sn9zF15pW59JIYiLgx3PQ3EyZLFp5Zqao906l=s32-c-mo" alt="user" />
-                                <div class="user-info">
-                                    <h5>Carrie Brewer</h5>
-                                    <small>1w ago</small>
-                                </div>
-                            </div>
-                            <div class="read-m-butt">
-                                <button>Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-
-            <!-- <div class="col-lg-4 col-md-6 col-sm-12 col-section">
-                <div class="card">
-                    <div class="card-header">
-                        <img src="https://dev.cosmeticsurgery.in/storage/files/Body-Lift-1-746x560.jpg" alt="city" />
-                    </div>
-                    <div class="card-body">
-                        <span class="tag tag-pink">Design</span>
-                        <h4>
-                            Amazing benefits and potential...
-                        </h4>
-                        <p>
-                            Dashboard Design Guidelines
-                        </p>
-                        <div class="user">
-                            <div>
-                                <img src="https://lh3.googleusercontent.com/ogw/ADGmqu8sn9zF15pW59JIYiLgx3PQ3EyZLFp5Zqao906l=s32-c-mo" alt="user" />
-                                <div class="user-info">
-                                    <h5>Carrie Brewer</h5>
-                                    <small>1w ago</small>
-                                </div>
-                            </div>
-                            <div class="read-m-butt">
-                                <button>Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
 </section>
 <!-- <section class="blog-list-half section-padding sub-bg">
