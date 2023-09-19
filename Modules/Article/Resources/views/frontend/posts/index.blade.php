@@ -17,38 +17,48 @@
 
 <section class="blog-section">
     <div class="container">
-
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-section">
-                <div class="card">
-                    <div class="card-header">
-                        <img src="https://dev.cosmeticsurgery.in/storage/files/Arm-Lift-2-746x560.jpg" alt="city" />
-                    </div>
-                    <div class="card-body">
-                        <span class="tag tag-teal">Technology</span>
-                        <h4>
-                            Amazing benefits and potential.
-                        </h4>
-                        <p>
-                            An exploration into the truck's polarising design
-                        </p>
-                        <div class="user">
-                            <div>
-                                <img src="https://dev.cosmeticsurgery.in/storage/files/Brow-Lift-Browplasty-746x560.jpg" alt="user" />
-                                <div class="user-info">
-                                    <h5>Carrie Brewer</h5>
-                                    <small>1w ago</small>
+
+            <?php
+            foreach ($post_data as $item) {
+                $details_url = route("frontend.$module_name.show", [$item->slug]);
+                $author_url = str_replace(' ', '-', strtolower($item->author));
+            ?>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>" />
+                        </div>
+                        <div class="card-body">
+                            <span class="tag tag-teal">Technology</span>
+                            <h4>
+                                <?= $item->name ?>
+                            </h4>
+                            <p>
+                                <?= strip_tags(Str::words($item->content, 6)); ?>
+                            </p>
+                            <div class="user">
+                                <div class="blog-author-flex">
+                                    <img src="<?= asset("img/default-avatar.jpg") ?>" alt="<?= $item->author ?>" />
+                                    <div class="user-info">
+                                        <h5>
+                                            <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
+                                        </h5>
+                                        <small>1w ago</small>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="read-m-butt">
-                                <button>Read More</button>
+                                <div class="read-m-butt">
+                                    <a href="<?= $details_url ?>">
+                                        <button>Read More</button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php  }  ?>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-section">
+            <!-- <div class="col-lg-4 col-md-6 col-sm-12 col-section">
                 <div class="card">
                     <div class="card-header">
                         <img src="https://dev.cosmeticsurgery.in/storage/files/Brow-Lift-Browplasty-746x560.jpg" alt="city" />
@@ -75,10 +85,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-section">
+            <!-- <div class="col-lg-4 col-md-6 col-sm-12 col-section">
                 <div class="card">
                     <div class="card-header">
                         <img src="https://dev.cosmeticsurgery.in/storage/files/Body-Lift-1-746x560.jpg" alt="city" />
@@ -105,7 +115,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 </section>
 <!-- <section class="blog-list-half section-padding sub-bg">

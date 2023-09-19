@@ -3852,3 +3852,9 @@ p {
 .cam .ico p {
     font-size: 18px;
 }
+
+.blog-author-flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
