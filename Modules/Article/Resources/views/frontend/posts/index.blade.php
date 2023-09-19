@@ -20,6 +20,8 @@
         <div class="row">
 
             <?php
+            // dd($post_data->toArray());
+
             foreach ($post_data as $item) {
                 $details_url = route("frontend.$module_name.show", [$item->slug]);
                 $author_url = str_replace(' ', '-', strtolower($item->author));
@@ -30,9 +32,11 @@
                             <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>" />
                         </div>
                         <div class="card-body">
-                            <span class="tag tag-teal">Technology</span>
+                            <!-- <span class="tag tag-teal">
+                                Technology
+                            </span> -->
                             <h4>
-                                <?= $item->name ?>
+                                <?= Str::words($item->name, 5) ?>
                             </h4>
                             <p>
                                 <?= strip_tags(Str::words($item->content, 6)); ?>
@@ -44,7 +48,12 @@
                                         <h5>
                                             <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
                                         </h5>
-                                        <small>1w ago</small>
+                                        <small>
+                                            <?php
+                                            echo $item->published_at;
+                                            ?>
+                                            <!-- 1w ago -->
+                                        </small>
                                     </div>
                                 </div>
                                 <div class="read-m-butt">
