@@ -36,7 +36,7 @@
                                 Technology
                             </span> -->
                             <h4>
-                                <?= Str::words($item->name, 5) ?>
+                                <?= Str::words($item->name, 4) ?>
                             </h4>
                             <p>
                                 <?= strip_tags(Str::words($item->content, 6)); ?>
