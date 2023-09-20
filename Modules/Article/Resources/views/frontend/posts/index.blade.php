@@ -22,6 +22,15 @@
             foreach ($post_data as $item) {
                 $details_url = route("frontend.$module_name.show", [$item->slug]);
                 $author_url = str_replace(' ', '-', strtolower($item->author));
+
+                $author_img = asset("img/default-avatar.jpg");
+                if ($item->author != "Super Admin") {
+                    $get_author_img = get_author_img($item->created_by);
+                    if (file_exists(public_path() . '/storage/user/profile/' . $get_author_img)) {
+                        $author_img = asset('storage/user/profile/' . $get_author_img);
+                    }
+                }
+
             ?>
                 <div class="col-lg-4 col-md-6 col-sm-12 col-section">
                     <div class="card">
@@ -29,9 +38,6 @@
                             <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>" />
                         </div>
                         <div class="card-body">
-                            <!-- <span class="tag tag-teal">
-                                Technology
-                            </span> -->
                             <h4>
                                 <?= substr($item->name, 0, 40) . "..." ?>
                             </h4>
@@ -40,7 +46,7 @@
                             </p>
                             <div class="user">
                                 <div class="blog-author-flex">
-                                    <img src="<?= asset("img/default-avatar.jpg") ?>" alt="<?= $item->author ?>" />
+                                    <img src="<?= $author_img ?>" alt="<?= $item->author ?>" />
                                     <div class="user-info">
                                         <h5>
                                             <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">

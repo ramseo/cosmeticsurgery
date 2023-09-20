@@ -1284,4 +1284,12 @@ if (!function_exists('date_today')) {
             ->orderBy('id', 'desc')
             ->get();
     }
+
+    function get_author_img($userId)
+    {
+        return DB::table('users')
+            ->select("avatar")
+            ->Where("id", $userId)
+            ->get()->first();
+    }
 }
