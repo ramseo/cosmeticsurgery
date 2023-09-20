@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<section class="blog-list-half section-padding sub-bg">
+<!-- <section class="blog-list-half section-padding sub-bg">
     <div class="container">
         <h3 class="text-capitalize author-archive-cls">
             <?php if ($slug1 == "Superadmin") {  ?>
@@ -74,6 +74,71 @@
         <div class="inner text-center">
             <div class="d-flex justify-content-center w-100 mt-3">
                 {{$posts->links()}}
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="blog-section">
+    <div class="container">
+        <h3 class="text-capitalize author-archive-cls">
+            <?php if ($slug1 == "Superadmin") {  ?>
+                Author Archives: <?= $slug ?>
+            <?php } else { ?>
+                Author Archives: <?= "Dr." . " " . $slug ?>
+            <?php } ?>
+        </h3>
+        <div class="row">
+            <?php
+            foreach ($post_data as $item) {
+                $details_url = route("frontend.$module_name.show", [$item->slug]);
+                $author_url = str_replace(' ', '-', strtolower($item->author));
+            ?>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>" />
+                        </div>
+                        <div class="card-body">
+                            <h4>
+                                <?= substr($item->name, 0, 40) . "..." ?>
+                            </h4>
+                            <p>
+                                <?= strip_tags(substr($item->content, 0, 40) . "...") ?>
+                            </p>
+                            <div class="user">
+                                <div class="blog-author-flex">
+                                    <img src="<?= asset("img/default-avatar.jpg") ?>" alt="<?= $item->author ?>" />
+                                    <div class="user-info">
+                                        <h5>
+                                            <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
+                                                <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
+                                            </a>
+                                        </h5>
+                                        <small>
+                                            <?php
+                                            $startDate = $item->published_at;
+                                            $endDate = date('Y-m-d');
+                                            $numberOfWeeks = (int)date("W", strtotime($endDate)) - (int)date("W", strtotime($startDate));
+                                            echo $numberOfWeeks . "w ago";
+                                            ?>
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="read-m-butt">
+                                    <a href="<?= $details_url ?>">
+                                        <button>Read More</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+        <div class="inner text-center">
+            <div class="d-flex justify-content-center w-100 mt-3">
+                <?= $post_data->links() ?>
             </div>
         </div>
     </div>
