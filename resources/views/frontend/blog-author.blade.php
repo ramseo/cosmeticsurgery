@@ -91,7 +91,7 @@
         <div class="row">
             <?php
             foreach ($posts as $item) {
-                $details_url = route("frontend.$module_name.show", [$item->slug]);
+                $details_url = route("frontend.posts.show", [$item->slug]);
                 $author_url = str_replace(' ', '-', strtolower($item->author));
             ?>
                 <div class="col-lg-4 col-md-6 col-sm-12 col-section">
