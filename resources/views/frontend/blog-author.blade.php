@@ -112,7 +112,7 @@
                                     <div class="user-info">
                                         <h5>
                                             <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
-                                                <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
+                                                <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . substr($item->author, 0, 10) ?>
                                             </a>
                                         </h5>
                                         <small>
