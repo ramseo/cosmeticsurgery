@@ -37,7 +37,7 @@
                                 <?= substr($item->name, 0, 40) . "..." ?>
                             </h4>
                             <p>
-                                <?= strip_tags(substr($item->content, 0, 35) . "...") ?>
+                                <?= strip_tags(substr($item->content, 0, 40) . "...") ?>
                             </p>
                             <div class="user">
                                 <div class="blog-author-flex">
