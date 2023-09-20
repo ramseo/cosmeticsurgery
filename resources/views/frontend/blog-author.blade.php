@@ -90,7 +90,7 @@
         </h3>
         <div class="row">
             <?php
-            foreach ($post_data as $item) {
+            foreach ($posts as $item) {
                 $details_url = route("frontend.$module_name.show", [$item->slug]);
                 $author_url = str_replace(' ', '-', strtolower($item->author));
             ?>
@@ -138,7 +138,7 @@
         </div>
         <div class="inner text-center">
             <div class="d-flex justify-content-center w-100 mt-3">
-                <?= $post_data->links() ?>
+                <?= $posts->links() ?>
             </div>
         </div>
     </div>
