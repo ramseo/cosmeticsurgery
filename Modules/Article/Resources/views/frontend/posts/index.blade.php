@@ -26,8 +26,8 @@
                 $author_img = asset("img/default-avatar.jpg");
                 if ($item->author != "Super Admin") {
                     $get_author_img = get_author_img($item->created_by);
-                    if (file_exists(public_path() . '/storage/user/profile/' . $get_author_img)) {
-                        $author_img = asset('storage/user/profile/' . $get_author_img);
+                    if (file_exists(public_path() . '/storage/user/profile/' . $get_author_img->avatar)) {
+                        $author_img = asset('storage/user/profile/' . $get_author_img->avatar);
                     }
                 }
 
