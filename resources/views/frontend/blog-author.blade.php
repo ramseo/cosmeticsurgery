@@ -93,6 +93,15 @@
             foreach ($posts as $item) {
                 $details_url = route("frontend.posts.show", [$item->slug]);
                 $author_url = str_replace(' ', '-', strtolower($item->author));
+
+                $author_img = asset("img/default-avatar.jpg");
+                if ($item->author != "Super Admin") {
+                    $get_author_img = get_author_img($item->created_by);
+                    if (file_exists(public_path() . '/storage/user/profile/' . $get_author_img->avatar)) {
+                        $author_img = asset('storage/user/profile/' . $get_author_img->avatar);
+                    }
+                }
+
             ?>
                 <div class="col-lg-4 col-md-6 col-sm-12 col-section">
                     <div class="card">
@@ -108,7 +117,7 @@
                             </p>
                             <div class="user">
                                 <div class="blog-author-flex">
-                                    <img src="<?= asset("img/default-avatar.jpg") ?>" alt="<?= $item->author ?>" />
+                                    <img src="<?= $author_img ?>" alt="<?= $item->author ?>" />
                                     <div class="user-info">
                                         <h5>
                                             <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
