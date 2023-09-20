@@ -3859,3 +3859,11 @@ p {
     align-items: center;
     flex-wrap: wrap;
 }
+
+.card.margin-404 p {
+    text-align: center;
+}
+
+.card.margin-404 h2 {
+    padding: 25px 0 0 0;
+}

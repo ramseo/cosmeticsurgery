@@ -15,8 +15,8 @@
             <div class="col">
                 <div class="text-center">
                     <h2>Page Not Found</h2>
-                    <p>
-                        <button onclick="window.history.back()" class="btn btn-warning ml-1" data-toggle="tooltip" title="Return Back">
+                    <p class="text-center">
+                        <button onclick="window.history.back()" class="btn btn-warning ml-1" data-toggle="tooltip" title="" data-original-title="Return Back">
                             <i class="fa fa-reply"></i>
                             Return Back
                         </button>
