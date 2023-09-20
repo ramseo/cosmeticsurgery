@@ -3640,7 +3640,8 @@ img {
     border-top: 1px dashed #fff;
 }
 
-.color-black {
+.color-black,
+.color-black:hover {
     color: #000;
 }
 

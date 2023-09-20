@@ -44,13 +44,17 @@
                                     <img src="<?= asset("img/default-avatar.jpg") ?>" alt="<?= $item->author ?>" />
                                     <div class="user-info">
                                         <h5>
-                                            <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
+                                            <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
+                                                <?= ($author_url == "super-admin") ? $item->author : "Dr." . " " . $item->author ?>
+                                            </a>
                                         </h5>
                                         <small>
                                             <?php
-                                            echo $item->published_at;
+                                            $startDate = $item->published_at;
+                                            $endDate = date('Y-m-d');
+                                            $numberOfWeeks = (int)date("W", strtotime($endDate)) - (int)date("W", strtotime($startDate));
+                                            echo $numberOfWeeks . "w ago";
                                             ?>
-                                            <!-- 1w ago -->
                                         </small>
                                     </div>
                                 </div>
