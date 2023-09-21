@@ -62,16 +62,17 @@
                 </div>
 
                 <?php
-                $popular_surgeries1 = popular_cities_surgeries("popular-surgeries", $skip = 0, $take = 18);
-                $popular_surgeries2 = popular_cities_surgeries("popular-surgeries", $skip = 18, $take = 16);
+                $popular_surgeries_arr = popular_cities_surgeries("popular-surgeries", $skip = "", $take = "");
+
+                list($array1, $array2) = array_chunk($popular_surgeries_arr, ceil(count($popular_surgeries_arr) / 2));
                 ?>
 
                 <p class="identity text-center">Popular Surgeries</p>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <?php if ($popular_surgeries1) { ?>
+                        <?php if ($array1) { ?>
                             <ul class="padd-null surgeries-list">
-                                <?php foreach ($popular_surgeries1 as $surgeries1) { ?>
+                                <?php foreach ($array1 as $surgeries1) { ?>
                                     <li class="<?= (str_replace('/', '', Request::getRequestUri()) == $surgeries1->url) ? 'active' : '' ?>">
                                         <a href="<?= $surgeries1->url ?>">
                                             <?= $surgeries1->title ?>
@@ -82,9 +83,9 @@
                         <?php } ?>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <?php if ($popular_surgeries2) { ?>
+                        <?php if ($array2) { ?>
                             <ul class="padd-null surgeries-list">
-                                <?php foreach ($popular_surgeries2 as $surgeries2) { ?>
+                                <?php foreach ($array2 as $surgeries2) { ?>
                                     <li class="<?= (str_replace('/', '', Request::getRequestUri()) == $surgeries2->url) ? 'active' : '' ?>">
                                         <a href="<?= $surgeries2->url ?>">
                                             <?= $surgeries2->title ?>
