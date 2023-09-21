@@ -3666,8 +3666,8 @@ p {
 
 .select_fg {
     text-align: center;
-    padding: 20px 0px 0px 0px;
-    float: left;
+    /* padding: 20px 0px 0px 0px;
+    float: left; */
     width: 100%;
 }
 
