@@ -540,7 +540,11 @@ class UserController extends Controller
 
         // add fields to update
         $data['name'] = $request->first_name . " " . $request->last_name;
-        $data['username'] = strtolower($request->first_name . "-" . $request->last_name);
+
+        $f_name_l_name = $request->first_name . "-" . $request->last_name;
+        $f_name_l_name = str_replace(" ", "-", $f_name_l_name);
+
+        $data['username'] = strtolower($f_name_l_name);
 
         if ($data['city']) {
             $jsonEncodeTags = json_encode($data['city']);
@@ -558,7 +562,7 @@ class UserController extends Controller
         $userprofiles['name'] = $data['name'];
         $userprofiles['first_name'] = $data['first_name'];
         $userprofiles['last_name'] = $data['last_name'];
-        $userprofiles['username'] = strtolower($request->first_name . "-" . $request->last_name);
+        $userprofiles['username'] = strtolower($f_name_l_name);
         $userprofiles['address'] = $data['address'];
         $userprofiles['mobile'] = $data['mobile'];
         $userprofiles['gender'] = $data['gender'];

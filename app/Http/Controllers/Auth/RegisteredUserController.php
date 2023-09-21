@@ -60,7 +60,9 @@ class RegisteredUserController extends Controller
 
         // username
         // $username = config('app.initial_username') + $user->id;
-        $user->username = strtolower($request->first_name . "-" . $request->last_name);
+        $f_name_l_name = $request->first_name . "-" . $request->last_name;
+        $f_name_l_name = str_replace(" ", "-", $f_name_l_name);
+        $user->username = strtolower($f_name_l_name);
 
         $user->save();
         $user->assignRole('user');
