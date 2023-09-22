@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
+use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -424,4 +427,9 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
     Route::get('search-by-vendors/', 'VendorController@vendorSearch')->name('vendor.search');
 
     Route::get('search-by-city/', 'VendorController@citySearch')->name('vendor.search.city');
+});
+
+Route::get("generate-sitemap", function () {
+    SitemapGenerator::create(config('app.url'))->writeToFile(public_path('sitemap.xml'));
+    dd("sitemap successfully created!");
 });
