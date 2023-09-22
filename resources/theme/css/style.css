@@ -1101,6 +1101,7 @@ ul.nav.nav-tabs {
 .tab-pane ul li a {
     color: #333;
     font-size: 17px;
+    text-transform: capitalize;
 }
 
 .llisting ul li {
