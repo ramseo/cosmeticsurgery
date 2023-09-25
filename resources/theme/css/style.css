@@ -67,7 +67,7 @@ a:hover {
     border-radius: 2px;
     text-align: center;
     margin-bottom: 16px;
-    height: 200px;
+    height: auto;
 }
 
 .sr-heading .form-control {
@@ -238,8 +238,8 @@ a:hover {
 }
 
 .sr-heading p {
-    margin-top: 18px;
-    margin-bottom: 17px;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 23px;
     color: #333;
     font-weight: 600;
