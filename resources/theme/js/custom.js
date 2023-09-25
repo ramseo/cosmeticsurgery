@@ -247,5 +247,6 @@ $(document).on('click', '.remove-default-active-cls', function () {
     $('.default-active-cls').removeClass("active active in");
 });
 
-
-// sel-open-next
+$(document).on('change', '.sel-open-next', function () {
+    window.open(this.value, '_blank');
+}); 
