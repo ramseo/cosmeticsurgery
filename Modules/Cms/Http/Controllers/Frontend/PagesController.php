@@ -262,7 +262,7 @@ class PagesController extends Controller
         }
         // template functions 
 
-        if ($template_view == 'show' || $template_view == 'surgery_cost') {
+        if ($template_view == "show" || $template_view == "surgery_cost" || $template_view == "popular-surgeries") {
             // Add HTML To Content
             $html = "";
             $html .= "<div class='new_breat_f' style='background: #007BFF'>";
