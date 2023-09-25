@@ -262,28 +262,74 @@ class PagesController extends Controller
         }
         // template functions 
 
+        // Add HTML To Content
         if ($template_view == "show" || $template_view == "surgery_cost" || $template_view == "popular-surgeries") {
-            // Add HTML To Content
-            $html = "";
-            $html .= "<div class='new_breat_f' style='background: #007BFF'>";
-            $html .= "<h5>Find a Plastic Surgeon in Your Area</h5>";
-            $html .= "<div class='select_fg'>";
-            $html .= "<select class='form-control cutome_sele_bg sel-open-next'>";
-            $html .= "<option value=''>Select Your City</option>";
+
+            $html_city = "";
+            $html_city .= "<div class='new_breat_f' style='background: #007BFF'>";
+            $html_city .= "<h5>Find a Plastic Surgeon in Your Area</h5>";
+            $html_city .= "<div class='select_fg'>";
+            $html_city .= "<select class='form-control cutome_sele_bg sel-open-next'>";
+            $html_city .= "<option value=''>Select Your City</option>";
 
             $getAllCities = getAllCities();
             foreach ($getAllCities as $city) {
-                $html .= "<option value='" . url(strtolower($city)) . "'>$city</option>";
+                $html_city .= "<option value='" . url(strtolower($city)) . "'>$city</option>";
             }
 
-            $html .= "</select>";
-            $html .= "</div>";
+            $html_city .= "</select>";
+            $html_city .= "</div>";
+            $html_city .= "</div>";
 
-            $addDropdownOptions = $html;
-            $newContent = str_replace("ADD_OPTION_CITY", $addDropdownOptions, $$module_name_singular->content);
+            $html_surgery = "";
+            $html_surgery .= '<div class="sr-heading">';
+            $html_surgery .= '<p class="text-center">Find the Top Surgeons in India by Procedure</p>';
+            $html_surgery .= '<select class="form-control cutome_sele_bg sel-open-next">';
+            $html_surgery .= '<option selected="selected" value="">Select a Procedure</option>';
+            $html_surgery .= '<option value="' . url("hair-transplant-surgeons") . '">Hair Transplant</option>';
+            $html_surgery .= '<option value="' . url("gynecomastia-surgeons") . '">Gynecomastia</option>';
+            $html_surgery .= '<option value="' . url("liposuction-surgeons") . '">Liposuction</option>';
+            $html_surgery .= '<option value="' . url("rhinoplasty-surgeons") . '">Rhinoplasty</option>';
+            $html_surgery .= '<option value="' . url("blepharoplasty-surgeons") . '">Blepharoplasty</option>';
+            $html_surgery .= '<option value="' . url("tummy-tuck-surgeons") . '">Tummy Tuck</option>';
+            $html_surgery .= '<option value="' . url("breast-surgery-surgeons") . '">Breast Surgery</option>';
+            $html_surgery .= '<option value="' . url("buccal-fat-removal-surgeons") . '">Buccal Fat Removal</option>';
+            $html_surgery .= '<option value="' . url("lip-augmentation-surgeons") . '">Lip Augmentation</option>';
+            $html_surgery .= '<option value="' . url("ear-surgery-surgeons") . '">Ear Surgery</option>';
+            $html_surgery .= '<option value="' . url("body-lift-surgeons") . '">Body Lift</option>';
+            $html_surgery .= '<option value="' . url("mommy-makeover-surgeons") . '">Mommy Makeover</option>';
+            $html_surgery .= '<option value="' . url("hymenoplasty-surgeons") . '">Hymenoplasty</option>';
+            $html_surgery .= '</select>';
+            $html_surgery .= '</div>';
+
+            $html_cost = "";
+            $html_cost .= '<div class="sr-heading">';
+            $html_cost .= '<p class="text-center">Find the Cost of a Procedure</p>';
+            $html_cost .= '<select class="form-control fm-cont cutome_sele_bg sel-open-next">';
+            $html_cost .= '<option selected="selected" value="">Select a Procedure</option>';
+            $html_cost .= '<option value="' . url("hair-transplant-surgeons") . '">Hair Transplant</option>';
+            $html_cost .= '<option value="' . url("gynecomastia-surgeons") . '">Gynecomastia</option>';
+            $html_cost .= '<option value="' . url("liposuction-surgeons") . '">Liposuction</option>';
+            $html_cost .= '<option value="' . url("rhinoplasty-surgeons") . '">Rhinoplasty</option>';
+            $html_cost .= '<option value="' . url("blepharoplasty-surgeons") . '">Blepharoplasty</option>';
+            $html_cost .= '<option value="' . url("tummy-tuck-surgeons") . '">Tummy Tuck</option>';
+            $html_cost .= '<option value="' . url("breast-surgery-surgeons") . '">Breast Surgery</option>';
+            $html_cost .= '<option value="' . url("buccal-fat-removal-surgeons") . '">Buccal Fat Removal</option>';
+            $html_cost .= '<option value="' . url("lip-augmentation-surgeons") . '">Lip Augmentation</option>';
+            $html_cost .= '<option value="' . url("ear-surgery-surgeons") . '">Ear Surgery</option>';
+            $html_cost .= '<option value="' . url("body-lift-surgeons") . '">Body Lift</option>';
+            $html_cost .= '<option value="' . url("mommy-makeover-surgeons") . '">Mommy Makeover</option>';
+            $html_cost .= '<option value="' . url("hymenoplasty-surgeons") . '">Hymenoplasty</option>';
+            $html_cost .= '</select>';
+            $html_cost .= '</div>';
+
+
+            $newContent = str_replace("ADD_OPTION_CITY", $html_city, $$module_name_singular->content);
+            $newContent = str_replace("ADD_OPTION_SURGERY", $html_surgery, $newContent);
+            $newContent = str_replace("ADD_OPTION_COST", $html_cost, $newContent);
             $$module_name_singular->content = $newContent;
-            // Add HTML To Content
         }
+        // Add HTML To Content
 
         return view(
             "cms::frontend.$module_name.$template_view",
