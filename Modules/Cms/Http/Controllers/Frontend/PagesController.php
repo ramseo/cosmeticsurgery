@@ -262,6 +262,29 @@ class PagesController extends Controller
         }
         // template functions 
 
+        // Add HTML To Content
+
+        $html = "";
+        $html .= "<div class='new_breat_f' style='background: #007BFF'>";
+        $html .= "<h5>Find a Plastic Surgeon in Your Area</h5>";
+        $html .= "<div class='select_fg'>";
+        $html .= "<select class='form-control cutome_sele_bg'>";
+        $html .= "<option selected='selected' value=''>Select Your City</option>";
+
+        $getAllCities = getAllCities();
+        foreach ($getAllCities as $city) {
+            $html .= "<option value='" . url(strtolower($city)) . "'>$city</option>";
+        }
+
+        $html .= "</select>";
+        $html .= "</div>";
+
+        $addDropdownOptions = $html;
+        $newContent = str_replace("ADD_OPTION_CITY", $addDropdownOptions, $$module_name_singular->content);
+        $$module_name_singular->content = $newContent;
+
+        // Add HTML To Content
+
         return view(
             "cms::frontend.$module_name.$template_view",
             compact('module_title', 'module_name', 'module_icon', 'module_action', 'module_name_singular', "$module_name_singular", "city", "surgery_str")

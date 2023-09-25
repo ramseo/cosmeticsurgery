@@ -56,7 +56,7 @@ a:hover {
 .cutome_sele_bg {
     max-width: 306px;
     height: 47px;
-    margin: auto;
+    margin: 15px 0 0 0;
 }
 
 .sr-heading {
@@ -3667,8 +3667,6 @@ p {
 
 .select_fg {
     text-align: center;
-    /* padding: 20px 0px 0px 0px;
-    float: left; */
     width: 100%;
 }
 
