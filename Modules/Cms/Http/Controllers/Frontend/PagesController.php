@@ -262,7 +262,7 @@ class PagesController extends Controller
         }
         // template functions 
 
-        if (is_a($$module_name_singular, 'Illuminate\Database\Eloquent\Collection')) {
+        if ($template_view == 'show' || $template_view == 'surgery_cost') {
             // Add HTML To Content
             $html = "";
             $html .= "<div class='new_breat_f' style='background: #007BFF'>";
