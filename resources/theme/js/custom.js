@@ -246,3 +246,6 @@ $(document).on('click', '#fa-bars', function () {
 $(document).on('click', '.remove-default-active-cls', function () {
     $('.default-active-cls').removeClass("active active in");
 });
+
+
+// sel-open-next

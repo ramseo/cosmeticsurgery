@@ -268,8 +268,8 @@ class PagesController extends Controller
             $html .= "<div class='new_breat_f' style='background: #007BFF'>";
             $html .= "<h5>Find a Plastic Surgeon in Your Area</h5>";
             $html .= "<div class='select_fg'>";
-            $html .= "<select class='form-control cutome_sele_bg'>";
-            $html .= "<option selected='selected' value=''>Select Your City</option>";
+            $html .= "<select class='form-control cutome_sele_bg sel-open-next'>";
+            $html .= "<option value=''>Select Your City</option>";
 
             $getAllCities = getAllCities();
             foreach ($getAllCities as $city) {
