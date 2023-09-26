@@ -38,7 +38,7 @@ class RegisteredUserController extends Controller
         $request->validate(
             [
                 'first_name' => 'required|string|max:191',
-                'last_name'  => 'string|max:191',
+                // 'last_name'  => 'string|max:191',
                 'email'      => 'required|string|email|max:191|unique:users',
                 'password'   => 'required|string|confirmed|min:8',
                 'agree' => 'required',
@@ -58,9 +58,12 @@ class RegisteredUserController extends Controller
             'password'   => Hash::make($request->password),
         ]);
 
-        // username
-        // $username = config('app.initial_username') + $user->id;
-        $f_name_l_name = $request->first_name . "-" . $request->last_name;
+        if ($request->last_name) {
+            $f_name_l_name = $request->first_name . "-" . $request->last_name;
+        } else {
+            $f_name_l_name = $request->first_name;
+        }
+
         $f_name_l_name = str_replace(" ", "-", $f_name_l_name);
         $user->username = strtolower($f_name_l_name);
 
