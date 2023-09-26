@@ -39,7 +39,7 @@ class RegisteredVendorController extends Controller
         $request->validate([
             'business_name' => 'required|string|max:191',
             'first_name' => 'required|string|max:191',
-            'last_name'  => 'required|string|max:191',
+            // 'last_name'  => 'required|string|max:191',
             'password'   => 'required|string|confirmed|min:8',
             'city_id' => 'required',
             'type_id'  => 'required',
