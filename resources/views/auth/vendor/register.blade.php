@@ -84,7 +84,7 @@
                 </div>
                 <div class="col-6 form-group mat-group">
                     <label for="">{{ __('Last Name') }}</label>
-                    <input type="last_name" class="form-control" id="last_name" name="last_name" value="{{ old('last_name') }}" placeholder="{{ __('Last Name') }}" aria-label="last_name" aria-describedby="last_name" required>
+                    <input type="last_name" class="form-control" id="last_name" name="last_name" value="{{ old('last_name') }}" placeholder="{{ __('Last Name') }}" aria-label="last_name" aria-describedby="last_name">
                 </div>
             </div>
             <div class="form-row">

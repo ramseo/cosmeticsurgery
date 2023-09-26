@@ -103,7 +103,7 @@
                                     $field_name = 'last_name';
                                     $field_lable = label_case($field_name);
                                     $field_placeholder = $field_lable;
-                                    $required = "required";
+                                    $required = "";
                                     ?>
                                     {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
                                     {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
