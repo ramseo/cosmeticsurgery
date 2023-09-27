@@ -285,7 +285,7 @@ class PagesController extends Controller
             $html_surgery_cost .= '<div class="row">';
             $html_surgery_cost .= '<div class="col-lg-6 col-md-6">';
             $html_surgery_cost .= '<div class="sr-heading">';
-            $html_surgery_cost .= '<p class="text-center">Find the Top Surgeons in India by Procedure</p>';
+            $html_surgery_cost .= '<p class="text-center">Find Top Surgeons in India by Procedure</p>';
             $html_surgery_cost .= '<select class="form-control cutome_sele_bg sel-open-next">';
             $html_surgery_cost .= '<option selected="selected" value="">Select a Procedure</option>';
             $html_surgery_cost .= '<option value="' . url("hair-transplant-surgeons") . '">Hair Transplant</option>';
