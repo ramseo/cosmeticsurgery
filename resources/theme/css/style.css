@@ -3870,3 +3870,16 @@ p {
 .select-cls {
     margin-bottom: 20px;
 }
+
+.trice-drop-down .sr-heading {
+    background: none;
+}
+
+.trice-drop-down .sr-heading p {
+    font-size: 15px;
+    color: #fff;
+}
+
+.trice-drop-down .opt_cls:nth-child(2) {
+    background: #e95110;
+}
