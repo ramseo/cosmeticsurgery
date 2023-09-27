@@ -3871,6 +3871,10 @@ p {
     margin-bottom: 20px;
 }
 
+.trice-drop-down {
+    margin: 15px 0 15px 0;
+}
+
 .trice-drop-down .sr-heading {
     background: none;
 }
