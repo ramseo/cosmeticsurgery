@@ -13,7 +13,6 @@
     <!-- BROWSER ICONS -->
     <meta name="robots" content="index, follow" />
     <title>@yield('title')</title>
-    <!-- <title>@yield('title') | {{ config('app.name') }}</title> -->
 
     @yield('site-meta-tags')
     @include('frontend.includes.meta')
