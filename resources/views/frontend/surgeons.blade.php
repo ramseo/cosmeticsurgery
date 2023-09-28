@@ -22,7 +22,7 @@
     <div class="container">
         <div class="identity surgeon-filter">
             <select id="surgeon-filter">
-                <option value="">Sort Surgeons By Alphabetic</option>
+                <option value="">Sort Surgeons By Alphabet</option>
                 <option value="a">A</option>
                 <option value="b">B</option>
                 <option value="c">C</option>
