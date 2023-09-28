@@ -106,6 +106,23 @@ class PagesController extends Controller
             foreach ($filter_data as $doc_item) {
                 $city = getCitiesById($doc_item->city, "pipe");
 
+                // Surgery Cost HTML
+                $html .= '<div class="col-sm-2">';
+                $html .= '<a target="_blank" href="' . url("surgeon/dr-$doc_item->username") . '">';
+                $html .= '<div class="list-doctor">';
+                if (file_exists(public_path() . '/storage/user/profile/' . $doc_item->avatar)) {
+                    $html .= '<img class="card-img-top" src="' . asset('/storage/user/profile/' . $doc_item->avatar) . '" alt="' . $doc_item->first_name . ' ' . $doc_item->last_name . '" style="width:100%" />';
+                } else {
+                    $html .= '<img class="card-img-top" src="' . asset($doc_item->avatar) . '" alt="' . $doc_item->first_name . ' ' . $doc_item->last_name . '" style="width:100%" />';
+                }
+                $html .= '<p>';
+                $html .= "Dr." . " " . $doc_item->first_name . " " . $doc_item->last_name;
+                $html .= '</p>';
+                $html .= '</div>';
+                $html .= '</a>';
+                $html .= '</div>';
+                // Surgery Cost HTML
+
                 $html .= '<div class="col-lg-3 col-md-6">';
                 $html .= '<div class="card">';
                 $html .=  '<a target="_blank" href="' . url("surgeon/dr-$doc_item->username") . '">';
