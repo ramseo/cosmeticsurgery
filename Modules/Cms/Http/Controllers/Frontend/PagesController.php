@@ -82,6 +82,76 @@ class PagesController extends Controller
         echo json_encode($response);
     }
 
+    function surgeon_filter(Request $request)
+    {
+        if (!$request->value) {
+            $filter_data = DB::table('users')
+                ->select('*')
+                ->Where('is_active', 1)
+                ->Where('city', '!=', NULL)
+                ->get();
+        } else {
+            $filter_data = DB::table('users')
+                ->select('*')
+                ->Where("first_name", 'LIKE', $request->value . '%')
+                ->Where('is_active', 1)
+                ->Where('city', '!=', NULL)
+                ->get();
+        }
+
+        $html = "";
+        $response = [];
+
+        if ($filter_data->count() > 0) {
+            foreach ($filter_data as $doc_item) {
+                $city = getCitiesById($doc_item->city, "pipe");
+
+                $html .= '<div class="col-lg-3 col-md-6">';
+                $html .= '<div class="card">';
+                $html .=  '<a target="_blank" href="' . url("surgeon/dr-$doc_item->username") . '">';
+                if (file_exists(public_path() . '/storage/user/profile/' . $doc_item->avatar)) {
+                    $html .= '<img src="' . asset('/storage/user/profile/' . $doc_item->avatar) . '" class="card-img-top" alt="doctor alt" style="width:100%" />';
+                } else {
+                    $html .= '<img src="' . asset($doc_item->avatar) . '" class="card-img-top" alt="doctor alt" style="width:100%" />';
+                }
+                $html .=  '</a>';
+                $html .= '<div class="card-body doctors-list-cls">';
+                $html .= '<a target="_blank" href="' . url("surgeon/dr-$doc_item->username") . '">';
+                $html .= '<h4 class="card-title">';
+                $html .= "Dr." . " " . $doc_item->first_name . " " . $doc_item->last_name;
+                $html .= '</h4>';
+                $html .= '</a>';
+                $html .= '<ul class="padd-null text-center">';
+                $html .= '<li>Cosmetic / Plastic Surgeon</li>';
+                $html .= '<li>';
+                $profile_data = get_userprofiles($doc_item->id);
+                $html .= $profile_data->degree;
+                $html .= '</li>';
+                $html .= '<li>';
+                $html .= '<a href="javascript:void(0)">';
+                $html .= '<i class="fa fa-map-marker blink"></i>';
+                $html .= '<b class="cities-font-size">' . $city . '</b>';
+                $html .= '</a>';
+                $html .= '</li>';
+                $html .= '</ul>';
+                $html .= '<a target="_blank" href="' . url("surgeon/dr-$doc_item->username") . '" class="surgeons-flex">';
+                $html .= '<button class="btn btn-primary">Consult Now</button>';
+                $html .= '<button class="btn btn-primary">Know More</button>';
+                $html .= '</a>';
+                $html .= '</div>';
+                $html .= '</div>';
+                $html .= '</div>';
+            }
+            $response['html'] = $html;
+            $response['status'] = true;
+        } else {
+            $response['html'] = "<p class='no-surgeons'>No Surgeons Found!</p>";
+            $response['status'] = false;
+        }
+
+        echo json_encode($response);
+    }
+
     /**
      * Display the specified resource.
      *

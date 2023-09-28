@@ -3887,3 +3887,20 @@ p {
 .trice-drop-down .opt_cls:nth-child(2) {
     background: #e95110;
 }
+
+#surgeon-filter {
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #fff;
+}
+
+.no-surgeons {
+    position: absolute;
+    right: 0;
+    left: 0;
+    color: red;
+    text-align: center;
+    padding-top: 10px;
+}

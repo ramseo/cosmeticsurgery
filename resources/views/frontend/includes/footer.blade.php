@@ -320,6 +320,7 @@ if (\Request::getRequestUri() != "/book-an-appointment") {
 @push('after-scripts')
 <script>
    var lead_form_path = "<?= route('frontend.pages.lead_form') ?>";
+   var surgeons_filter_path = "<?= route('frontend.pages.surgeon_filter') ?>";
    var csrf_token = "<?= csrf_token() ?>";
    var base_url = "<?= url('/') . '/' ?>";
 

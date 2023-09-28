@@ -249,4 +249,22 @@ $(document).on('click', '.remove-default-active-cls', function () {
 
 $(document).on('change', '.sel-open-next', function () {
     window.open(this.value, '_blank');
+});
+
+
+$(document).on('change', '#surgeon-filter', function () {
+    $.ajax({
+        url: surgeons_filter_path,
+        type: 'post',
+        data: {
+            value: this.value,
+            "_token": csrf_token,
+        },
+        dataType: 'json',
+        success: function (response) {
+            console.log(response.html);
+            $("#ajax-surgeons").html(response.html);
+
+        }
+    });
 }); 

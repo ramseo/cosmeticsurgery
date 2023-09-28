@@ -985,7 +985,7 @@ if (!function_exists('date_today')) {
 
     function getCityById($cityId)
     {
-        return DB::table('cities')->select('name', 'slug', 'id')->where('id', $cityId)->get()->first();
+        return DB::table('cities')->select('name', 'slug', 'id')->Where('id', $cityId)->get()->first();
     }
 
     function getCitiesById($jsonData, $dataType)
