@@ -265,7 +265,6 @@ $(document).on('change', '#surgeon-filter', function () {
         },
         dataType: 'json',
         success: function (response) {
-            console.log(response.html);
             $("#ajax-surgeons").html(response.html);
 
         }
