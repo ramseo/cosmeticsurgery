@@ -104,6 +104,7 @@
         $doctors = DB::table('users')->select('*')->whereNotNull('city')->Where('is_active', 1)->orderBy("first_name")->get()->toArray();
         if ($doctors) {
         ?>
+            <p class="identity">our surgeons:</p>
             <div class="identity surgeon-filter">
                 <select attr="cost" id="surgeon-filter">
                     <option value="">Sort Surgeons By Alphabet</option>
@@ -135,8 +136,7 @@
                     <option value="z">Z</option>
                 </select>
             </div>
-            <p class="identity">our surgeons:</p>
-            <div id="ajax-surgeons-cost" class="row">
+            <div id="ajax-surgeons" class="row">
                 <?php foreach ($doctors as $doc_item) { ?>
                     <div class="col-sm-2">
                         <a target="_blank" href="<?= url("surgeon/dr-$doc_item->username") ?>">

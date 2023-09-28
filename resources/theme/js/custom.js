@@ -254,13 +254,13 @@ $(document).on('change', '.sel-open-next', function () {
 
 $(document).on('change', '#surgeon-filter', function () {
     var attr = $(this).attr("attr");
-    console.log(attr);
 
     $.ajax({
         url: surgeons_filter_path,
         type: 'post',
         data: {
             value: this.value,
+            attr: attr,
             "_token": csrf_token,
         },
         dataType: 'json',
