@@ -266,7 +266,6 @@ $(document).on('change', '#surgeon-filter', function () {
         dataType: 'json',
         success: function (response) {
             $("#ajax-surgeons").html(response.html);
-
         }
     });
 }); 
