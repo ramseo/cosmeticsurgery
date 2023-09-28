@@ -189,48 +189,6 @@ class PagesController extends Controller
         );
     }
 
-    public function storecities(Request $request)
-    {
-        $request->validate([
-            'city' => 'required|string',
-            'content' => 'required|string',
-        ]);
-
-        $module_title = $this->module_title;
-        $module_name = $this->module_name;
-        $module_path = $this->module_path;
-        $module_icon = $this->module_icon;
-        $module_model = $this->module_model;
-        $module_name_singular = Str::singular($module_name);
-
-        $module_action = 'Store';
-
-        $data = $request->all();
-        $data['created_by_name'] = auth()->user()->name;
-
-
-        $generate_multiple_pages = generate_multiple_pages($data);
-
-        $newdata = [];
-        foreach ($generate_multiple_pages as $item) {
-            $newdata['_token'] = $item['_token'];
-            $newdata['name'] = $item['name'];
-            $newdata['slug'] = lcfirst($item['slug']);
-            $newdata['content'] = $item['content'];
-            $newdata['created_by_name'] = $item['created_by_name'];
-            $newdata['status'] = $item['status'];
-
-            $$module_name_singular = $module_model::create($newdata);
-            event(new PageCreated($$module_name_singular));
-        }
-
-        Flash::success("<i class='fas fa-check'></i> New '" . Str::singular($module_title) . "' Added")->important();
-
-        Log::info(label_case($module_title . ' ' . $module_action) . " | '" . $$module_name_singular->name . '(ID:' . $$module_name_singular->id . ") ' by User:" . Auth::user()->name . '(ID:' . Auth::user()->id . ')');
-
-        return redirect("admin/$module_name");
-    }
-
     function checkcity(Request $request)
     {
         $data = DB::table("pages")->where('name', $request->city)->get()->first();

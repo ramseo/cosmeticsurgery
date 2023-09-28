@@ -1027,59 +1027,6 @@ if (!function_exists('date_today')) {
         return $html;
     }
 
-    function generate_multiple_pages($data)
-    {
-        // dd($data);
-
-        $getCityName = getCityById($data['city']);
-        $getCityName = $getCityName->name;
-
-        $citiesArray = array(
-            "$getCityName",
-            "rhinoplasty-$getCityName",
-            "blepharoplasty-$getCityName",
-            "facelift-$getCityName",
-            "brow-lift-$getCityName",
-            "neck-lift-$getCityName",
-            "chin-surgery-$getCityName",
-            "cheek-augmentation-$getCityName",
-            "lip-augmentation-$getCityName",
-            "buccal-fat-removal-$getCityName",
-            "ear-surgery-$getCityName",
-            "breast-augmentation-$getCityName",
-            "breast-lift-$getCityName",
-            "breast-reduction-$getCityName",
-            "breast-implant-removal-$getCityName",
-            "breast-implant-revision-$getCityName",
-            "gynecomastia-$getCityName",
-            "liposuction-$getCityName",
-            "tummy-tuck-$getCityName",
-            "buttock-enhancement-$getCityName",
-            "body-lift-$getCityName",
-            "arm-lift-$getCityName",
-            "thigh-lift-$getCityName",
-            "body-contouring-$getCityName",
-            "mommy-makeover-$getCityName",
-            "hair-transplant-$getCityName",
-            "men-and-plastic-surgery-$getCityName",
-        );
-
-        $target = [];
-        foreach ($citiesArray as $key => $item) {
-            $target[$key] = [
-                '_token' => $data['_token'],
-                'name' => ucwords(str_replace("-", " ", $item)),
-                'slug' => $item,
-                'content' => $data['content'],
-                'created_by_name' => $data['created_by_name'],
-                'status' => 1,
-            ];
-        }
-
-        return $target;
-    }
-
-
 
     function contains_str($str, array $arr)
     {

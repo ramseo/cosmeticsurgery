@@ -62,7 +62,6 @@ Route::group(['namespace' => '\Modules\Cms\Http\Controllers\Backend', 'as' => 'b
     Route::patch("pages/trashed/{id}", ['as' => "pages.restore", 'uses' => "PagesController@restore"]);
 
     Route::get("pages/createcities", ['as' => "pages.createcities", 'uses' => "PagesController@createcities"]);
-    Route::post("pages/storecities", ['as' => "pages.storecities", 'uses' => "PagesController@storecities"]);
     Route::post("pages/checkcity", ['as' => "pages.checkcity", 'uses' => "PagesController@checkcity"]);
 
     Route::resource("pages", "PagesController");
