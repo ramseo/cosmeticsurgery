@@ -254,12 +254,30 @@ $(document).on('change', '.sel-open-next', function () {
 
 $(document).on('change', '#surgeon-filter', function () {
     var attr = $(this).attr("attr");
+    callAjax(this.value, attr);
+});
 
+$(document).on('click', '#sort-by-asc-des', function () {
+    $('#surgeon-filter').prop('selectedIndex', 0);
+
+    var asc_desc = $(this).attr("attr");
+    if (asc_desc == "desc") {
+        $("#sort-by-asc-des").attr("attr", "asc");
+        $("#sort-by-asc-des").html("Click To Sort By Ascending Order").css({ 'background': 'red' });
+    } else {
+        $("#sort-by-asc-des").attr("attr", "desc");
+        $("#sort-by-asc-des").html("Click To Sort By Descending Order").css({ 'background': '#2abfb7' });
+    }
+
+    callAjax(asc_desc, this.value);
+});
+
+function callAjax(val, attr) {
     $.ajax({
         url: surgeons_filter_path,
         type: 'post',
         data: {
-            value: this.value,
+            value: val,
             attr: attr,
             "_token": csrf_token,
         },
@@ -268,4 +286,4 @@ $(document).on('change', '#surgeon-filter', function () {
             $("#ajax-surgeons").html(response.html);
         }
     });
-}); 
+}

@@ -422,8 +422,7 @@ a:hover {
 
 .identity select {
     max-width: 428px !important;
-    margin: auto;
-    height: 40px;
+    height: 36px;
     font-size: 15px;
 }
 
@@ -3894,7 +3893,10 @@ p {
     border-radius: 10px;
     border: none;
     outline: none;
-    background: #fff;
+    background: #2abfb7;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 14px;
 }
 
 .surgeon-filter {
@@ -3914,4 +3916,14 @@ p {
 
 .trice-drop-down .sr-heading {
     padding: 15px 0 0 0;
+}
+
+.sort-btn button,
+.sort-btn button:hover {
+    background: #2abfb7;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bolder;
 }
