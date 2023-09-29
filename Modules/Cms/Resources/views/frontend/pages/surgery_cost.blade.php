@@ -135,6 +135,11 @@
                     <option value="y">Y</option>
                     <option value="z">Z</option>
                 </select>
+                <div class="sort-btn">
+                    <button type="button" class="btn mt-1 kl btn-sm">
+                        Sort Desc
+                    </button>
+                </div>
             </div>
             <div id="ajax-surgeons" class="row">
                 <?php foreach ($doctors as $doc_item) { ?>

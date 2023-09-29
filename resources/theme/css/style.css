@@ -3897,6 +3897,12 @@ p {
     background: #fff;
 }
 
+.surgeon-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .no-surgeons {
     position: absolute;
     right: 0;
