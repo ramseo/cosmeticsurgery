@@ -3873,7 +3873,8 @@ p {
 }
 
 .trice-drop-down {
-    margin: 15px 0 15px 0;
+    border: 1px solid #c2c2f6;
+    margin: 25px 0 25px 0;
 }
 
 .trice-drop-down .sr-heading {
@@ -3886,7 +3887,7 @@ p {
 }
 
 .trice-drop-down .opt_cls:nth-child(2) {
-    background: #e95110;
+    background: #ffffff;
 }
 
 #surgeon-filter {
@@ -3913,5 +3914,22 @@ p {
 }
 
 .trice-drop-down .sr-heading {
-    padding: 15px 0 0 0;
+    padding: 0;
+    margin-bottom: 22px;
 }
+
+.trice-drop-down .new_breat_f {
+    margin-top: 0;
+    margin-bottom: 0;
+    background: linear-gradient(to right, #0777ff 5%, #ffffff 157%) !important;
+}
+
+.trice-drop-down .sr-heading .form-control {
+    border: 1px solid #8ec7ff;
+    margin-top: 0;
+}
+
+
+/* .trice-drop-down .cutome_sele_bg {
+    height: 40px !important;
+} */
