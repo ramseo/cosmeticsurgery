@@ -84,11 +84,26 @@ class PagesController extends Controller
 
     function surgeon_filter(Request $request)
     {
-        if (!$request->value) {
+        if ($request->value == "asc") {
             $filter_data = DB::table('users')
                 ->select('*')
                 ->Where('is_active', 1)
                 ->Where('city', '!=', NULL)
+                ->orderBy('first_name', $request->value)
+                ->get();
+        } else if ($request->value == "desc") {
+            $filter_data = DB::table('users')
+                ->select('*')
+                ->Where('is_active', 1)
+                ->Where('city', '!=', NULL)
+                ->orderBy('first_name', $request->value)
+                ->get();
+        } else if (!$request->value) {
+            $filter_data = DB::table('users')
+                ->select('*')
+                ->Where('is_active', 1)
+                ->Where('city', '!=', NULL)
+                ->orderBy('first_name', 'asc')
                 ->get();
         } else {
             $filter_data = DB::table('users')

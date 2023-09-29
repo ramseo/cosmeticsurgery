@@ -263,9 +263,10 @@ a:hover {
     transition: transform .5s ease;
 }
 
-.list-doctor:hover {
+
+/* .list-doctor:hover {
     transform: scale(1.1);
-}
+} */
 
 .list-doctor {
     width: 100%;
@@ -422,8 +423,7 @@ a:hover {
 
 .identity select {
     max-width: 428px !important;
-    margin: auto;
-    height: 40px;
+    height: 36px;
     font-size: 15px;
 }
 
@@ -3895,7 +3895,10 @@ p {
     border-radius: 10px;
     border: none;
     outline: none;
-    background: #fff;
+    background: #2abfb7;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 14px;
 }
 
 .surgeon-filter {
@@ -3929,7 +3932,12 @@ p {
     margin-top: 0;
 }
 
-
-/* .trice-drop-down .cutome_sele_bg {
-    height: 40px !important;
-} */
+.sort-btn button,
+.sort-btn button:hover {
+    background: #2abfb7;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bolder;
+}
