@@ -20,22 +20,34 @@
 
 <div class="container-fluid new-doctor">
     <div class="container">
-        <div class="identity surgeon-filter">
-            <select id="surgeon-filter">
-                <option value="">Sort Surgeons By Alphabet</option>
-                <?php foreach (range('A', 'Z') as $elements) { ?>
-                    <option value="<?= strtolower($elements) ?>">
-                        <?= $elements ?>
-                    </option>
-                <?php } ?>
-            </select>
+        <?php if ($doctors) { ?>
+            <div class="identity surgeon-filter">
+                <select id="surgeon-filter">
+                    <option value="">Sort Surgeons By Alphabet</option>
+                    <?php
+                    $alphabets_arr = [];
+                    $fr_name_arr = array_column($doctors, "first_name");
+                    foreach ($fr_name_arr as $item) {
+                        if (!in_array($item[0], $alphabets_arr)) {
+                            array_push($alphabets_arr, $item[0]);
+                        }
+                    }
 
-            <div class="sort-btn">
-                <button attr="desc" id="sort-by-asc-des" type="button" class="btn">
-                    Click To Sort By Descending Order
-                </button>
+                    foreach ($alphabets_arr as $elements) {
+                    ?>
+                        <option value="<?= strtolower($elements) ?>">
+                            <?= $elements ?>
+                        </option>
+                    <?php } ?>
+                </select>
+
+                <div class="sort-btn">
+                    <button attr="desc" id="sort-by-asc-des" type="button" class="btn">
+                        Click To Sort By Descending Order
+                    </button>
+                </div>
             </div>
-        </div>
+        <?php } ?>
         <div id="ajax-surgeons" class="row anc">
             <?php
             if ($doctors) {
