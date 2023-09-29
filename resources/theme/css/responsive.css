@@ -1094,6 +1094,12 @@
             display: grid;
             justify-content: center;
         }
+
+        #surgeon-filter {
+            margin: auto;
+            margin-bottom: 10px;
+        }
+
     }
 
     @media(min-width: 768px) and (max-width: 1199px) {
