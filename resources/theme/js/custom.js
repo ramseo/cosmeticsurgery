@@ -261,6 +261,7 @@ $(document).on('click', '#sort-by-asc-des', function () {
     $('#surgeon-filter').prop('selectedIndex', 0);
 
     var asc_desc = $(this).attr("attr");
+    var cost = $(this).attr("page-attr");
     if (asc_desc == "desc") {
         $("#sort-by-asc-des").attr("attr", "asc");
         $("#sort-by-asc-des").html("Click To Sort By Ascending Order").css({ 'background': 'red' });
@@ -269,7 +270,7 @@ $(document).on('click', '#sort-by-asc-des', function () {
         $("#sort-by-asc-des").html("Click To Sort By Descending Order").css({ 'background': '#2abfb7' });
     }
 
-    callAjax(asc_desc, this.value);
+    callAjax(asc_desc, cost);
 });
 
 function callAjax(val, attr) {

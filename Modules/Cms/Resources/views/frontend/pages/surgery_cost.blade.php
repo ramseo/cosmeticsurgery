@@ -125,7 +125,7 @@
                     <?php } ?>
                 </select>
                 <div class="sort-btn">
-                    <button attr="desc" id="sort-by-asc-des" type="button" class="btn">
+                    <button page-attr="cost" attr="desc" id="sort-by-asc-des" type="button" class="btn">
                         Click To Sort By Descending Order
                     </button>
                 </div>
