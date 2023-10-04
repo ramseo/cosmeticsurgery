@@ -269,7 +269,7 @@ $(document).on('click', '#sort-by-asc-des', function () {
         $("#sort-by-asc-des").html("Click To Sort By Ascending Order").css({ 'background': 'lightgrey' });
     } else {
         $("#sort-by-asc-des").attr("attr", "desc");
-        $("#sort-by-asc-des").html("Click To Sort By Descending Order").css({ 'background': '#000' });
+        $("#sort-by-asc-des").html("Click To Sort By Descending Order").css({ 'background': 'white' });
     }
 
     callAjax(asc_desc, cost);
