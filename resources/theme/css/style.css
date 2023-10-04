@@ -3555,7 +3555,7 @@ img {
 }
 
 .btn.mt-1.kl.btn-sm {
-    background-color: #2abfb7;
+    background-color: #fff;
     font-weight: 600;
 }
 
@@ -3906,11 +3906,11 @@ p {
 
 #surgeon-filter {
     width: 210px;
-    border-radius: 10px;
+    border-radius: 4px;
     border: none;
     outline: none;
-    background: #2abfb7;
-    color: #fff;
+    background: #fff;
+    color: #0056b3;
     font-weight: bolder;
     font-size: 14px;
 }
@@ -3953,10 +3953,10 @@ p {
 
 .sort-btn button,
 .sort-btn button:hover {
-    background: #2abfb7;
+    background: #fff;
     border: none;
     outline: none;
     font-size: 14px;
-    color: #fff;
+    color: #0056b3;
     font-weight: bolder;
 }
