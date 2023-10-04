@@ -3932,6 +3932,11 @@ p {
     margin-top: 0;
 }
 
+.trice-drop-down .sr-heading p {
+    margin: 10px 0px;
+    color: #389cff;
+}
+
 .sort-btn button,
 .sort-btn button:hover {
     background: #2abfb7;
