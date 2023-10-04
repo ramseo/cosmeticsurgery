@@ -3939,10 +3939,10 @@ p {
 
 .sort-btn button,
 .sort-btn button:hover {
-    background: #2abfb7;
+    background: #fff;
     border: none;
     outline: none;
     font-size: 14px;
-    color: #fff;
+    color: #0056b3;
     font-weight: bolder;
 }
