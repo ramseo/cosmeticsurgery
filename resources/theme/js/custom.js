@@ -248,7 +248,9 @@ $(document).on('click', '.remove-default-active-cls', function () {
 });
 
 $(document).on('change', '.sel-open-next', function () {
-    window.open(this.value, '_blank');
+    if (this.value) {
+        window.open(this.value, '_blank');
+    }
 });
 
 
