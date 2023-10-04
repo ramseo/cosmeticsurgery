@@ -266,10 +266,10 @@ $(document).on('click', '#sort-by-asc-des', function () {
     var cost = $(this).attr("page-attr");
     if (asc_desc == "desc") {
         $("#sort-by-asc-des").attr("attr", "asc");
-        $("#sort-by-asc-des").html("Click To Sort By Ascending Order").css({ 'background': 'lightgrey' });
+        $("#sort-by-asc-des").html("Click To Sort By Ascending Order").css({ 'background': 'darkgrey', 'color': 'white' });
     } else {
         $("#sort-by-asc-des").attr("attr", "desc");
-        $("#sort-by-asc-des").html("Click To Sort By Descending Order").css({ 'background': 'white' });
+        $("#sort-by-asc-des").html("Click To Sort By Descending Order").css({ 'background': 'white', 'color': '#0056b3' });
     }
 
     callAjax(asc_desc, cost);
