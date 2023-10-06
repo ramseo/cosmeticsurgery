@@ -132,7 +132,7 @@ class PagesController extends Controller
                         $html .= '<img class="card-img-top" src="' . asset($doc_item->avatar) . '" alt="' . $doc_item->first_name . ' ' . $doc_item->last_name . '" style="width:100%" />';
                     }
                     $html .= '<p>';
-                    $html .= "Dr." . " " . $doc_item->first_name . " " . $doc_item->last_name;
+                    $html .= "Dr." . " " . substr($doc_item->first_name . " " . $doc_item->last_name, 0, 25);
                     $html .= '</p>';
                     $html .= '</div>';
                     $html .= '</a>';
@@ -151,7 +151,7 @@ class PagesController extends Controller
                     $html .= '<div class="card-body doctors-list-cls">';
                     $html .= '<a target="_blank" href="' . url("surgeon/dr-$doc_item->username") . '">';
                     $html .= '<h4 class="card-title">';
-                    $html .= "Dr." . " " . $doc_item->first_name . " " . $doc_item->last_name;
+                    $html .= "Dr." . " " . substr($doc_item->first_name . " " . $doc_item->last_name, 0, 16);
                     $html .= '</h4>';
                     $html .= '</a>';
                     $html .= '<ul class="padd-null text-center">';
