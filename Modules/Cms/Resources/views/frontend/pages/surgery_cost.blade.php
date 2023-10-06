@@ -141,7 +141,7 @@
                                     <img class="card-img-top" src="<?= asset($doc_item->avatar) ?>" alt="<?= $doc_item->first_name . ' ' . $doc_item->last_name ?>" style="width:100%" />
                                 <?php } ?>
                                 <p>
-                                    Dr. <?= $doc_item->first_name . " " . $doc_item->last_name ?>
+                                    Dr. <?= substr($doc_item->first_name . " " . $doc_item->last_name, 0, 25) ?>
                                 </p>
                             </div>
                         </a>

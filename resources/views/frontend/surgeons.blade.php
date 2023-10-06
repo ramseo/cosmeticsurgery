@@ -66,7 +66,7 @@
                             <div class="card-body doctors-list-cls">
                                 <a target="_blank" href="<?= url("surgeon/dr-$doc_item->username") ?>">
                                     <h4 class="card-title">
-                                        Dr. <?= $doc_item->first_name . " " . $doc_item->last_name ?>
+                                        Dr. <?= substr($doc_item->first_name . " " . $doc_item->last_name, 0, 16) ?>
                                     </h4>
                                 </a>
                                 <ul class="padd-null text-center">

@@ -3679,7 +3679,6 @@ p {
 }
 
 .new_breat_f h5 {
-    float: left;
     width: 100%;
     font-size: 30px;
     color: #fff;
@@ -3945,4 +3944,9 @@ p {
     font-size: 14px;
     color: #0056b3;
     font-weight: bolder;
+}
+
+.btn.focus,
+.btn:focus {
+    box-shadow: none;
 }
