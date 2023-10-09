@@ -3964,3 +3964,7 @@ p {
 .btn:focus {
     box-shadow: none;
 }
+
+.addr-cls {
+    line-height: 10px;
+}
