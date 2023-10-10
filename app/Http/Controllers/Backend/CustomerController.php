@@ -68,12 +68,21 @@ class CustomerController extends Controller
         parse_str($request->data, $output);
 
         $i = 0;
-        foreach ($output['item'] as $value) {
-            $result = DB::table('users')
-                ->where('id', $value)
-                ->update(['sortable' => $i]);
-            $i++;
+        if ($output) {
+            foreach ($output['item'] as $value) {
+                DB::table('users')
+                    ->where('id', $value)
+                    ->update(['sortable' => $i]);
+                $i++;
+            }
+            $response['status'] = true;
+            $response['msg'] = "Successfully Sorted";
+        } else {
+            $response['status'] = false;
+            $response['msg'] = "Failed To Sort";
         }
+
+        echo json_encode($response);
     }
 
     function is_active(Request $request)

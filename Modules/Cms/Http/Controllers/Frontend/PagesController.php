@@ -103,7 +103,7 @@ class PagesController extends Controller
                 ->select('*')
                 ->Where('is_active', 1)
                 ->Where('city', '!=', NULL)
-                ->orderBy('first_name', 'asc')
+                ->orderBy('sortable')
                 ->get();
         } else {
             $filter_data = DB::table('users')

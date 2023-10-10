@@ -247,8 +247,6 @@ Customer | Index
     $('#sortable').sortable({
         axis: 'y',
         update: function(event, ui) {
-            console.log(this);
-
             var data = $(this).sortable('serialize');
 
             // POST to server using $.post or $.ajax
