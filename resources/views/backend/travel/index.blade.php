@@ -18,7 +18,7 @@ Travel | Index
                 </div>
                 <div class="col-4">
                     <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
-                        <a href="{{ route("backend.travel.index") }}" class="btn btn-secondary btn-sm ml-1" data-toggle="tooltip" title="Type List"><i class="fas fa-list-ul"></i> List</a>
+                        <a href="{{ route("backend.travel.index") }}" class="btn btn-secondary btn-sm ml-1" data-toggle="tooltip" ><i class="fas fa-list-ul"></i> List</a>
                     </div>
                     <div class="float-right">
                         <a href='{{ route("backend.travel.create")}}'

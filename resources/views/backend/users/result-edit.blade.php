@@ -37,7 +37,7 @@
                     Categories Management Dashboard
                 </div>
                 <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
-                    <a href="<?= url("admin/users/profile/$user->id/edit") ?>" class="btn btn-secondary btn-sm ml-1" data-toggle="tooltip" title="Type List">
+                    <a href="<?= url("admin/users/profile/$user->id/edit") ?>" class="btn btn-secondary btn-sm ml-1" data-toggle="tooltip" >
                         <i class="fa fa-list-ul"></i>
                         List
                     </a>

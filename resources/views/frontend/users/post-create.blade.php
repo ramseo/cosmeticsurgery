@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="two mar-right-50">
-                        <a href="<?= route("frontend.profile_posts.index") ?>" class="btn btn-secondary btn-sm ml-1" data-toggle="tooltip" title="Type List">
+                        <a href="<?= route("frontend.profile_posts.index") ?>" class="btn btn-secondary btn-sm ml-1" data-toggle="tooltip" >
                             <i class="fa fa-list-ul"></i>
                             List
                         </a>
