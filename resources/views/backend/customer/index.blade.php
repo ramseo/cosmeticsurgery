@@ -122,7 +122,7 @@ Customer | Index
                                     <td><?= $doc->status ?></td>
                                     <td>
                                         <div class='switch-flex-cls'>
-                                            <a href="<?= route("backend.customer.edit", $doc->id) ?>" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service">
+                                            <a href="<?= route("backend.customer.edit", $doc->id) ?>" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip">
                                                 <i class="fas fa-wrench"></i>
                                             </a>
                                             <label class="switch">

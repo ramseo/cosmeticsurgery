@@ -49,7 +49,7 @@ class CustomerController extends Controller
 
                     $btn = "";
                     $btn .= "<div class='switch-flex-cls'>";
-                    $btn .= '<a href="' . route("backend.customer.edit", $vendor->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service"><i class="fas fa-wrench"></i></a>';
+                    $btn .= '<a href="' . route("backend.customer.edit", $vendor->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip"><i class="fas fa-wrench"></i></a>';
                     $btn .= '<label class="switch">
                     <input onclick="userIsActive(this)" user_id="' . $vendor->id . '" name="is_active" type="checkbox" ' . $checked . '>
                     <span class="slider"></span>
@@ -182,7 +182,7 @@ class CustomerController extends Controller
                 ->addColumn('action', function ($album) {
                     $btn = "";
                     $btn .= '<div class="album-flex-cls">';
-                    $btn .= '<a href="' . route("backend.customer.results.edit", $album->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service"><i class="fa fa-wrench"></i></a>';
+                    $btn .= '<a href="' . route("backend.customer.results.edit", $album->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip"><i class="fa fa-wrench"></i></a>';
                     $btn .= '<a href="' . route("backend.customer.results.image.index", $album->id) . '" class="btn btn-sm btn-success mt-1" data-toggle="tooltip" title="Album Gallery"><i class="fa fa-file-image"></i></a>';
                     $btn .= '<a href="' . route("backend.customer.results.delete", $album->id) . '" class="btn btn-sm btn-danger mt-1 del-link" data-toggle="tooltip" title="Album Delete"><i class="fa fa-trash"></i></a>';
                     $btn .= '</div>';
