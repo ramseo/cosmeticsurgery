@@ -29,13 +29,15 @@ class CustomerController extends Controller
      */
     public function index(Request $request)
     {
+        $vendors = User::select(['id', 'name', 'username', 'email', 'email_verified_at', 'updated_at', 'status', 'is_active'])->whereHas(
+            'roles',
+            function ($q) {
+                $q->where('name', 'user');
+            }
+        )->orderBy("sortable")->get();
+
         if ($request->ajax()) {
-            $vendors = User::select(['id', 'name', 'username', 'email', 'email_verified_at', 'updated_at', 'status', 'is_active'])->whereHas(
-                'roles',
-                function ($q) {
-                    $q->where('name', 'user');
-                }
-            )->get();
+
             return Datatables::of($vendors)
                 ->addIndexColumn()
                 ->addColumn('action', function ($vendor) {
@@ -58,7 +60,20 @@ class CustomerController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.customer.index');
+        return view('backend.customer.index', array("surgeons" => $vendors));
+    }
+
+    public function sortable(Request $request)
+    {
+        parse_str($request->data, $output);
+
+        $i = 0;
+        foreach ($output['item'] as $value) {
+            $result = DB::table('users')
+                ->where('id', $value)
+                ->update(['sortable' => $i]);
+            $i++;
+        }
     }
 
     function is_active(Request $request)
