@@ -96,6 +96,9 @@ Customer | Index
         <div class="row mt-4">
             <div class="col">
                 <div class="table-responsive">
+                    <div id="loadingImage">
+                        <img src="<?= asset("img/giphy.gif") ?>">
+                    </div>
                     <table class="table table-bordered table-hover table-responsive-sm">
                         <thead>
                             <tr>
@@ -247,9 +250,9 @@ Customer | Index
     $('#sortable').sortable({
         axis: 'y',
         update: function(event, ui) {
+            $("#loadingImage").show();
             var data = $(this).sortable('serialize');
 
-            // POST to server using $.post or $.ajax
             $.ajax({
                 data: {
                     data: data,
@@ -257,6 +260,18 @@ Customer | Index
                 },
                 type: 'POST',
                 url: '<?= route('backend.customer.sortable') ?>',
+                dataType: "json",
+                success: function(response) {
+                    setTimeout(function() {
+                        $("#loadingImage").hide();
+                    }, 2000);
+                },
+                error: function(request, error) {
+                    setTimeout(function() {
+                        $("#loadingImage").hide();
+                    }, 2000);
+                    alert("FOUT:" + error);
+                }
             });
         }
     });

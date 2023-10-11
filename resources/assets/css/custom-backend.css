@@ -180,3 +180,15 @@ small {
     padding: 5px 0;
     text-decoration: none !important;
 }
+
+#loadingImage {
+    display: none;
+    text-align: center;
+}
+
+#loadingImage img {
+    width: 150px;
+    position: fixed;
+    margin: auto 0;
+    right: 35%;
+}
