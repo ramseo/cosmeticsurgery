@@ -43,7 +43,7 @@ class PostsController extends Controller
 
         $module_action = 'List';
 
-        $post_data = $module_model::latest()->Where('status', 1)->with(['category', 'tags', 'comments'])->paginate(6);
+        $post_data = $module_model::latest()->Where('status', 1)->with(['category', 'tags', 'comments'])->paginate(12);
 
         return view(
             "article::frontend.$module_path.index",

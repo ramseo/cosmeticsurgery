@@ -39,7 +39,7 @@
                         <h4 class="card-title mb-0">
                             <i class="c-icon cil-people"></i>
                             Post
-                            <small class="text-muted">Add</small>
+                            <small class="text-muted">Edit</small>
                         </h4>
                         <div class="small text-muted">
                             Posts Management Dashboard
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="two mar-right-50">
-                        <a href="<?= route("frontend.profile_posts.index") ?>" class="btn btn-secondary btn-sm ml-1" data-toggle="tooltip" >
+                        <a href="<?= route("frontend.profile_posts.index") ?>" class="btn btn-secondary btn-sm ml-1" data-toggle="tooltip">
                             <i class="fa fa-list-ul"></i>
                             List
                         </a>

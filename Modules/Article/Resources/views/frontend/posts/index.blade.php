@@ -35,18 +35,24 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 col-section">
                     <div class="card">
                         <div class="card-header">
-                            <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>" />
+                            <a href="<?= $details_url ?>">
+                                <img src="<?= $item->featured_image ?>" alt="<?= ($item->alt) ? $item->alt : $item->name ?>" />
+                            </a>
                         </div>
                         <div class="card-body">
                             <h4>
-                                <?= substr($item->name, 0, 40) . "..." ?>
+                                <a class="color-black" href="<?= $details_url ?>">
+                                    <?= substr($item->name, 0, 40) . "..." ?>
+                                </a>
                             </h4>
                             <p>
                                 <?= strip_tags(substr($item->content, 0, 40) . "...") ?>
                             </p>
                             <div class="user">
                                 <div class="blog-author-flex">
-                                    <img src="<?= $author_img ?>" alt="<?= $item->author ?>" />
+                                    <a href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
+                                        <img src="<?= $author_img ?>" alt="<?= $item->author ?>" />
+                                    </a>
                                     <div class="user-info">
                                         <h5>
                                             <a class="color-black" href="<?= url('/') . '/' . 'blog/author/' . $author_url ?>">
