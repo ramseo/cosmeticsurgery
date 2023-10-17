@@ -206,11 +206,12 @@ class PostsController extends Controller
         // $data = $request->except('related_posts');
         $data['created_by_name'] = auth()->user()->name;
 
-        if ($data['related_posts']) {
-            $jsonEncodeTags = json_encode($data['related_posts']);
-            $data['related_posts'] = $jsonEncodeTags;
-        } else {
-            $data['related_posts'] = Null;
+        $data['related_posts'] = Null;
+        if (isset($data['related_posts'])) {
+            if ($data['related_posts']) {
+                $jsonEncodeTags = json_encode($data['related_posts']);
+                $data['related_posts'] = $jsonEncodeTags;
+            }
         }
 
         $module_name_singular = $module_model::create($data);
