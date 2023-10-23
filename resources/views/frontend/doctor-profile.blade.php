@@ -339,7 +339,7 @@
 
 <?php
 $getDocPosts = getDocPosts($doctor_details->first_name . " " . $doctor_details->last_name);
-if ($getDocPosts) {
+if ($getDocPosts->isNotEmpty()) {
 ?>
     <section class="blog-list-half section-padding sub-bg">
         <div class="container">
