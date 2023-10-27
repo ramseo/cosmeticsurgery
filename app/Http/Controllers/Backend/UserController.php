@@ -553,11 +553,17 @@ class UserController extends Controller
      */
     public function changePasswordUpdate(Request $request, $id)
     {
-        // $this->validate($request, [
-        //     'password' => 'required|confirmed|min:6',
-        // ]);
+
+        $user = User::find($id);
+        $oldpassword = $request->input('old_password');
+
+        if (!Hash::check($oldpassword, $user->password)) {
+            $this->validate($request, [
+                'old_password' => ['required', new MatchOldPassword],
+            ]);
+        }
+
         $this->validate($request, [
-            'old_password' => ['required', new MatchOldPassword],
             'new_password' => 'required|different:old_password',
             'new_password_confirmation' => ['same:new_password'],
         ]);
