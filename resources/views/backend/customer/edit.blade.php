@@ -18,11 +18,14 @@
         <div class="row">
             <div class="col-8">
                 <h4 class="card-title mb-0">
-                    <i class="c-icon cil-people"></i> {{ __('labels.backend.users.edit.title') }}
-                    <small class="text-muted">{{ __('labels.backend.users.edit.action') }} </small>
+                    <i class="c-icon cil-people"></i>
+                    <?= "Dr." . " " . $user->first_name . " " . $user->last_name . " " . "Profile" ?>
+                    <small class="text-muted">
+                        {{ __('labels.backend.users.edit.action') }}
+                    </small>
                 </h4>
                 <div class="small text-muted">
-                    {{ __('labels.backend.users.edit.sub-title') }}
+                    Surgeons Management
                 </div>
             </div>
             <!--/.col-->
@@ -169,7 +172,8 @@
                             <a href="{{route('backend.users.emailConfirmationResend', $user->id)}}" class="btn btn-primary" data-toggle="tooltip" title="Send Confirmation Email"><i class="fas fa-envelope"></i></a>
                             @endif
                             @if($user->id != 1)
-                            <!-- <a href="<?//= route("backend.customer.destroy", $user->id) ?>" class="btn btn-danger" data-method="DELETE" data-token="{{csrf_token()}}" data-toggle="tooltip" title="{{__('labels.backend.delete')}}" data-confirm="Are you sure?">
+                            <!-- <a href="<? //= route("backend.customer.destroy", $user->id) 
+                                            ?>" class="btn btn-danger" data-method="DELETE" data-token="{{csrf_token()}}" data-toggle="tooltip" title="{{__('labels.backend.delete')}}" data-confirm="Are you sure?">
                                 <i class="fas fa-trash-alt"></i>
                                 Delete
                             </a> -->

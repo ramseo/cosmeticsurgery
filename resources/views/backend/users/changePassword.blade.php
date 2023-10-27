@@ -18,8 +18,11 @@
         <div class="row">
             <div class="col-8">
                 <h4 class="card-title mb-0">
-                    <i class="{{$module_icon}}"></i> @lang('User')
-                    <small class="text-muted">@lang('Change Password') </small>
+                    <i class="{{$module_icon}}"></i>
+                    <?= "Dr." . " " . $user->first_name . " " . $user->last_name . " " . "Profile" ?>
+                    <small class="text-muted">
+                        @lang('Change Password')
+                    </small>
                 </h4>
                 <div class="small text-muted">
                     {{ __('labels.backend.users.edit.sub-title') }}

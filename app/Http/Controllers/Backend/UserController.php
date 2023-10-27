@@ -519,7 +519,6 @@ class UserController extends Controller
      */
     public function changePassword($id)
     {
-        dd(123);
         $module_title = $this->module_title;
         $module_name = $this->module_name;
         $module_path = $this->module_path;
