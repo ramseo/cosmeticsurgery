@@ -1096,8 +1096,9 @@
         }
 
         #surgeon-filter {
-            margin: auto;
-            margin-bottom: 10px;
+            margin-bottom: 7px;
+            width: auto;
+            text-align: center;
         }
 
     }
