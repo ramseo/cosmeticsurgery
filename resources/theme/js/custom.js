@@ -298,21 +298,23 @@ $(window).scroll(function (event) {
     console.log(scroll);
 
     if (scroll >= 67) {
-        $(".surgeons-fixed-sidebar").css({
-            'position': 'fixed',
-            'width': '350px',
-            'top': '136px',
-            'overflow': 'scroll',
-            'height': '450px',
-        });
+        $(".sidebar-menu").addClass("surgeons-fixed-sidebar");
+        // $(".surgeons-fixed-sidebar").css({
+        //     'position': 'fixed',
+        //     'width': '350px',
+        //     'top': '136px',
+        //     'overflow': 'scroll',
+        //     'height': '450px',
+        // });
     } else {
-        $(".surgeons-fixed-sidebar").css({
-            'position': 'inherit',
-            'width': '',
-            'top': '',
-            'overflow': '',
-            'height': '',
-        });
+        $(".sidebar-menu").removeClass("surgeons-fixed-sidebar");
+        // $(".surgeons-fixed-sidebar").css({
+        //     'position': 'inherit',
+        //     'width': '',
+        //     'top': '',
+        //     'overflow': '',
+        //     'height': '',
+        // });
     }
 
 });

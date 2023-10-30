@@ -1113,6 +1113,14 @@
             text-align: center;
         }
 
+        .surgeons-fixed-sidebar {
+            position: inherit;
+            width: auto;
+            top: auto;
+            overflow: scroll;
+            height: auto;
+        }
+
     }
 
     @media(min-width: 768px) and (max-width: 1199px) {

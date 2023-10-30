@@ -23,7 +23,7 @@
                 <?= $$module_name_singular->content ?>
             </div>
             <div class="col-lg-4 loc">
-                <div class="sidebar-menu surgeons-fixed-sidebar">
+                <div class="sidebar-menu">
                     <?php
                     $popular_cities1 = popular_cities_surgeries("cities", $skip = 0, $take = 13);
                     $popular_cities2 = popular_cities_surgeries("cities", $skip = 13, $take = 100);
