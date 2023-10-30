@@ -1101,6 +1101,18 @@
             text-align: center;
         }
 
+        .navbar-nav.ml-auto {
+            display: block;
+        }
+
+        .nv ul li {
+            text-align: center;
+        }
+
+        .nav-item.dropdown.show .dropdown-item {
+            text-align: center;
+        }
+
     }
 
     @media(min-width: 768px) and (max-width: 1199px) {
