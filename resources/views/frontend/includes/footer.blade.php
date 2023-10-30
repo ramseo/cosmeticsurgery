@@ -1,4 +1,4 @@
-<div class="container-fluid" style="background-color:#1a508b">
+<div class="container-fluid position-relative" style="background-color:#1a508b">
    <footer>
       <div class="container">
          <div class="row">
@@ -90,7 +90,7 @@
    </footer>
 </div>
 
-<div class="container-fluid" style="background-color: #1a508b; border-top:1px dashed #fff">
+<div class="container-fluid position-relative" style="background-color: #1a508b; border-top:1px dashed #fff">
    <div class="small-footer">
       <div class="container">
          <div class="row">
@@ -129,7 +129,7 @@
    </div>
 </div>
 
-<div class="container-fluid small-footer-parent">
+<div class="container-fluid small-footer-parent position-relative">
    <div class="small-footer">
       <div class="floatt-left">
          <?= "Copyright ©" . " " . date('Y') . " - " . $_SERVER['SERVER_NAME'] . " - " . "All rights reserved" ?>

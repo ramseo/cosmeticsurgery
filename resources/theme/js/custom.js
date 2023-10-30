@@ -290,3 +290,29 @@ function callAjax(val, attr) {
         }
     });
 }
+
+
+
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    console.log(scroll);
+
+    if (scroll >= 67) {
+        $(".surgeons-fixed-sidebar").css({
+            'position': 'fixed',
+            'width': '350px',
+            'top': '136px',
+            'overflow': 'scroll',
+            'height': '450px',
+        });
+    } else {
+        $(".surgeons-fixed-sidebar").css({
+            'position': 'inherit',
+            'width': '',
+            'top': '',
+            'overflow': '',
+            'height': '',
+        });
+    }
+
+});
