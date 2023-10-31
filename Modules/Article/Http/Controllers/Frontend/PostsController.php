@@ -5,6 +5,7 @@ namespace Modules\Article\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Modules\Article\Events\PostViewed;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
@@ -43,7 +44,7 @@ class PostsController extends Controller
 
         $module_action = 'List';
 
-        $post_data = $module_model::latest()->Where('status', 1)->with(['category', 'tags', 'comments'])->paginate(12);
+        $post_data = $module_model::Where('status', 1)->where("published_at", "<=", Carbon::now())->latest()->paginate(12);
 
         return view(
             "article::frontend.$module_path.index",
