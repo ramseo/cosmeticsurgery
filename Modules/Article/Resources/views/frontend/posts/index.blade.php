@@ -60,12 +60,7 @@
                                             </a>
                                         </h5>
                                         <small>
-                                            <?php
-                                            $startDate = $item->published_at;
-                                            $endDate = date('Y-m-d');
-                                            $numberOfWeeks = (int)date("W", strtotime($endDate)) - (int)date("W", strtotime($startDate));
-                                            echo $numberOfWeeks . "w ago";
-                                            ?>
+                                            <?= date('F', strtotime($item->published_at)) . " " . date('d', strtotime($item->published_at)) . "," . date('Y', strtotime($item->published_at)) ?>
                                         </small>
                                     </div>
                                 </div>
