@@ -1239,4 +1239,14 @@ if (!function_exists('date_today')) {
             ->Where("id", $userId)
             ->get()->first();
     }
+
+    function header_menu_cities()
+    {
+        return DB::table('cities')
+            ->select("*")
+            ->orderBy('name', 'asc')
+            ->limit(10)
+            ->get()
+            ->toArray();
+    }
 }

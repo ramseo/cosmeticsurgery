@@ -81,30 +81,49 @@ $city = getData('cities');
                         foreach ($header_menu as $item) {
                             $child_item = dynamicMenuChildItem($item->id);
                     ?>
-                            <li class="nav-item <?= ($child_item) ? "dropdown" : "" ?>">
-                                <a class="nav-link <?= ($item->title == "Home") ? "home-item-active-cls" : "" ?>  <?= ($child_item) ? "dropdown-toggle" : "" ?> " href="<?= ($child_item) ? "#" : url("/") . "/" . $item->url ?>" <?= ($child_item) ? 'role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : '' ?>>
-                                    <?= $item->title ?>
-                                </a>
-                                <?php if ($child_item) { ?>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <?php foreach ($child_item as $c_item) { ?>
-                                            <a class="dropdown-item" href="<?= url("/") . "/" . $c_item['url'] ?>">
-                                                <?= $c_item['title'] ?>
-                                            </a>
-                                        <?php } ?>
-                                        <?php if ($item->title == "Clinics") { ?>
+                            <?php
+                            if ($item->title == "Clinics") {
+                                $citiesArr = header_menu_cities();
+                            ?>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <?= $item->title ?>
+                                    </a>
+                                    <?php if ($citiesArr) { ?>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <?php foreach ($citiesArr as $c) { ?>
+                                                <a class="dropdown-item" href="<?= url("/") . "/" . $c->slug ?>">
+                                                    <?= $c->name ?>
+                                                </a>
+                                            <?php } ?>
                                             <a class="dropdown-item" href="<?= url("/") . "/clinics" ?>">
                                                 View All Clinics
                                             </a>
-                                        <?php } elseif ($item->title == "Face" || $item->title == "Breast" || $item->title == "Body") { ?>
-                                            <a class="dropdown-item" href="<?= url("/") . "/procedures" ?>">
-                                                View All Procedures
-                                            </a>
-                                        <?php } ?>
-                                    </div>
-                                <?php } ?>
-                            </li>
+                                        </div>
+                                    <?php } ?>
+                                </li>
+                            <?php } else { ?>
+                                <li class="nav-item <?= ($child_item) ? "dropdown" : "" ?>">
+                                    <a class="nav-link <?= ($item->title == "Home") ? "home-item-active-cls" : "" ?>  <?= ($child_item) ? "dropdown-toggle" : "" ?> " href="<?= ($child_item) ? "#" : url("/") . "/" . $item->url ?>" <?= ($child_item) ? 'role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : '' ?>>
+                                        <?= $item->title ?>
+                                    </a>
+                                    <?php if ($child_item) { ?>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <?php foreach ($child_item as $c_item) { ?>
+                                                <a class="dropdown-item" href="<?= url("/") . "/" . $c_item['url'] ?>">
+                                                    <?= $c_item['title'] ?>
+                                                </a>
+                                            <?php } ?>
+                                            <?php if ($item->title == "Face" || $item->title == "Breast" || $item->title == "Body") { ?>
+                                                <a class="dropdown-item" href="<?= url("/") . "/procedures" ?>">
+                                                    View All Procedures
+                                                </a>
+                                            <?php } ?>
+                                        </div>
+                                    <?php } ?>
+                                </li>
                     <?php
+                            }
                         }
                     }
                     ?>
