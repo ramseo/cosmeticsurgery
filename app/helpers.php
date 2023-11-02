@@ -970,7 +970,7 @@ if (!function_exists('date_today')) {
 
     function getAllCities()
     {
-        $getAllCities = DB::table('cities')->select('name', 'slug', 'id')->get()->toArray();
+        $getAllCities = DB::table('cities')->select('name', 'slug', 'id')->orderBy("name", "asc")->get()->toArray();
 
         $array = json_decode(json_encode($getAllCities), true);
 
@@ -1038,7 +1038,7 @@ if (!function_exists('date_today')) {
 
     function citiesArr()
     {
-        $all_cities = DB::table('cities')->select('slug')->get()->toArray();
+        $all_cities = DB::table('cities')->select('slug')->orderBy("name", "asc")->get()->toArray();
         if ($all_cities) {
             return array_column($all_cities, 'slug');
         } else {
@@ -1083,11 +1083,11 @@ if (!function_exists('date_today')) {
                 return collect([]);
             }
         } else if ($uri == "cities") {
-            return DB::table($uri)->select('*')->skip($skip)->take($take)->get();
+            return DB::table($uri)->select('*')->orderBy("name", "asc")->get()->toArray();
         } else {
             $menu_id = DB::table('menutype')->where('url', "popular-surgeries")->select('menu_id')->get()->first();
             if ($menu_id) {
-                return DB::table('menuitem')->where('menu_id', $menu_id->menu_id)->select('*')->get();
+                return DB::table('menuitem')->where('menu_id', $menu_id->menu_id)->select('*')->orderBy("title", "asc")->get();
             } else {
                 return collect([]);
             }
