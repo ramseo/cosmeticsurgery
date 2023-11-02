@@ -25,8 +25,9 @@
             <div class="col-lg-4 loc">
 
                 <?php
-                $popular_cities1 = popular_cities_surgeries("cities", $skip = 0, $take = 13);
-                $popular_cities2 = popular_cities_surgeries("cities", $skip = 13, $take = 100);
+                $all_cities = popular_cities_surgeries("cities", $skip = false, $take = false);
+
+                list($city_array1, $city_array2) = array_chunk($all_cities, ceil(count($all_cities) / 2));
                 ?>
 
                 <p class="identity text-center">
@@ -34,9 +35,9 @@
                 </p>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <?php if ($popular_cities1) { ?>
+                        <?php if ($city_array1) { ?>
                             <ul class="padd-null cities-list">
-                                <?php foreach ($popular_cities1 as $cities1) { ?>
+                                <?php foreach ($city_array1 as $cities1) { ?>
                                     <li class="<?= (str_replace('/', '', Request::getRequestUri()) == $cities1->slug) ? 'active' : '' ?>">
                                         <a href="<?= $cities1->slug ?>">
                                             <?= $cities1->name ?>
@@ -47,9 +48,9 @@
                         <?php } ?>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <?php if ($popular_cities2) { ?>
+                        <?php if ($city_array2) { ?>
                             <ul class="padd-null cities-list">
-                                <?php foreach ($popular_cities2 as $cities2) { ?>
+                                <?php foreach ($city_array2 as $cities2) { ?>
                                     <li class="<?= (str_replace('/', '', Request::getRequestUri()) == $cities2->slug) ? 'active' : '' ?>">
                                         <a href="<?= $cities2->slug ?>">
                                             <?= $cities2->name ?>
