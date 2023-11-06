@@ -3,7 +3,7 @@
     foreach ($menus as $item) {
         $child_item = getChildItems($item->id);
     ?>
-        <li class="child_li" id="menu_<?= $item->id ?>">
+        <li class="child_li" id="menu-<?= $item->id ?>">
             <table class="page_item">
                 <tbody>
                     <tr class="flex-cls-tr">

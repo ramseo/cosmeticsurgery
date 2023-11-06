@@ -348,6 +348,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.',
     Route::get("menus/destroy/{menu_id}/{id}", ['as' => "menu.destroy", 'uses' => "MenuController@destroy"]);
     Route::resource("menus", "MenuController");
 
+    Route::post('menus/sortable', 'MenuController@sortable')->name('menus.sortable');
+
     /*
      *
      *  Menu Type Routes 

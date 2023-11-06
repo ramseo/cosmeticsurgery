@@ -36,12 +36,15 @@
             <div class="col">
                 <div class="table-responsive">
                     <div class="table table-bordered table-hover table-responsive-sm">
-                        <ul id="pagetree" class="ui-sortable ui-sortable-menu">
+                        <div id="loadingImage">
+                            <img src="<?= asset("img/giphy.gif") ?>">
+                        </div>
+                        <ul id="pagetree" class="ui-sortable ui-sortable-menu sortable-menu">
                             <?php
                             foreach ($menus as $item) {
                                 $child_item = getChildItems($item->id);
                             ?>
-                                <li class="parent_li" id="menu_<?= $item->id ?>">
+                                <li class="parent_li" id="menu-<?= $item->id ?>">
                                     <table class="page_item">
                                         <tbody>
                                             <tr class="flex-cls-tr">
@@ -138,6 +141,38 @@
         "order": [
             [1, 'desc']
         ]
+    });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script>
+    $('.sortable-menu').sortable({
+        axis: 'y',
+        update: function(event, ui) {
+            $("#loadingImage").show();
+            var data = $(this).sortable('serialize');
+
+            $.ajax({
+                data: {
+                    data: data,
+                    _token: '<?= csrf_token() ?>'
+                },
+                type: 'POST',
+                url: '<?= route('backend.menus.sortable') ?>',
+                dataType: "json",
+                success: function(response) {
+                    setTimeout(function() {
+                        $("#loadingImage").hide();
+                    }, 2000);
+                },
+                error: function(request, error) {
+                    setTimeout(function() {
+                        $("#loadingImage").hide();
+                    }, 2000);
+                    alert("FOUT:" + error);
+                }
+            });
+        }
     });
 </script>
 

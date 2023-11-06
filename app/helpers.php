@@ -721,7 +721,7 @@ if (!function_exists('date_today')) {
             return DB::table('menuitem')->select('*')
                 ->where('menu_id', $item->menu_id)
                 ->where('parent_id', 0)
-                ->orderBy('sort', 'ASC')
+                ->orderBy('sortable')
                 ->get();
         } else {
             return [];
