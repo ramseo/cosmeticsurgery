@@ -51,7 +51,7 @@
                                                     <?php } ?>
                                                     <a target="_blank" href="<?= url("admin/menus/edit/$item->id") ?>">
                                                         <?php
-                                                        echo $item->title;
+                                                        echo $item->title . " " . "<span class='merlinCats'>" . $item->url . "</span>";
                                                         if ($child_item->isNotEmpty()) {
                                                             if ($child_item->count() > 0) {
                                                                 echo "<span>[" . " " . $child_item->count() . " " . "]</span>";
@@ -59,9 +59,6 @@
                                                         }
                                                         ?>
                                                     </a>
-                                                </td>
-                                                <td class="merlinCats">
-                                                    <span><?= $item->url ?></span>
                                                 </td>
                                                 <td class="menu_item_options">
                                                     <a href="<?= url("admin/menus/edit/$item->id") ?>" class="btn" data-toggle="tooltip" title="Edit Service">
