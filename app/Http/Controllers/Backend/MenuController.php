@@ -32,8 +32,9 @@ class MenuController extends Controller
     public function index($menu_id, Request $request)
     {
         $menuName = DB::table('menutype')->where('menu_id', $menu_id)->select('title')->first();
+        $menus = Menu::Where('menu_id', $menu_id)->Where('parent_id', 0)->orderBy('parent_id')->select(['id', 'title', 'url', 'menu_id', 'parent_id', 'sort'])->get();
+
         if ($request->ajax()) {
-            $menus = Menu::where('menu_id', $menu_id)->orderBy('parent_id', 'asc')->select(['id', 'title', 'url', 'menu_id', 'parent_id', 'sort']);
             return Datatables::of($menus)
                 ->addIndexColumn()
                 ->editColumn('title', function ($menu) {
@@ -112,7 +113,7 @@ class MenuController extends Controller
                 ->rawColumns(['action', 'title'])
                 ->make(true);
         }
-        return view('backend.menu.index_datatable', compact('menuName', 'menu_id'))->with('menu_id', $menu_id);
+        return view('backend.menu.index_datatable', compact('menus', 'menuName', 'menu_id'))->with('menu_id', $menu_id);
     }
 
     /**
@@ -130,6 +131,8 @@ class MenuController extends Controller
         $menuData = new stdClass();
         $menuData->title = '';
         $menuData->url = '';
+        $menuData->id = '';
+        $menuData->parent_id = '';
 
         return view(
             "backend.$module_name.create",

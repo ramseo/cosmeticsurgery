@@ -1,40 +1,25 @@
 <div class="row">
     <div class="col-12 col-md-6">
         <div class="form-group">
-            <?php
-            $getMenuItems = getMenuItems($menu_id);
-            if (isset($menuData->id)) {
-                $currentId = $menuData->id;
-            } else {
-                $currentId = 0;
-            }
-
-            if (isset($menuData->parent_id)) {
-                $currentParentId = $menuData->parent_id;
-            } else {
-                $currentParentId = 0;
-            }
-            ?>
             <label for="parent_id">Parent</label>
             <select class="form-control" name="parent_id">
+                <option value="0">Root</option>
                 <?php
-                $isParent = isParent($currentId);
-                if ($isParent) {
-                    echo "<option value='0'>Aready selected as a parent</option>";
-                } else {
-                    echo "<option value='0'>Root</option>";
-                    if ($getMenuItems) {
-                        foreach ($getMenuItems as $item) {
-                            if ($item->id != $currentId) {
-                                if ($currentParentId == $item->id) {
-                                    $selected = "selected";
-                                } else {
-                                    $selected = "";
-                                }
-                                echo "<option value='" . $item->id . "' $selected>$item->title</option>";
-                            }
+                $getMenuItems = getMenuItems($menu_id);
+                foreach ($getMenuItems as $item) {
+
+                    $selected = "";
+                    if ($menuData) {
+                        if ($item->id == $menuData->parent_id) {
+                            $selected = "selected";
                         }
                     }
+
+                ?>
+                    <option value="<?= $item->id ?>" <?= $selected ?>>
+                        <?= $item->title ?>
+                    </option>
+                <?php
                 }
                 ?>
             </select>

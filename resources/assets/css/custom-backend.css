@@ -192,3 +192,95 @@ small {
     margin: auto 0;
     right: 35%;
 }
+
+#pagetree {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+}
+
+#pagetree li {
+    list-style: none;
+    padding: 5px 15px;
+    margin: 0px;
+    margin-bottom: 0px;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 0 !important;
+    padding: 5px 0 !important;
+}
+
+#menutree li {
+    border: 1px solid #ddd;
+    border-radius: 0 !important;
+    padding: 5px 0 !important;
+}
+
+#pagetree .page_item {
+    clear: both;
+    min-height: 18px;
+    width: 100%;
+    margin: auto;
+    padding: 0 15px;
+}
+
+#pagetree li ul {
+    margin-top: 10px;
+}
+
+.flex-cls-tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-cls-tr td {
+    padding: 0;
+    border: none;
+}
+
+.ui-sortable .child_li {
+    border: none !important;
+}
+
+.menu_item_options .fa-wrench {
+    color: darkblue;
+}
+
+.menu_item_options .fa-trash-alt {
+    color: darkred;
+}
+
+.page_item_name {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page_item_name .fa-minus-square,
+.page_item_name .fa-plus-square {
+    color: #29B4AE;
+    padding: 0 5px 0 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.page_item_name a {
+    color: inherit;
+}
+
+.name-left-padd {
+    padding-left: 30px !important;
+}
+
+.ui-sortable-menu {
+    display: none;
+}
+
+.page_item_name a span {
+    padding-left: 30px;
+    font-weight: bolder;
+}

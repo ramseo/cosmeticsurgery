@@ -66,3 +66,36 @@ $(document).on("change", '.sort-menu-cls', function () {
         }
     });
 })
+
+
+function append_menu(elm) {
+    var li_elm = $(elm).closest("li");
+
+    var ul_elm = $(li_elm).find("ul:first");
+
+    $(ul_elm).show();
+
+    visibleElements = $(ul_elm).length;
+    if (visibleElements) {
+        $(elm).attr("class", "fa fa-minus-square");
+        $(elm).attr("onclick", "detach_menu(this)");
+    }
+
+    console.log(visibleElements);
+}
+
+function detach_menu(elm) {
+    var li_elm = $(elm).closest("li");
+
+    var ul_elm = $(li_elm).find("ul:first");
+
+    $(ul_elm).hide();
+
+    hiddenElements = $(ul_elm).length;
+    if (hiddenElements) {
+        $(elm).attr("class", "fa fa-plus-square");
+        $(elm).attr("onclick", "append_menu(this)");
+    }
+
+    console.log(hiddenElements);
+} 
