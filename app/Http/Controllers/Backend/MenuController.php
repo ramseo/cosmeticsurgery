@@ -174,7 +174,44 @@ class MenuController extends Controller
         $module_title = 'Menu';
         $module_name = 'menus';
 
-        DB::table('menuitem')->where('id', $id)->where('menu_id', $menu_id)->delete();
+        $menu_ids = [];
+        $menu_ids[] = $id;
+
+        $child_1 = DB::table('menuitem')->where('parent_id', $id)->where('menu_id', $menu_id)->get();
+        if ($child_1->isNotEmpty()) {
+            foreach ($child_1 as $child_1) {
+
+                $menu_ids[] = $child_1->id;
+
+                $child_2 = DB::table('menuitem')->where('parent_id', $child_1->id)->where('menu_id', $menu_id)->get();
+                if ($child_2->isNotEmpty()) {
+                    foreach ($child_2 as $child_2) {
+
+                        $menu_ids[] = $child_2->id;
+
+                        $child_3 = DB::table('menuitem')->where('parent_id', $child_2->id)->where('menu_id', $menu_id)->get();
+                        if ($child_3->isNotEmpty()) {
+                            foreach ($child_3 as $child_3) {
+
+                                $menu_ids[] = $child_3->id;
+
+                                $child_4 = DB::table('menuitem')->where('parent_id', $child_3->id)->where('menu_id', $menu_id)->get();
+
+                                if ($child_4->isNotEmpty()) {
+                                    foreach ($child_4 as $child_4) {
+                                        $menu_ids[] = $child_4->id;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // dd($menu_ids);
+
+        DB::table('menuitem')->whereIn('id', $menu_ids)->where('menu_id', $menu_id)->delete();
 
         Flash::success('<i class="fas fa-check"></i> ' . label_case($module_title) . ' Deleted Successfully!')->important();
         return redirect("admin/$module_name/$menu_id");
