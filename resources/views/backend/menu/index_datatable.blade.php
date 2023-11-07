@@ -20,11 +20,14 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
-                    <a href='{{ url("admin/menutype") }}' class="btn btn-secondary btn-sm ml-1" data-toggle="tooltip"><i class="fas fa-list-ul"></i> List</a>
+                <div class="btn-toolbar float-right">
+                    <a href='{{ url("admin/menutype") }}' class="btn btn-secondary btn-sm ml-1">
+                        <i class="fas fa-list-ul"></i>
+                        List
+                    </a>
                 </div>
                 <div class="float-right">
-                    <a href="{{ route('backend.menus.create').'/'. $menu_id}}" class='btn btn-success btn-sm' data-toggle="tooltip" title="{{__('Create')}}">
+                    <a href="{{ route('backend.menus.create').'/'. $menu_id}}" class='btn btn-success btn-sm' title="{{__('Create')}}">
                         <i class="fas fa-plus-circle"></i>
                     </a>
                 </div>
@@ -64,10 +67,10 @@
                                                     </a>
                                                 </td>
                                                 <td class="menu_item_options">
-                                                    <a href="<?= url("admin/menus/edit/$item->id") ?>" class="btn" data-toggle="tooltip" title="Edit Service">
+                                                    <a href="<?= url("admin/menus/edit/$item->id") ?>" class="btn" title="Edit Service">
                                                         <i class="fas fa-wrench"></i>
                                                     </a>
-                                                    <a href="<?= url("admin/menus/destroy/$item->menu_id/$item->id") ?>" class="btn del-review-popup" data-method="DELETE" data-token="<?= csrf_token() ?>" data-toggle="tooltip" title="Delete" data-confirm="Are you sure?">
+                                                    <a href="<?= url("admin/menus/destroy/$item->menu_id/$item->id") ?>" class="btn del-review-popup" data-method="DELETE" data-token="<?= csrf_token() ?>" title="Delete" data-confirm="Are you sure?">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </a>
                                                 </td>
