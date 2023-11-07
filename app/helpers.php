@@ -1078,7 +1078,7 @@ if (!function_exists('date_today')) {
         if ($uri == "popular-surgeries") {
             $menu_id = DB::table('menutype')->where('url', $uri)->select('menu_id')->get()->first();
             if ($menu_id) {
-                return DB::table('menuitem')->where('menu_id', $menu_id->menu_id)->select('*')->orderBy("title", "asc")->get()->toArray();
+                return DB::table('menuitem')->where('menu_id', $menu_id->menu_id)->select('*')->orderBy("sortable")->get()->toArray();
             } else {
                 return collect([]);
             }
@@ -1087,7 +1087,7 @@ if (!function_exists('date_today')) {
         } else {
             $menu_id = DB::table('menutype')->where('url', "popular-surgeries")->select('menu_id')->get()->first();
             if ($menu_id) {
-                return DB::table('menuitem')->where('menu_id', $menu_id->menu_id)->select('*')->orderBy("title", "asc")->get();
+                return DB::table('menuitem')->where('menu_id', $menu_id->menu_id)->select('*')->orderBy("sortable")->get();
             } else {
                 return collect([]);
             }
