@@ -23,10 +23,10 @@
                             </a>
                         </td>
                         <td class="menu_item_options">
-                            <a href="<?= url("admin/menus/edit/$item->id") ?>" class="btn" data-toggle="tooltip" title="Edit Service">
+                            <a href="<?= url("admin/menus/edit/$item->id") ?>" class="btn" title="Edit Service">
                                 <i class="fas fa-wrench"></i>
                             </a>
-                            <a href="<?= url("admin/menus/destroy/$item->menu_id/$item->id") ?>" class="btn del-review-popup" data-method="DELETE" data-token="<?= csrf_token() ?>" data-toggle="tooltip" title="Delete" data-confirm="Are you sure?">
+                            <a href="<?= url("admin/menus/destroy/$item->menu_id/$item->id") ?>" class="btn del-review-popup" data-method="DELETE" data-token="<?= csrf_token() ?>" title="Delete" data-confirm="Are you sure?">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
                         </td>
