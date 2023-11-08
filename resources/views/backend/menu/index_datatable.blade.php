@@ -45,7 +45,7 @@
                         <div id="loadingImage">
                             <img src="<?= asset("img/giphy.gif") ?>">
                         </div>
-                        <ul id="pagetree" class="ui-sortable ui-sortable-menu sortable-menu">
+                        <ul id="pagetree" class="ui-sortable sortable-menu">
                             <?php
                             foreach ($menus as $item) {
                                 $child_item = getChildItems($item->id);
