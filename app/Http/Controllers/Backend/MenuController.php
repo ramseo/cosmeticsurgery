@@ -211,7 +211,7 @@ class MenuController extends Controller
 
         // dd($menu_ids);
 
-        DB::table('menuitem')->whereIn('id', $menu_ids)->where('menu_id', $menu_id)->delete();
+        DB::table('menuitem')->WhereIn('id', $menu_ids)->Where('menu_id', $menu_id)->delete();
 
         Flash::success('<i class="fas fa-check"></i> ' . label_case($module_title) . ' Deleted Successfully!')->important();
         return redirect("admin/$module_name/$menu_id");

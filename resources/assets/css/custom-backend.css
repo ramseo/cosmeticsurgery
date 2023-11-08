@@ -290,3 +290,15 @@ small {
 .merlinCats {
     color: lightgray;
 }
+
+.menu-items-expand,
+.menu-items-expand:hover {
+    text-transform: capitalize;
+    background: #248f48;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.menu-items-expand:focus {
+    box-shadow: none;
+}

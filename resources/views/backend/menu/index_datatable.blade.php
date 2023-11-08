@@ -20,6 +20,9 @@
                 </div>
             </div>
             <div class="col-4">
+                <div class="float-left">
+                    <button attr="expand" class="btn btn-default menu-items-expand">expand all</button>
+                </div>
                 <div class="btn-toolbar float-right">
                     <a href='{{ url("admin/menutype") }}' class="btn btn-secondary btn-sm ml-1">
                         <i class="fas fa-list-ul"></i>

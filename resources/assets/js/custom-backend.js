@@ -77,7 +77,7 @@ function append_menu(elm) {
 
     visibleElements = $(ul_elm).length;
     if (visibleElements) {
-        $(elm).attr("class", "fa fa-minus-square");
+        $(elm).attr("class", "fa fa-minus-square expand-icon");
         $(elm).attr("onclick", "detach_menu(this)");
     }
 
@@ -93,9 +93,31 @@ function detach_menu(elm) {
 
     hiddenElements = $(ul_elm).length;
     if (hiddenElements) {
-        $(elm).attr("class", "fa fa-plus-square");
+        $(elm).attr("class", "fa fa-plus-square expand-icon");
         $(elm).attr("onclick", "append_menu(this)");
     }
 
     console.log(hiddenElements);
-} 
+}
+
+$(document).on("click", ".menu-items-expand", function () {
+    if ($(this).attr("attr") == "expand") {
+        $('.ui-sortable-menu').show();
+
+        $(this).html("collapse all");
+        $(this).attr("attr", "collapse");
+        if ($(".expand-icon").attr("class") == "fa fa-plus-square expand-icon") {
+            $(".expand-icon").attr("class", "fa fa-minus-square expand-icon");
+            $(".expand-icon").attr("onclick", "detach_menu(this)");
+        }
+    } else {
+        $('.ui-sortable-menu').hide();
+
+        $(this).html("expand all");
+        $(this).attr("attr", "expand");
+        if ($(".expand-icon").attr("class") == "fa fa-minus-square expand-icon") {
+            $(".expand-icon").attr("class", "fa fa-plus-square expand-icon");
+            $(".expand-icon").attr("onclick", "append_menu(this)");
+        }
+    }
+})
