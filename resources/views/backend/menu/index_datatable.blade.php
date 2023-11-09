@@ -50,13 +50,13 @@
                             foreach ($menus as $item) {
                                 $child_item = getChildItems($item->id);
                             ?>
-                                <li class="parent_li" id="menu-<?= $item->id ?>">
+                                <li class="parent_li" id="menu-<?= $item->id ?>"> 
                                     <table class="page_item">
                                         <tbody>
                                             <tr class="flex-cls-tr">
                                                 <td class="page_item_name <?= ($child_item->isNotEmpty()) ? "" : "name-left-padd" ?>">
                                                     <?php if ($child_item->isNotEmpty()) { ?>
-                                                        <i onclick="append_menu(this)" class="fa fa-plus-square" aria-hidden="true"></i>
+                                                        <i onclick="append_menu(this)" class="fa fa-plus-square expand-icon" aria-hidden="true"></i>
                                                     <?php } ?>
                                                     <a target="_blank" href="<?= url("admin/menus/edit/$item->id") ?>">
                                                         <?php
@@ -73,7 +73,7 @@
                                                     <a href="<?= url("admin/menus/edit/$item->id") ?>" class="btn" title="Edit Service">
                                                         <i class="fas fa-wrench"></i>
                                                     </a>
-                                                    <a href="<?= url("admin/menus/destroy/$item->menu_id/$item->id") ?>" class="btn del-review-popup" data-method="DELETE" data-token="<?= csrf_token() ?>" title="Delete" data-confirm="Are you sure?">
+                                                    <a href="<?= url("admin/menus/destroy/$item->menu_id/$item->id") ?>" class="btn del-review-popup" data-method="DELETE" data-token="<?= csrf_token() ?>" title="Delete" data-confirm="This will deleted the entire child tree of this item. Are you sure?">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </a>
                                                 </td>
