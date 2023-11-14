@@ -370,7 +370,7 @@ class PagesController extends Controller
         if ($template_view == "show" || $template_view == "surgery_cost" || $template_view == "popular-surgeries") {
 
             $html_city = "";
-            $html_city .= "<div class='new_breat_f' style='background: #007BFF'>";
+            $html_city .= "<div class='new_breat_f'>";
             $html_city .= "<h5>Find a Plastic Surgeon in Your Area</h5>";
             $html_city .= "<div class='select_fg'>";
             $html_city .= "<select class='form-control cutome_sele_bg sel-open-next'>";
