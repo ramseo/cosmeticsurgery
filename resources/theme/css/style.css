@@ -10,9 +10,10 @@ a:hover {
     margin-top: 83px;
 }
 
-.spacer {
+
+/* .spacer {
     margin-top: 3rem;
-}
+} */
 
 .nv a {
     color: #333;
@@ -3897,7 +3898,7 @@ p {
 .trice-drop-down {
     background: linear-gradient(to right, #0777ff 40%, #ffffff 157%) !important;
     border: 1px solid #c2c2f6;
-    margin: 25px 0 25px 0;
+    margin: 40px 0 25px 0;
 }
 
 .trice-drop-down .sr-heading {
