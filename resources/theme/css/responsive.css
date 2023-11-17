@@ -1120,10 +1120,16 @@
             overflow: scroll;
             height: auto;
         }
-
     }
 
     @media(min-width: 768px) and (max-width: 1199px) {
+        .surgeons-fixed-sidebar {
+            position: inherit;
+            width: auto;
+            top: 0;
+            height: auto;
+        }
+
         .search-header .head {
             font-size: 40px;
         }
@@ -1497,6 +1503,14 @@
     }
 
     @media(min-width: 320px) and (max-width: 576px) {
+        .cutome_sele_bg {
+            max-width: 215px;
+        }
+
+        .new_breat_f h5 {
+            font-size: 22px;
+        }
+
         .tabo {
             margin-right: 0px !important;
             margin-left: 0px !important;

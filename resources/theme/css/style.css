@@ -10,9 +10,10 @@ a:hover {
     margin-top: 83px;
 }
 
-.spacer {
+
+/* .spacer {
     margin-top: 3rem;
-}
+} */
 
 .nv a {
     color: #333;
@@ -73,6 +74,10 @@ a:hover {
 .sr-heading .form-control {
     color: #333;
     font-weight: 600;
+}
+
+.sr-heading .cutome_sele_bg {
+    max-width: 230px;
 }
 
 .gender-contact {
@@ -3677,29 +3682,34 @@ p {
 }
 
 .select_fg {
+    background: #fff;
     text-align: center;
     width: 100%;
+    padding-bottom: 15px;
+    border-radius: 0 0 10px 10px;
 }
 
 .new_breat_f {
-    background: #1877F2 !important;
     margin: 20px 0px;
-    padding: 20px;
+    padding: 15px;
     justify-content: center;
 }
 
 .new_breat_f h5 {
     width: 100%;
-    font-size: 30px;
-    color: #fff;
+    font-size: 28px;
+    color: #1877F2;
+    background: #fff;
     padding: 0px;
     margin: 0px;
     text-align: center;
+    padding-top: 15px;
+    border-radius: 10px 10px 0 0;
 }
 
 .cutome_sele_bg {
     display: inline-block !important;
-    max-width: 300px;
+    max-width: 360px;
     background: #fff;
     font-size: 18px;
     color: #000;
@@ -3881,8 +3891,9 @@ p {
 }
 
 .trice-drop-down {
+    background: linear-gradient(to right, #0777ff 40%, #ffffff 157%) !important;
     border: 1px solid #c2c2f6;
-    margin: 25px 0 25px 0;
+    margin: 40px 0 25px 0;
 }
 
 .trice-drop-down .sr-heading {
@@ -3890,12 +3901,13 @@ p {
 }
 
 .trice-drop-down .sr-heading p {
+    margin-bottom: 15px;
     font-size: 15px;
     color: #fff;
 }
 
-.trice-drop-down .opt_cls:nth-child(2) {
-    background: #ffffff;
+.select_fg .form-control {
+    border: 1px solid #85bcf1;
 }
 
 #surgeon-filter {
@@ -3926,23 +3938,17 @@ p {
 
 .trice-drop-down .sr-heading {
     padding: 0;
-    margin-bottom: 22px;
+    margin-bottom: 15px;
 }
 
 .trice-drop-down .new_breat_f {
     margin-top: 0;
     margin-bottom: 0;
-    background: linear-gradient(to right, #0777ff 5%, #ffffff 157%) !important;
 }
 
 .trice-drop-down .sr-heading .form-control {
     border: 1px solid #8ec7ff;
     margin-top: 0;
-}
-
-.trice-drop-down .sr-heading p {
-    margin: 10px 0px;
-    color: #389cff;
 }
 
 .sort-btn button,
