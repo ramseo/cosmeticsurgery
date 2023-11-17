@@ -3480,10 +3480,6 @@ img {
     height: 250px;
 }
 
-.dropdown-item {
-    padding: 5px 15px 5px 15px !important;
-}
-
 .res-cat {
     width: 100%;
 }
@@ -3720,7 +3716,6 @@ p {
 .password-container {
     position: relative;
 }
-
 
 /* ---------------------Blog----------------------------- */
 
@@ -3975,4 +3970,51 @@ p {
     top: 150px;
     overflow: scroll;
     height: 450px;
+}
+
+.drop-down-child {
+    display: none;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    top: 0;
+}
+
+.drop-down-child a {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #0056b3;
+    border-bottom: none;
+}
+
+.drop-down-child a:last-child {
+    border-bottom: 1px solid #0056b3;
+}
+
+.dropdown-item-child {
+    color: #fff;
+    border-bottom: 1px solid lightgray;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    clear: both;
+    text-align: inherit;
+    white-space: nowrap;
+    border: 0;
+    padding: 5px 15px 5px 15px;
+}
+
+#desktop-header-menu .dropdown-menu {
+    margin: 0;
+    font-size: 15px;
+    padding: 0;
+}
+
+#desktop-header-menu .dropdown-menu .dropdown-item {
+    border: 1px solid;
+    border-bottom: none;
+}
+
+.view-all-procedures {
+    border-bottom: 1px solid !important;
 }

@@ -109,6 +109,40 @@ $city = getData('cities');
                                     </a>
                                     <?php if ($child_item) { ?>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <?php
+                                            foreach ($child_item as $c_item) {
+                                                $child_item_1 = dynamicMenuChildItem($c_item['id']);
+                                            ?>
+                                                <div class="main-child-cls position-relative">
+                                                    <a class="dropdown-item <?= ($child_item_1) ? "dropdown-toggle" : "" ?>" href="<?= url("/") . "/" . $c_item['url'] ?>">
+                                                        <?= $c_item['title'] ?>
+                                                    </a>
+                                                    <?php if ($child_item_1) {  ?>
+                                                        <div class="drop-down-child" aria-labelledby="navbarDropdown">
+                                                            <?php foreach ($child_item_1 as $c_item_1) { ?>
+                                                                <a class="dropdown-item-child" href="<?= url("/") . "/" . $c_item_1['url'] ?>">
+                                                                    <?= $c_item_1['title'] ?>
+                                                                </a>
+                                                            <?php } ?>
+                                                        </div>
+                                                    <?php } ?>
+                                                </div>
+                                            <?php } ?>
+
+                                            <?php if ($item->title == "Face" || $item->title == "Breast" || $item->title == "Body") { ?>
+                                                <a class="dropdown-item view-all-procedures" href="<?= url("/") . "/procedures" ?>">
+                                                    View All Procedures
+                                                </a>
+                                            <?php } ?>
+                                        </div>
+                                    <?php } ?>
+                                </li> 
+                                <!-- <li class="nav-item <?= ($child_item) ? "dropdown" : "" ?>">
+                                    <a class="nav-link <?= ($item->title == "Home") ? "home-item-active-cls" : "" ?>  <?= ($child_item) ? "dropdown-toggle" : "" ?> " href="<?= ($child_item) ? "#" : url("/") . "/" . $item->url ?>" <?= ($child_item) ? 'role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : '' ?>>
+                                        <?= $item->title ?>
+                                    </a>
+                                    <?php if ($child_item) { ?>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <?php foreach ($child_item as $c_item) { ?>
                                                 <a class="dropdown-item" href="<?= url("/") . "/" . $c_item['url'] ?>">
                                                     <?= $c_item['title'] ?>
@@ -121,7 +155,7 @@ $city = getData('cities');
                                             <?php } ?>
                                         </div>
                                     <?php } ?>
-                                </li>
+                                </li> -->
                     <?php
                             }
                         }

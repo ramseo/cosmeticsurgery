@@ -291,30 +291,27 @@ function callAjax(val, attr) {
     });
 }
 
-
-
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     console.log(scroll);
 
     if (scroll >= 67) {
         $(".sidebar-menu").addClass("surgeons-fixed-sidebar");
-        // $(".surgeons-fixed-sidebar").css({
-        //     'position': 'fixed',
-        //     'width': '350px',
-        //     'top': '136px',
-        //     'overflow': 'scroll',
-        //     'height': '450px',
-        // });
     } else {
         $(".sidebar-menu").removeClass("surgeons-fixed-sidebar");
-        // $(".surgeons-fixed-sidebar").css({
-        //     'position': 'inherit',
-        //     'width': '',
-        //     'top': '',
-        //     'overflow': '',
-        //     'height': '',
-        // });
     }
+});
 
+$(document).on('mouseover mouseleave', '.main-child-cls', function (e) {
+    var elm = $(this).children();
+    var next_elm = $(elm).next(".drop-down-child");
+
+    var width = $(this).width();
+    $(next_elm).css({ "left": width + "px" });
+
+    if (e.type === 'mouseover') {
+        $(next_elm).show();
+    } else {
+        $(next_elm).hide();
+    }
 });
