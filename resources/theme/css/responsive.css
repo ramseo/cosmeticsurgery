@@ -1120,6 +1120,29 @@
             overflow: scroll;
             height: auto;
         }
+
+        .main-child-cls.position-relative {
+            pointer-events: none;
+        }
+
+        .drop-down-child {
+            display: block;
+            position: inherit;
+            background: none;
+        }
+
+        .drop-down-child a {
+            border: none;
+        }
+
+        .dropdown-item-child {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .drop-down-child a:last-child {
+            border-bottom: none;
+        }
     }
 
     @media(min-width: 768px) and (max-width: 1199px) {
