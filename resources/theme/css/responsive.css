@@ -1121,9 +1121,9 @@
             height: auto;
         }
 
-        .main-child-cls.position-relative {
+        /* .main-child-cls.position-relative {
             pointer-events: none;
-        }
+        } */
 
         .drop-down-child {
             display: block;
@@ -1137,7 +1137,7 @@
 
         .dropdown-item-child {
             font-size: 12px;
-            font-weight: 400;
+            font-weight: 600;
         }
 
         .drop-down-child a:last-child {

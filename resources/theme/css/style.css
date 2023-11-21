@@ -4021,6 +4021,6 @@ p {
     border-bottom: none;
 }
 
-.view-all-procedures {
-    border-bottom: 1px solid !important;
+.nav-item.dropdown .dropdown-menu .view-all-procedures {
+    border-bottom: 1px solid;
 }
