@@ -293,7 +293,6 @@ function callAjax(val, attr) {
 
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    console.log(scroll);
 
     if (scroll >= 67) {
         $(".sidebar-menu").addClass("surgeons-fixed-sidebar");

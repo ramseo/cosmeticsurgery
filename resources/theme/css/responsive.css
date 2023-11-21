@@ -1143,6 +1143,15 @@
         .drop-down-child a:last-child {
             border-bottom: none;
         }
+
+        #desktop-header-menu .dropdown-menu .dropdown-item {
+            border: none;
+        }
+
+        .view-all-procedures {
+            border-bottom: none;
+        }
+
     }
 
     @media(min-width: 768px) and (max-width: 1199px) {
