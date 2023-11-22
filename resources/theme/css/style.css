@@ -4029,4 +4029,5 @@ p {
     color: #0056b3;
     text-transform: uppercase;
     font-weight: 600;
+    pointer-events: none;
 }
