@@ -4024,3 +4024,9 @@ p {
 .nav-item.dropdown .dropdown-menu .view-all-procedures {
     border-bottom: 1px solid;
 }
+
+.tab-pane ul li a.active-surgery {
+    color: #0056b3;
+    text-transform: uppercase;
+    font-weight: 600;
+}

@@ -37,38 +37,42 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="rhinoplasty-<?= strtolower($city) ?>">Rhinoplasty</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/rhinoplasty-" . strtolower($city)) ? "active-surgery" : "" ?>" href="rhinoplasty-<?= strtolower($city) ?>">
+                                            Rhinoplasty
+                                        </a>
                                     </li>
                                     <li>
-                                        <a href="blepharoplasty-<?= strtolower($city) ?>">Blepharoplasty</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/blepharoplasty-" . strtolower($city)) ? "active-surgery" : "" ?>" href="blepharoplasty-<?= strtolower($city) ?>">
+                                            Blepharoplasty
+                                        </a>
                                     </li>
                                     <li>
-                                        <a href="facelift-<?= strtolower($city) ?>">Facelift</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/facelift-" . strtolower($city)) ? "active-surgery" : "" ?>" href="facelift-<?= strtolower($city) ?>">Face lift</a>
                                     </li>
                                     <li>
-                                        <a href="brow-lift-<?= strtolower($city) ?>">Brow Lift</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/brow-lift-" . strtolower($city)) ? "active-surgery" : "" ?>" href="brow-lift-<?= strtolower($city) ?>">Brow Lift</a>
                                     </li>
                                     <li>
-                                        <a href="neck-lift-<?= strtolower($city) ?>">Neck Lift</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/neck-lift-" . strtolower($city)) ? "active-surgery" : "" ?>" href="neck-lift-<?= strtolower($city) ?>">Neck Lift</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="chin-surgery-<?= strtolower($city) ?>">Chin Surgery</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/chin-surgery-" . strtolower($city)) ? "active-surgery" : "" ?>" href="chin-surgery-<?= strtolower($city) ?>">Chin Surgery</a>
                                     </li>
                                     <li>
-                                        <a href="cheek-augmentation-<?= strtolower($city) ?>">Cheek augmentation</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/cheek-augmentation-" . strtolower($city)) ? "active-surgery" : "" ?>" href="cheek-augmentation-<?= strtolower($city) ?>">Cheek augmentation</a>
                                     </li>
                                     <li>
-                                        <a href="lip-augmentation-<?= strtolower($city) ?>">Lip augmentation</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/lip-augmentation-" . strtolower($city)) ? "active-surgery" : "" ?>" href="lip-augmentation-<?= strtolower($city) ?>">Lip augmentation</a>
                                     </li>
                                     <li>
-                                        <a href="buccal-fat-removal-<?= strtolower($city) ?>">Buccal Fat Removal</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/buccal-fat-removal-" . strtolower($city)) ? "active-surgery" : "" ?>" href="buccal-fat-removal-<?= strtolower($city) ?>">Buccal Fat Removal</a>
                                     </li>
                                     <li>
-                                        <a href="ear-surgery-<?= strtolower($city) ?>">Ear Surgery</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/ear-surgery-" . strtolower($city)) ? "active-surgery" : "" ?>" href="ear-surgery-<?= strtolower($city) ?>">Ear Surgery</a>
                                     </li>
                                 </ul>
                             </div>
@@ -84,32 +88,30 @@
                         <img src="<?= asset('img/breast.jpg') ?>" style="width:100%">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="row odd-series">
+                        <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="breast-augmentation-<?= strtolower($city) ?>">Breast Augmentation</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/breast-augmentation-" . strtolower($city)) ? "active-surgery" : "" ?>" href="breast-augmentation-<?= strtolower($city) ?>">Breast Augmentation</a>
                                     </li>
                                     <li>
-                                        <a href="breast-lift-<?= strtolower($city) ?>">Breast Lift</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/breast-lift-" . strtolower($city)) ? "active-surgery" : "" ?>" href="breast-lift-<?= strtolower($city) ?>">Breast Lift</a>
                                     </li>
                                     <li>
-                                        <a href="breast-reduction-<?= strtolower($city) ?>">Breast Reduction</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/breast-reduction-" . strtolower($city)) ? "active-surgery" : "" ?>" href="breast-reduction-<?= strtolower($city) ?>">Breast Reduction</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="breast-implant-removal-<?= strtolower($city) ?>">Breast Implant
-                                            Removal</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/breast-implant-removal-" . strtolower($city)) ? "active-surgery" : "" ?>" href="breast-implant-removal-<?= strtolower($city) ?>">Breast Implant Removal</a>
                                     </li>
                                     <li>
-                                        <a href="breast-implant-revision-<?= strtolower($city) ?>">Breast Implant
-                                            Revision</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/breast-implant-revision-" . strtolower($city)) ? "active-surgery" : "" ?>" href="breast-implant-revision-<?= strtolower($city) ?>">Breast Implant Revision</a>
                                     </li>
                                     <li>
-                                        <a href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/gynecomastia-" . strtolower($city)) ? "active-surgery" : "" ?>" href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
                                     </li>
                                 </ul>
                             </div>
@@ -129,32 +131,32 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="liposuction-<?= strtolower($city) ?>">Liposuction</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/liposuction-" . strtolower($city)) ? "active-surgery" : "" ?>" href="liposuction-<?= strtolower($city) ?>">Liposuction</a>
                                     </li>
                                     <li>
-                                        <a href="tummy-tuck-<?= strtolower($city) ?>">Tummy tuck</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/tummy-tuck-" . strtolower($city)) ? "active-surgery" : "" ?>" href="tummy-tuck-<?= strtolower($city) ?>">Tummy tuck</a>
                                     </li>
                                     <li>
-                                        <a href="buttock-enhancement-<?= strtolower($city) ?>">Buttock Enhancement</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/buttock-enhancement-" . strtolower($city)) ? "active-surgery" : "" ?>" href="buttock-enhancement-<?= strtolower($city) ?>">Buttock Enhancement</a>
                                     </li>
                                     <li>
-                                        <a href="body-lift-<?= strtolower($city) ?>">Body Lift</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/body-lift-" . strtolower($city)) ? "active-surgery" : "" ?>" href="body-lift-<?= strtolower($city) ?>">Body Lift</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="arm-lift-<?= strtolower($city) ?>">Arm Lift</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/arm-lift-" . strtolower($city)) ? "active-surgery" : "" ?>" href="arm-lift-<?= strtolower($city) ?>">Arm Lift</a>
                                     </li>
                                     <li>
-                                        <a href="thigh-lift-<?= strtolower($city) ?>">Thigh Lift</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/thigh-lift-" . strtolower($city)) ? "active-surgery" : "" ?>" href="thigh-lift-<?= strtolower($city) ?>">Thigh Lift</a>
                                     </li>
                                     <li>
-                                        <a href="body-contouring-<?= strtolower($city) ?>">Body Contouring</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/body-contouring-" . strtolower($city)) ? "active-surgery" : "" ?>" href="body-contouring-<?= strtolower($city) ?>">Body Contouring</a>
                                     </li>
                                     <li>
-                                        <a href="mommy-makeover-<?= strtolower($city) ?>">Mommy Makeover</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/mommy-makeover-" . strtolower($city)) ? "active-surgery" : "" ?>" href="mommy-makeover-<?= strtolower($city) ?>">Mommy Makeover</a>
                                     </li>
                                 </ul>
                             </div>
@@ -173,14 +175,13 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="hair-transplant-<?= strtolower($city) ?>">Hair Transplant</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/hair-transplant-" . strtolower($city)) ? "active-surgery" : "" ?>" href="hair-transplant-<?= strtolower($city) ?>">Hair Transplant</a>
                                     </li>
                                     <li>
-                                        <a href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/gynecomastia-" . strtolower($city)) ? "active-surgery" : "" ?>" href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
                                     </li>
                                     <li>
-                                        <a href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic
-                                            Surgery</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/men-and-plastic-surgery-" . strtolower($city)) ? "active-surgery" : "" ?>" href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic Surgery</a>
                                     </li>
                                 </ul>
                             </div>
@@ -199,14 +200,13 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="hair-transplant-<?= strtolower($city) ?>">Hair Transplant</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/hair-transplant-" . strtolower($city)) ? "active-surgery" : "" ?>" href="hair-transplant-<?= strtolower($city) ?>">Hair Transplant</a>
                                     </li>
                                     <li>
-                                        <a href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/gynecomastia-" . strtolower($city)) ? "active-surgery" : "" ?>" href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
                                     </li>
                                     <li>
-                                        <a href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic
-                                            Surgery</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/men-and-plastic-surgery-" . strtolower($city)) ? "active-surgery" : "" ?>" href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic Surgery</a>
                                     </li>
                                 </ul>
                             </div>
@@ -225,14 +225,13 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
                                     <li>
-                                        <a href="hair-transplant-<?= strtolower($city) ?>">Hair Transplant</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/hair-transplant-" . strtolower($city)) ? "active-surgery" : "" ?>" href="hair-transplant-<?= strtolower($city) ?>">Hair Transplant</a>
                                     </li>
                                     <li>
-                                        <a href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/gynecomastia-" . strtolower($city)) ? "active-surgery" : "" ?>" href="gynecomastia-<?= strtolower($city) ?>">Gynecomastia</a>
                                     </li>
                                     <li>
-                                        <a href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic
-                                            Surgery</a>
+                                        <a class="<?= (\Request::getRequestUri() == "/men-and-plastic-surgery-" . strtolower($city)) ? "active-surgery" : "" ?>" href="men-and-plastic-surgery-<?= strtolower($city) ?>">Men and Plastic Surgery</a>
                                     </li>
                                 </ul>
                             </div>
@@ -240,6 +239,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
