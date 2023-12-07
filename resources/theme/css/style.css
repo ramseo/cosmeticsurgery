@@ -2911,6 +2911,7 @@ img {
 .item-middle {
     display: flex;
     justify-content: center;
+    padding: 40px 0 0 0;
 }
 
 .doc-view-btn a,
@@ -4030,4 +4031,13 @@ p {
     text-transform: uppercase;
     font-weight: 600;
     pointer-events: none;
+}
+
+.zoho-crm-oauth {
+    padding: 10px 0 0 0;
+}
+
+.zoho-crm-oauth button {
+    background: #E42527;
+    font-weight: 600;
 }

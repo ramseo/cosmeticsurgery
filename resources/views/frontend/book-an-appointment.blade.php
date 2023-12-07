@@ -211,14 +211,35 @@
 
                         date_default_timezone_set('Asia/Kolkata');
                         $current_time = date('H:i:s A');
+
+                        $target_url = URL::to('/') .  "/book-an-appointment";
+
+                        $code = "";
+                        if (isset($_GET['code'])) {
+                            $code = $_GET['code'];
+                        }
                         ?>
 
                         <input type="hidden" name="city_url" value="<?= input_url() ?>">
                         <input type="hidden" name="url" value="<?= input_url() ?>">
                         <input type="hidden" name="time" value="<?= $current_time ?>">
-                        <button type="submit" name="submit" class="submit-button-contact">
+                        <input type="hidden" name="code" value="<?= $code ?>">
+                        <!-- <button type="submit" name="submit" class="submit-button-contact">
                             Submit
-                        </button>
+                        </button> -->
+                        <div class="zoho-crm-oauth">
+                            <a href="<?= "https://accounts.zoho.in/oauth/v2/auth?response_type=code&client_id=1000.2IKVBF4JGWRGEW8MOLEFC7ZB350KXZ&scope=ZohoCRM.modules.ALL&redirect_uri=$target_url&prompt=consent" ?>">
+                                <?php if ($code) { ?>
+                                    <button type="submit" name="submit" class="submit-button-contact">
+                                        <?= ($code) ? "Connected With Zoho CRM" : "Click to Connect With Zoho CRM" ?>
+                                    </button>
+                                <?php } else { ?>
+                                    <div type="submit" name="submit" class="submit-button-contact">
+                                        <?= ($code) ? "Connected With Zoho CRM" : "Click to Connect With Zoho CRM" ?>
+                                    </div>
+                                <?php } ?>
+                            </a>
+                        </div>
                     </div>
                 </form>
             </div>

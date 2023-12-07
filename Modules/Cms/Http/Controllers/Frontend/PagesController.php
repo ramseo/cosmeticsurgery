@@ -79,8 +79,116 @@ class PagesController extends Controller
             $response['status'] = false;
         }
 
+        // Zoho CRM Leads
+        $response['zoho_lead_inserted'] = false;
+        $oAuth_tokens = $this->generate_refresh_token($post['code']);
+
+        if ($oAuth_tokens['status'] == true) {
+            $result = $this->insert_record($post['name'], "last", $post['email'], $post['phone'], $post['message'], $oAuth_tokens['access_token']);
+            if ($result['status'] == true) {
+                $response['zoho_lead_inserted'] = true;
+            }
+        }
+        // Zoho CRM Leads
+
         echo json_encode($response);
     }
+
+    // Zoho CRM Curl
+    function generate_refresh_token($code)
+    {
+
+        $post = [
+            'code' => $code,
+            'redirect_uri' => url("/") . "/" . "book-an-appointment",
+            'client_id' => '1000.2IKVBF4JGWRGEW8MOLEFC7ZB350KXZ',
+            'client_secret' => 'f606ae1f41d82695dcc6138ae874ba18948f482d0e',
+            'grant_type' => 'authorization_code'
+        ];
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://accounts.zoho.in/oauth/v2/token');
+
+        curl_setopt($ch, CURLOPT_POST, 1);
+
+        curl_setopt($ch,  CURLOPT_POSTFIELDS, http_build_query($post));
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('content-type:application/x-www-form-urlencoded'));
+
+        $response = curl_exec($ch);
+        $data = json_decode($response);
+
+        $api_data = [];
+        if (isset($data->access_token)) {
+            $api_data['access_token'] = $data->access_token;
+            $api_data['scope'] = $data->scope;
+            $api_data['api_domain'] = $data->api_domain;
+            $api_data['token_type'] = $data->token_type;
+            $api_data['expires_in'] = $data->expires_in;
+            $api_data['status'] = true;
+        } else {
+            $api_data['status'] = false;
+        }
+
+        return $api_data;
+    }
+
+    function insert_record($firstname, $lastname, $email, $phone, $description, $access_token)
+    {
+        $postdata = [
+            "data" => [
+                [
+                    "Company" => "SEO Book Lab",
+                    "First_Name" => $firstname,
+                    "Last_Name" => $lastname,
+                    "Email" => $email,
+                    "Phone" => $phone,
+                    "Description" => $description,
+                ]
+            ],
+            "trigger" => [
+                "approval",
+                "workflow",
+                "blueprint"
+            ]
+        ];
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://www.zohoapis.in/crm/v2/Leads');
+
+        curl_setopt($ch, CURLOPT_POST, 1);
+
+        curl_setopt($ch,  CURLOPT_POSTFIELDS, json_encode($postdata));
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Zoho-oauthtoken ' . $access_token, 'content-type:application/x-www-form-urlencoded'));
+
+        $response = curl_exec($ch);
+
+        $response = json_decode($response);
+
+        $zoho_crm_lead_insert = [];
+        $zoho_crm_lead_insert['status'] = false;
+
+        if (isset($response->data)) {
+            if ($response->data[0]->status == 'success') {
+                $zoho_crm_lead_insert['status'] = true;
+            }
+        }
+
+        return $zoho_crm_lead_insert;
+    }
+
+    // Zoho CRM Curl
 
     function surgeon_filter(Request $request)
     {
