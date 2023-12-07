@@ -87,7 +87,7 @@ class PagesController extends Controller
         $oAuth_tokens = $this->generate_refresh_token($post['code']);
 
         if ($oAuth_tokens['status'] == true) {
-            $result = $this->insert_record($post['name'], "last", $post['email'], $post['phone'], $post['message'], $oAuth_tokens['access_token']);
+            $result = $this->insert_record($post['name'], "Null", $post['email'], $post['phone'], $post['message'], $post['location'], $post['url'], $oAuth_tokens['access_token']);
             if ($result['status'] == true) {
                 $response['zoho_lead_inserted'] = true;
             }
@@ -141,17 +141,21 @@ class PagesController extends Controller
         return $api_data;
     }
 
-    function insert_record($firstname, $lastname, $email, $phone, $description, $access_token)
+    function insert_record($firstname, $lastname, $email, $phone, $description, $city, $website, $access_token)
     {
         $postdata = [
             "data" => [
                 [
-                    "Company" => "SEO Book Lab",
+                    "Company" => "Null",
                     "First_Name" => $firstname,
                     "Last_Name" => $lastname,
                     "Email" => $email,
                     "Phone" => $phone,
                     "Description" => $description,
+                    "City" => $city,
+                    "Website" => $website,
+                    "Lead_Status" => "Contact in Future",
+                    "Lead_Source" => "Google+",
                 ]
             ],
             "trigger" => [
