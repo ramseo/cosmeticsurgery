@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Modules\Cms\Events\PageViewed;
 use DB;
+use Illuminate\Support\Facades\URL;
 use App\Models\leadform;
+use Illuminate\Routing\Route;
 
 class PagesController extends Controller
 {
@@ -73,6 +75,7 @@ class PagesController extends Controller
         $status = leadform::create($data);
 
         $response = [];
+
         if ($status) {
             $response['status'] = true;
         } else {

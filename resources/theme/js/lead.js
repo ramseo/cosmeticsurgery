@@ -110,6 +110,10 @@ $('#google-sheet').submit(function (e) {
 
                     setTimeout(function () {
                         $('#popup').modal('hide');
+
+                        var url_arr = window.location.href.split('?');
+                        url_arr.pop();
+                        window.location.replace(url_arr[0]);
                     }, 4000);
                 } else {
                     alert("Failed to send email.")
