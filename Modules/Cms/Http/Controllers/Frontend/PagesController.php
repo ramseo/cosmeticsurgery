@@ -156,7 +156,7 @@ class PagesController extends Controller
                     "Website" => $website,
                     "Lead_Status" => "Contact in Future",
                     "Lead_Source" => "Google+",
-                    "Title" => "lead",
+                    "Designation" => "Customer",
                 ]
             ],
             "trigger" => [
