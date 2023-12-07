@@ -147,7 +147,8 @@
 
 <!-- LEAD FORM CODE -->
 <?php
-if (\Request::getRequestUri() != "/book-an-appointment") {
+$url = strtok(\Request::getRequestUri(), '?');
+if ($url != "/book-an-appointment") {
 ?>
    <div class="sidebar-form">
       <div class="call-action">
