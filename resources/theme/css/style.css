@@ -4055,3 +4055,7 @@ p {
 .content-abs-fix .surgeons-flex {
     padding: 0px 5px 0px 5px;
 }
+
+.min-height-185 {
+    min-height: 185px;
+}

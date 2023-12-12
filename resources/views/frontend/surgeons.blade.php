@@ -64,7 +64,7 @@
                                     <img src="<?= asset('/storage/user/profile/' . $doc_item->avatar) ?>" class="card-img-top" alt="doctor alt" style="width:100%" />
                                 <?php } else { ?>
                                     <img src="<?= asset($doc_item->avatar) ?>" class="card-img-top" alt="doctor alt" style="width:100%" />
-                                <?php } ?>
+                                <?php } ?> 
                             </a>
                             <div class="card-body doctors-list-cls position-relative">
                                 <div class="content-abs-fix">
