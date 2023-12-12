@@ -199,6 +199,9 @@
                         </div>
 
                         <?php
+
+                        use Illuminate\Support\Facades\Session;
+
                         function input_url()
                         {
                             return sprintf(
@@ -214,9 +217,14 @@
 
                         $target_url = URL::to('/') .  "/book-an-appointment";
 
-                        $code = "";
                         if (isset($_GET['code'])) {
-                            $code = $_GET['code'];
+                            Session::put('access_token', $_GET['code']);
+                        }
+
+                        $code = "";
+                        $access_token = Session::get('access_token');
+                        if ($access_token) {
+                            $code = $access_token;
                         }
                         ?>
 

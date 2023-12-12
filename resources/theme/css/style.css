@@ -4041,3 +4041,17 @@ p {
     background: #E42527;
     font-weight: 600;
 }
+
+.content-abs-fix {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    text-align: center;
+    right: 0;
+    left: 0;
+}
+
+.content-abs-fix .surgeons-flex {
+    padding: 0px 5px 0px 5px;
+}

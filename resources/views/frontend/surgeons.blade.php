@@ -66,31 +66,33 @@
                                     <img src="<?= asset($doc_item->avatar) ?>" class="card-img-top" alt="doctor alt" style="width:100%" />
                                 <?php } ?>
                             </a>
-                            <div class="card-body doctors-list-cls">
-                                <a target="_blank" href="<?= url("surgeon/dr-$doc_item->username") ?>">
-                                    <h4 class="card-title">
-                                        Dr. <?= substr($doc_item->first_name . " " . $doc_item->last_name, 0, 16) ?>
-                                    </h4>
-                                </a>
-                                <ul class="padd-null text-center">
-                                    <li>Cosmetic / Plastic Surgeon</li>
-                                    <li>
-                                        <?php
-                                        $profile_data = get_userprofiles($doc_item->id);
-                                        echo $profile_data->degree;
-                                        ?>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <i class="fa fa-map-marker blink"></i>
-                                            <b class="cities-font-size"><?= $city ?></b>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <a target="_blank" href="<?= url("surgeon/dr-$doc_item->username") ?>" class="surgeons-flex">
-                                    <button class="btn btn-primary">Consult Now</button>
-                                    <button class="btn btn-primary">Know More</button>
-                                </a>
+                            <div class="card-body doctors-list-cls position-relative">
+                                <div class="content-abs-fix">
+                                    <a target="_blank" href="<?= url("surgeon/dr-$doc_item->username") ?>">
+                                        <h4 class="card-title">
+                                            Dr. <?= substr($doc_item->first_name . " " . $doc_item->last_name, 0, 22) ?>
+                                        </h4>
+                                    </a>
+                                    <ul class="padd-null text-center">
+                                        <li>Cosmetic / Plastic Surgeon</li>
+                                        <li>
+                                            <?php
+                                            $profile_data = get_userprofiles($doc_item->id);
+                                            echo $profile_data->degree;
+                                            ?>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="fa fa-map-marker blink"></i>
+                                                <b class="cities-font-size"><?= $city ?></b>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a target="_blank" href="<?= url("surgeon/dr-$doc_item->username") ?>" class="surgeons-flex">
+                                        <button class="btn btn-primary">Consult Now</button>
+                                        <button class="btn btn-primary">Know More</button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
