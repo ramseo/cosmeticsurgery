@@ -51,18 +51,18 @@ class GenerateMenus
                 ]);
             // Submenu: Categories
 
-            // $articles_menu->add('<i class="c-sidebar-nav-icon fas fa-list-alt"></i> Categories', [
-            //     'route' => 'backend.categories.index',
-            //     'class' => 'c-sidebar-nav-item',
-            // ])
-            //     ->data([
-            //         'order'         => 83,
-            //         'activematches' => 'admin/categories*',
-            //         'permission'    => ['edit_categories'],
-            //     ])
-            //     ->link->attr([
-            //         'class' => 'c-sidebar-nav-link',
-            //     ]);
+            $articles_menu->add('<i class="c-sidebar-nav-icon fas fa-list-alt"></i> Categories', [
+                'route' => 'backend.categories.index',
+                'class' => 'c-sidebar-nav-item',
+            ])
+                ->data([
+                    'order'         => 83,
+                    'activematches' => 'admin/categories*',
+                    'permission'    => ['edit_categories'],
+                ])
+                ->link->attr([
+                    'class' => 'c-sidebar-nav-link',
+                ]);
 
             // Submenu: Tags
             // $articles_menu->add('<i class="c-sidebar-nav-icon fas fa-tags"></i> Tags', [
