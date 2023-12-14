@@ -36,22 +36,22 @@
         </div>
     </div> -->
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col-12">
         <div class="form-group">
             <?php
-            $field_name = 'description';
-            $field_lable = label_case($field_name);
-            $field_placeholder = $field_lable;
-            $required = "";
+            // $field_name = 'description';
+            // $field_lable = label_case($field_name);
+            // $field_placeholder = $field_lable;
+            // $required = "";
             ?>
             {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
             {{ html()->textarea($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-6">
         <div class="form-group">
             <?php
@@ -77,7 +77,8 @@
             </div>
             @endif
             <div class="custom-file">
-                <input type="file" class="custom-file-input" name="image" <?= $img_required ?>>
+                <input type="file" class="custom-file-input" name="image" <? //= $img_required 
+                                                                            ?>>
                 <label class="custom-file-label">Choose file</label>
                 <small>Please upload W: 200 H: 200 file</small>
             </div>
@@ -86,17 +87,17 @@
     <div class="col-6">
         <div class="form-group">
             <?php
-            $field_name = 'alt';
-            $field_lable = label_case($field_name);
-            $field_placeholder = $field_lable;
-            $required = "";
+            // $field_name = 'alt';
+            // $field_lable = label_case($field_name);
+            // $field_placeholder = $field_lable;
+            // $required = "";
             ?>
             {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
 
-</div>
+</div> -->
 
 
 <div class="row">
