@@ -1257,4 +1257,12 @@ if (!function_exists('date_today')) {
             ->Where("parent_id", $menu_id)
             ->get();
     }
+
+
+    function getCategories()
+    {
+        return DB::table('categories')
+            ->select("*")
+            ->get();
+    }
 }

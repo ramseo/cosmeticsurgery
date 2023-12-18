@@ -234,6 +234,30 @@
         </div>
     </div>
 </div>
+
+<!-- post category -->
+<div class="row">
+    <div class="col-6">
+        <div class="form-group">
+            <?php
+            $field_name = 'category_id';
+            $field_lable = "Category";
+            $field_placeholder = __("Select an option");
+            $required = "";
+            $getCategories = getCategories();
+
+            $catArr = [];
+            foreach ($getCategories as $item) {
+                $catArr[$item->id] = $item->name;
+            }
+            ?>
+            {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
+            {{ html()->select($field_name, $catArr)->placeholder($field_placeholder)->class('form-control select2')->attributes(["$required"]) }}
+        </div>
+    </div>
+</div>
+<!-- post category -->
+
 <div class="row">
     <div class="col-6">
         <div class="form-group">
