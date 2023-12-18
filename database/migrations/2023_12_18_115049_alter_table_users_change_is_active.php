@@ -14,7 +14,7 @@ class AlterTableUsersChangeIsActive extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('is_active')->default(0);
+            $table->integer('is_active')->default(0)->change();
         });
     }
 
