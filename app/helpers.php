@@ -1265,4 +1265,12 @@ if (!function_exists('date_today')) {
             ->select("*")
             ->get();
     }
+
+    function getPostCatName($cid)
+    {
+        return DB::table('categories')
+            ->Where("id", $cid)
+            ->select("*")
+            ->get()->first();
+    }
 }

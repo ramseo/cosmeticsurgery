@@ -48,6 +48,16 @@
                         <i class="fa fa-calendar"></i>
                         {{$$module_name_singular->published_at_formatted}}
                     </span>
+                    &nbsp;
+                    <span class="post-date">
+                        <i class="fa fa-certificate" aria-hidden="true"></i>
+                        <?php
+                        $getPostCatName = getPostCatName($$module_name_singular->category_id);
+                        ?>
+                        <a class="color-white" href="<?= "#" ?>">
+                            <?= $getPostCatName->name ?>
+                        </a>
+                    </span>
                 </div>
                 <div class="blog-intro">
                     <p>

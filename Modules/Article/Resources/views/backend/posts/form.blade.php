@@ -247,6 +247,8 @@
             $getCategories = getCategories();
 
             $catArr = [];
+            $catArr[0] = "Select-Category";
+
             foreach ($getCategories as $item) {
                 $catArr[$item->id] = $item->name;
             }
