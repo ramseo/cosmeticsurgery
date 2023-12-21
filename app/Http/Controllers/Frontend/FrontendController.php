@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
+use App\Models\Category;
 
 class FrontendController extends Controller
 {
@@ -254,5 +255,23 @@ class FrontendController extends Controller
 
         $posts = DB::table('posts')->where('author', $slug)->select('*')->paginate(6);
         return view('frontend.blog-author', compact('body_class', 'module_name_singular', "$module_name_singular", 'posts', 'slug', 'slug1'));
+    }
+
+
+    public function blog_category($slug)
+    {
+        $getCatBySlug = Category::where('slug', $slug)->first();
+
+        $body_class = '';
+        $module_name_singular = Str::singular("pages");
+        $$module_name_singular = (object) array(
+            'meta_title' => $getCatBySlug->meta_title,
+            'meta_description' => $getCatBySlug->meta_description,
+            'meta_keywords' => $getCatBySlug->meta_keywords,
+            'name' => "Blog / Category / $slug",
+        );
+
+        $posts = DB::table('posts')->where('category_name', $slug)->select('*')->paginate(6);
+        return view('frontend.blog-category', compact('body_class', 'module_name_singular', "$module_name_singular", 'posts', 'slug'));
     }
 }

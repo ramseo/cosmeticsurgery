@@ -56,7 +56,7 @@
                     ?>
                         <span class="post-date">
                             <i class="fa fa-certificate" aria-hidden="true"></i>
-                            <a class="color-white" href="<?= "#" ?>">
+                            <a class="color-white" href="<?= url("/") . "/" . "blog/category/" . $getPostCatName->slug ?>">
                                 <?= $getPostCatName->name ?>
                             </a>
                         </span>

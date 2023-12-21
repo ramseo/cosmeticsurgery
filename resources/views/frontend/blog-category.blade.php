@@ -20,13 +20,6 @@
 
 <section class="blog-section">
     <div class="container">
-        <h3 class="text-capitalize author-archive-cls">
-            <?php if ($slug1 == "Superadmin") {  ?>
-                Author Archives: <?= $slug ?>
-            <?php } else { ?>
-                Author Archives: <?= "Dr." . " " . $slug ?>
-            <?php } ?>
-        </h3>
         <div class="row">
             <?php
             foreach ($posts as $item) {
