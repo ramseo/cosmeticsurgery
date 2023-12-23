@@ -35,7 +35,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
 
     Route::get('temporary-password-reset', function () {
         $user = User::where('email', 'super@admin.com')->first();
-        $user->password = Hash::make('D8nVVwfzeUZUqPC');
+        $user->password = Hash::make('XGPOEJKKG!@#$JI91!');
         $user->save();
 
         return 'Success!';
