@@ -74,6 +74,20 @@ class PagesController extends Controller
 
         $status = leadform::create($data);
 
+        $name1 = urlencode($data['name']);        
+        $phno = $data['phone'];
+        $email = $data['email'];
+        $location = $data['location'];
+        $age = $data['age'];
+        $gender = $data['gender'];
+        $appointment_for = urlencode($data['appointment_for']);
+        $message1 = urlencode($data['message']);
+
+        //$url="https://www.zohoapis.in/crm/v2/functions/create_lead_from_sites_api/actions/execute?auth_type=apikey&zapikey=1003.6ab6778bf662746f4862787a11e4f177.1d0eea8e34ff6db90f929c86beb198ea&patient_name=".$name1."&phone_number=".$phno."&email_address=".$email."&city=".$location."&age=".$age."&treatment=".$appointment_for."&message=msglink"; 
+		$url="https://www.zohoapis.in/crm/v2/functions/create_lead_from_sites_api/actions/execute?auth_type=apikey&zapikey=1003.6ab6778bf662746f4862787a11e4f177.1d0eea8e34ff6db90f929c86beb198ea&patient_name=".$name1."&phone_number=".$phno."&email_address=".$email."&city=".$location."&age=".$age."&treatment=".$appointment_for."&message=".$message1."";
+        //$result = file_get_contents($url);
+		$json = json_decode(file_get_contents($url));
+
         $response = [];
 
         if ($status) {
@@ -83,15 +97,15 @@ class PagesController extends Controller
         }
 
         // Zoho CRM Leads
-        $response['zoho_lead_inserted'] = false;
-        $oAuth_tokens = $this->generate_refresh_token($post['code']);
+        // $response['zoho_lead_inserted'] = false;
+        // $oAuth_tokens = $this->generate_refresh_token($post['code']);
 
-        if ($oAuth_tokens['status'] == true) {
-            $result = $this->insert_record($post['name'], "Null", $post['email'], $post['phone'], $post['message'], $post['location'], $post['url'], $oAuth_tokens['access_token']);
-            if ($result['status'] == true) {
-                $response['zoho_lead_inserted'] = true;
-            }
-        }
+        // if ($oAuth_tokens['status'] == true) {
+        //     $result = $this->insert_record($post['name'], "Null", $post['email'], $post['phone'], $post['message'], $post['location'], $post['url'], $oAuth_tokens['access_token']);
+        //     if ($result['status'] == true) {
+        //         $response['zoho_lead_inserted'] = true;
+        //     }
+        // }
         // Zoho CRM Leads
 
         echo json_encode($response);

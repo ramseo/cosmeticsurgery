@@ -150,6 +150,10 @@
 $url = strtok(\Request::getRequestUri(), '?');
 if ($url != "/book-an-appointment") {
 ?>
+
+<?php
+//if (\Request::getRequestUri() != "/book-an-appointment") {
+?>
    <div class="sidebar-form">
       <div class="call-action">
          <span>Enquiry Form</span>

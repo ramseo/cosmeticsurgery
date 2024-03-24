@@ -232,10 +232,11 @@
                         <input type="hidden" name="url" value="<?= input_url() ?>">
                         <input type="hidden" name="time" value="<?= $current_time ?>">
                         <input type="hidden" name="code" value="<?= $code ?>">
-                        <!-- <button type="submit" name="submit" class="submit-button-contact">
+                        <button type="submit" name="submit" class="submit-button-contact">
                             Submit
-                        </button> -->
-                        <div class="zoho-crm-oauth">
+                        </button>
+                        
+                        <!-- <div class="zoho-crm-oauth">
                             <a href="<?= "https://accounts.zoho.in/oauth/v2/auth?response_type=code&client_id=1000.2IKVBF4JGWRGEW8MOLEFC7ZB350KXZ&scope=ZohoCRM.modules.ALL&redirect_uri=$target_url&prompt=consent" ?>">
                                 <?php if ($code) { ?>
                                     <button type="submit" name="submit" class="submit-button-contact">
@@ -247,7 +248,7 @@
                                     </div>
                                 <?php } ?>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </form>
             </div>
