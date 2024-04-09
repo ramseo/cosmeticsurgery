@@ -16,6 +16,11 @@
                            </a>
                         </li>
                      <?php } ?>
+
+                     <li>
+                     <a href="<?= url('contact-us') ?>">Contact us</a>
+                        </li>
+
                   </ul>
                </div>
             <?php

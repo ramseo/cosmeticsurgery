@@ -239,6 +239,39 @@ class FrontendController extends Controller
         return view('frontend.book-an-appointment', compact('body_class', 'module_name_singular', "$module_name_singular"));
     }
 
+
+    public function contactus()
+    {
+        //echo ('view');
+       // exit();
+        $body_class = '';
+        $module_name_singular = Str::singular("pages");
+        $$module_name_singular = (object) array(
+            'meta_title' => "Contact us",
+            'meta_description' => "Contact us",
+            'meta_keywords' => "",
+            'name' => "Contact us",
+        );
+
+        return view('frontend.contact-us', compact('body_class', 'module_name_singular', "$module_name_singular"));
+    }
+
+    public function contactlist()
+    {
+    //    echo ('view');
+    //     exit();
+        $body_class = '';
+        $module_name_singular = Str::singular("pages");
+        $$module_name_singular = (object) array(
+            'meta_title' => "Contact us",
+            'meta_description' => "Contact us",
+            'meta_keywords' => "",
+            'name' => "Contact us",
+        );
+
+        return view('frontend.contact-us', compact('body_class', 'module_name_singular', "$module_name_singular"));
+    }
+
     public function blog_author($slug)
     {
         $slug = str_replace('-', ' ', ucwords($slug));
