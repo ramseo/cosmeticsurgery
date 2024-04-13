@@ -269,6 +269,17 @@ class FrontendController extends Controller
             'name' => "Contact us",
         );
 
+
+            $to = "ashwani@seobooklab.com";//change receiver address  
+            $subject = "Contact Us";  
+            $message = "<h1>send msg message</h1>";  
+            
+            $header = "From:xyz@example.com \r\n";  
+            $header .= "MIME-Version: 1.0 \r\n";  
+            $header .= "Content-type: text/html;charset=UTF-8 \r\n";  
+            
+            $result = mail ($to,$subject,$message,$header);  
+
         return view('frontend.contact-us', compact('body_class', 'module_name_singular', "$module_name_singular"));
     }
 
