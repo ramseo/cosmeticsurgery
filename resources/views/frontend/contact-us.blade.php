@@ -127,7 +127,7 @@
                             <div class="position-relative">
                                 <i class="fa fa-envelope icon" aria-hidden="true"></i>
                             </div>
-                            <input type="text" name="email" class="form-controler email-cls" id="exampleInputEmail" placeholder="Email Address*" required>
+                            <input type="text" name="email" class="form-controler email-cls" id="exampleInputEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="Email Address*" required>
                             <div class="email-err"></div>
                         </div>
 
@@ -138,7 +138,7 @@
                             <i class="fa fa-comment icon" aria-hidden="true"></i>
                         </div>
 
-                        <textarea maxlength="3000" name="message" class="form-controler message-cls" id="exampleFormControlTextarea1" rows="7" placeholder="Message*"></textarea>
+                        <textarea maxlength="3000" name="message" class="form-controler message-cls" id="exampleFormControlTextarea1" rows="7" placeholder="Message*" required></textarea>
                         <div class="msg-err"></div>
 
                         </div>

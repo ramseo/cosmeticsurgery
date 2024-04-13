@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use App\Models\Category;
@@ -256,25 +257,77 @@ class FrontendController extends Controller
         return view('frontend.contact-us', compact('body_class', 'module_name_singular', "$module_name_singular"));
     }
 
-    public function contactlist()
+    public function contactlist(Request $request)
     {
-    //    echo ('view');
-    //     exit();
-        $body_class = '';
-        $module_name_singular = Str::singular("pages");
-        $$module_name_singular = (object) array(
-            'meta_title' => "Contact us",
-            'meta_description' => "Contact us",
-            'meta_keywords' => "",
-            'name' => "Contact us",
-        );
+
+       
+            // echo "dsdss";
+            // exit();
+            // DD($request->all());
+            // print_r($request->all());
+            //$msg = "First line of text\nSecond line of text";
+            //.. use wordwrap() if lines are longer than 70 characters
+            //$msg = wordwrap($msg,70);
+            
+             $name = $request->name;
+             $phone = $request->phone;
+             $email = $request->email;
+             $msg = $request->message;
+             //echo $name;
+             //exit();
+            //    echo ('view');
+            //     exit();
+            $body_class = '';
+            $module_name_singular = Str::singular("pages");
+            $$module_name_singular = (object) array(
+                'meta_title' => "Contact us",
+                'meta_description' => "Contact us",
+                'meta_keywords' => "",
+                'name' => "Contact us",
+            );
 
 
             $to = "ashwani@seobooklab.com";//change receiver address  
             $subject = "Contact Us";  
-            $message = "<h1>send msg message</h1>";  
+           // $message = "<h1>send msg message</h1>";  
+
+                    $message = "
+                            <html>
+                            <head>
+                            <title>Contact Us</title>
+                            </head>
+                            <body>
+                            <h2>Contact Us !</h2>
+                            <table>
+                                <tr>
+                                <td>Name</td>
+                                <td>:</td>
+                                <td>$name</td>    
+                                </tr>
+                                <tr>
+                                <td>User Email</td>
+                                <td>:</td>
+                                <td>$email</td>    
+                                </tr>
+                                <tr>
+                                <td>Phone</td>
+                                <td>:</td>
+                                <td>$phone</td>   
+                                </tr>
+                                <tr>
+                                <td>Message</td>
+                                <td>:</td>
+                                <td>$msg</td>    
+                                </tr> 
+                            </table>
+                            </body>
+                            </html>
+                    ";
+
+                   // echo $message;
+                //exit();
             
-            $header = "From:xyz@example.com \r\n";  
+            $header = "From:contact@seobooklab.com \r\n";  
             $header .= "MIME-Version: 1.0 \r\n";  
             $header .= "Content-type: text/html;charset=UTF-8 \r\n";  
             
