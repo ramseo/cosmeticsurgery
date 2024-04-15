@@ -252,6 +252,7 @@ class FrontendController extends Controller
             'meta_description' => "Contact us",
             'meta_keywords' => "",
             'name' => "Contact us",
+            'rep' => "1",
         );
 
         return view('frontend.contact-us', compact('body_class', 'module_name_singular', "$module_name_singular"));
@@ -284,6 +285,7 @@ class FrontendController extends Controller
                 'meta_description' => "Contact us",
                 'meta_keywords' => "",
                 'name' => "Contact us",
+                'rep' => "2",
             );
 
 

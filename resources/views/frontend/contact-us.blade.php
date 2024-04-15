@@ -103,8 +103,22 @@
     <div class="container">
         <div class="row row-flex-cls">
             <div class="col-lg-8 one_order">
+
+            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+            <script type="text/javascript"> 
+            $(document).ready( function() {
+                $('#deletesuccess').delay(7000).fadeOut();
+            });
+            </script>
+
                 <form method="post" action="{{url('/')}}/contactlist">
                     <h4 class="book-app">Contact us</h4>
+
+                    <?php $valch = $$module_name_singular->rep;                     
+                     if ($valch == '2') { ?>
+                      <p style="color:red;" id="deletesuccess"> <?php  echo "Thank you for contacting us. Our team will get in touch with you shortly."; ?> </p>
+                    <?php  }   ?> 
+                    
                     <div class="form-new">
                         <div class="form-group margin-bottom-5">
                             <div class="position-relative">
