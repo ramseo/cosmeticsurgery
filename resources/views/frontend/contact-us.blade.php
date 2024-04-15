@@ -104,11 +104,20 @@
         <div class="row row-flex-cls">
             <div class="col-lg-8 one_order">
 
-            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+            <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
             <script type="text/javascript"> 
             $(document).ready( function() {
                 $('#deletesuccess').delay(7000).fadeOut();
             });
+            </script> -->
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+            <script type="text/javascript">
+                    $(function(){
+                    setTimeout(function(){
+                        $("#deletesuccess").fadeOut(1500);}, 7000);
+                    });
             </script>
 
                 <form method="post" action="{{url('/')}}/contactlist">
