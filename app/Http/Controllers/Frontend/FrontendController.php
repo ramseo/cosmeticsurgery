@@ -289,7 +289,7 @@ class FrontendController extends Controller
             );
 
 
-            $to = "ashwani@seobooklab.com";//change receiver address  
+            $to = "info@cosmeticsurgery.in";//change receiver address  
             $subject = "Contact Us";  
            // $message = "<h1>send msg message</h1>";  
 
