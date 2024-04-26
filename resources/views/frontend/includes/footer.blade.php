@@ -17,9 +17,12 @@
                         </li>
                      <?php } ?>
 
-                     <li>
-                     <a href="<?= url('contact-us') ?>">Contact us</a>
+                        <li>
+                          <a href="<?= url('contact-us') ?>">Contact us</a>
                         </li>
+                        <li>
+                        <a href="{{ route('login') }}">Dr. Login</a>
+                      </li>  
 
                   </ul>
                </div>

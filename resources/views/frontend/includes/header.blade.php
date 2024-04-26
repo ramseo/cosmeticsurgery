@@ -185,11 +185,11 @@ $city = getData('cities');
                         @csrf
                     </form> -->
                     @else
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">
                             Login
                         </a>
-                    </li>
+                    </li> -->
                     @endauth
                 </ul>
             </div>
