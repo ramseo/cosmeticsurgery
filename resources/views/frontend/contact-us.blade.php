@@ -133,7 +133,7 @@
                             <div class="position-relative">
                                 <i class="fa fa-user icon" aria-hidden="true"></i>
                             </div>
-                            <input type="text" name="name" class="form-controler name-cls" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Enter Name*" required>
+                            <input type="text" name="name" class="form-controler name-cls" id="exampleInputName1" aria-describedby="emailHelp" maxlength="30"  placeholder="Enter Name*" required>
                             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                             <div class="name-err"></div>
                         </div>
@@ -142,7 +142,7 @@
                             <div class="position-relative">
                                 <i class="fa fa-phone icon" aria-hidden="true"></i>
                             </div>
-                            <input type="number" name="phone" class="form-controler phone-cls" id="exampleInputPhone" placeholder="Phone Number*" required>
+                            <input type="text" pattern="[0-9]+" title="number only" name="phone" class="form-controler phone-cls" id="exampleInputPhone" maxlength="15" placeholder="Phone Number*" required>
                             <div class="phone-err"></div>
                         </div>
 
@@ -150,7 +150,7 @@
                             <div class="position-relative">
                                 <i class="fa fa-envelope icon" aria-hidden="true"></i>
                             </div>
-                            <input type="text" name="email" class="form-controler email-cls" id="exampleInputEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="Email Address*" required>
+                            <input type="text" name="email" class="form-controler email-cls" id="exampleInputEmail" maxlength="60" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="Email Address*" required>
                             <div class="email-err"></div>
                         </div>
 
@@ -161,7 +161,7 @@
                             <i class="fa fa-comment icon" aria-hidden="true"></i>
                         </div>
 
-                        <textarea maxlength="3000" name="message" class="form-controler message-cls" id="exampleFormControlTextarea1" rows="7" placeholder="Message*" required></textarea>
+                        <textarea maxlength="3000" name="message" class="form-controler message-cls" maxlength="500" id="exampleFormControlTextarea1" rows="7" placeholder="Message*" required></textarea>
                         <div class="msg-err"></div>
 
                         </div>

@@ -21,7 +21,7 @@
                           <a href="<?= url('contact-us') ?>">Contact us</a>
                         </li>
                         <li>
-                        <a href="{{ route('login') }}">Dr. Login</a>
+                        <a href="{{ route('login') }}">Doctor Login</a>
                       </li>  
 
                   </ul>
