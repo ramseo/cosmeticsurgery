@@ -45,9 +45,9 @@
                     </div>
 
                     <div class="two mar-right-50">
-                        <a href='<?= route("frontend.results.create") ?>' class='btn btn-success btn-sm' data-toggle="tooltip" title="{{__('Create')}}">
+                        <!-- <a href='<?= route("frontend.results.create") ?>' class='btn btn-success btn-sm' data-toggle="tooltip" title="{{__('Create')}}">
                             Create <i class="fa fa-plus-circle"></i>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
                 <div class="row">

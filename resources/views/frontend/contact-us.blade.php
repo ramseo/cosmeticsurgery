@@ -161,7 +161,7 @@
                             <i class="fa fa-comment icon" aria-hidden="true"></i>
                         </div>
 
-                        <textarea maxlength="3000" name="message" class="form-controler message-cls" maxlength="500" id="exampleFormControlTextarea1" rows="7" placeholder="Message*" required></textarea>
+                        <textarea name="message" class="form-controler message-cls" maxlength="500" id="exampleFormControlTextarea1" rows="7" placeholder="Message*" required></textarea>
                         <div class="msg-err"></div>
 
                         </div>
@@ -169,7 +169,10 @@
 
 
                        
-
+                        <!-- <div class="form-group margin-bottom-5">
+                            <div class="g-recaptcha" data-theme="light" data-sitekey="<?= env('DATA_SITEKEY_V2') ?>"></div>
+                            <div class="captcha-err"></div>
+                        </div> -->
                       
 
                        
