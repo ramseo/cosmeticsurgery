@@ -98,12 +98,14 @@ Customer | Index
         <!--/.row-->
 
         <div class="row mt-4">
-            <div class="col">
+            <div class="col"> 
                 <div class="table-responsive">
                     <div id="loadingImage">
                         <img src="<?= asset("img/giphy.gif") ?>">
                     </div>
-                    <table class="table table-bordered table-hover table-responsive-sm">
+                    <!-- id="datatable"  <table id="datatable" class="table table-bordered table-hover table-responsive-sm"> -->
+
+                    <table  class="table table-bordered table-hover table-responsive-sm">
                         <thead>
                             <tr>
                                 <th>#</th>
