@@ -72,6 +72,14 @@ Customer | Index
     .switch-flex-cls a {
         padding: 0.375rem 0.75rem;
     }
+
+    .form-control-sm {
+    height: calc(1.5em + 0.5rem + 2px);
+    padding: 0.25rem 1.9rem;
+    font-size: 0.765625rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    }
 </style>
 
 <div class="card">
@@ -103,9 +111,8 @@ Customer | Index
                     <div id="loadingImage">
                         <img src="<?= asset("img/giphy.gif") ?>">
                     </div>
-                    <!-- id="datatable"  <table id="datatable" class="table table-bordered table-hover table-responsive-sm"> -->
-
-                    <table  class="table table-bordered table-hover table-responsive-sm">
+                    
+                    <table id="datatable"  class="table table-bordered table-hover table-responsive-sm">
                         <thead>
                             <tr>
                                 <th>#</th>
