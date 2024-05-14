@@ -44,11 +44,11 @@
                         </div>
                     </div>
 
-                    <div class="two mar-right-50">
+                    <!-- <div class="two mar-right-50">
                         <a href='<?= route("frontend.profile_posts.create") ?>' class='btn btn-success btn-sm' data-toggle="tooltip" title="{{__('Create')}}">
                             Create <i class="fa fa-plus-circle"></i>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="row">

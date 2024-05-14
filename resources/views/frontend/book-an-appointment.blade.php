@@ -101,7 +101,7 @@
                             <div class="position-relative">
                                 <i class="fa fa-user icon" aria-hidden="true"></i>
                             </div>
-                            <input type="text" name="name" class="form-controler name-cls" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Patient's Name*">
+                            <input type="text" name="name" class="form-controler name-cls" id="exampleInputName1" aria-describedby="emailHelp" maxlength="50" placeholder="Patient's Name*">
                             <div class="name-err"></div>
                         </div>
 
