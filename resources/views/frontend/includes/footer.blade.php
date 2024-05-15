@@ -175,7 +175,7 @@ if ($url != "/book-an-appointment") {
             <div class="position-relative">
                <i class="fa fa-user icon" aria-hidden="true"></i>
             </div>
-            <input type="text" name="name" class="form-controler name-cls" id="exampleInputName1" aria-describedby="emailHelp" maxlength="45" placeholder="Patient's Name*">
+            <input type="text" name="name" class="form-controler name-cls" id="exampleInputName1" aria-describedby="emailHelp" maxlength="35" placeholder="Patient's Name*">
             <div class="name-err"></div>
          </div>
 
@@ -184,7 +184,7 @@ if ($url != "/book-an-appointment") {
             <div class="position-relative">
                <i class="fa fa-phone icon" aria-hidden="true"></i>
             </div>
-            <input type="number" name="phone" class="form-controler phone-cls" id="exampleInputPhone" min="1" max="25" placeholder="Phone Number*">
+            <input type="number" name="phone" class="form-controler phone-cls" id="exampleInputPhone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" placeholder="Phone Number*">
             <div class="phone-err"></div>
          </div>
 
@@ -220,7 +220,7 @@ if ($url != "/book-an-appointment") {
             <div class="position-relative">
                <i class="fa fa-id-badge icon" aria-hidden="true"></i>
             </div>
-            <input type="text" name="age" class="form-controler age-cls" id="exampleInputAge" maxlength="4" placeholder="Age in Years*">
+            <input type="text" name="age" class="form-controler age-cls" id="exampleInputAge" maxlength="2" placeholder="Age in Years*">
             <div class="age-err"></div>
          </div>
 
