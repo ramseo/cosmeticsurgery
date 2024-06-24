@@ -261,7 +261,7 @@
 
 <?php if ($all_result_category->isNotEmpty()) { ?>
     <!-- before after results -->
-    <!-- <section class="before-after-cls">
+    <section class="before-after-cls">
         <div class="container-fluid mtab pt-4 pb-4" style="background-color:#f8f8f8">
             <div class="container">
                 <p class="identity text-center">
@@ -333,7 +333,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- before after results -->
 <?php } ?>
 
