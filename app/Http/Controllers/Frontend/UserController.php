@@ -339,9 +339,9 @@ class UserController extends Controller
                 ->addColumn('action', function ($album) {
                     $btn = "";
                     $btn .= '<div class="album-flex-cls">';
-                   // $btn .= '<a href="' . route("frontend.results.edit", $album->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service"><i class="fa fa-wrench"></i></a>';
+                    $btn .= '<a href="' . route("frontend.results.edit", $album->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service"><i class="fa fa-wrench"></i></a>';
                     $btn .= '<a href="' . route("frontend.results.image.index", $album->id) . '" class="btn btn-sm btn-success mt-1" data-toggle="tooltip" title="Album Gallery"><i class="fa fa-file-image-o"></i></a>';
-                   // $btn .= '<a href="' . route("frontend.results.delete", $album->id) . '" class="btn btn-sm btn-danger mt-1 del-link" data-toggle="tooltip" title="Album Delete"><i class="fa fa-trash"></i></a>';
+                    $btn .= '<a href="' . route("frontend.results.delete", $album->id) . '" class="btn btn-sm btn-danger mt-1 del-link" data-toggle="tooltip" title="Album Delete"><i class="fa fa-trash"></i></a>';
                     $btn .= '</div>';
                     return $btn;
                 })
