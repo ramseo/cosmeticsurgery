@@ -180,7 +180,7 @@ class UserController extends Controller
                     $btn = "";
                     $btn .= '<div>';
                     // $btn .= '<a href="' . route("frontend.profile_posts.edit", $album->id) . '" class="btn btn-sm btn-primary mt-1" data-toggle="tooltip" title="Edit Service"><i class="fa fa-wrench"></i></a>';
-                   // $btn .= '<a href="' . route("frontend.profile_posts.delete", $album->id) . '" class="btn btn-sm btn-danger mt-1 del-link" data-toggle="tooltip" title="Album Delete"><i class="fa fa-trash"></i></a>';
+                    $btn .= '<a href="' . route("frontend.profile_posts.delete", $album->id) . '" class="btn btn-sm btn-danger mt-1 del-link" data-toggle="tooltip" title="Album Delete"><i class="fa fa-trash"></i></a>';
                     $btn .= '</div>';
                     return $btn;
                 })
