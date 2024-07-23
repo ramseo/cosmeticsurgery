@@ -5,9 +5,30 @@
 <?php
 $meta_img_target = asset("img/Buccal-Fat-Removal-Cheek-Reduction-1-1024x683.jpg");
 $meta_description_target = "";
+
+$request = $_SERVER['REQUEST_URI'];
+$params     = explode("/", $request);
+//echo $params[1];
+//echo $params[2];
+
+  $geturl = $params[1];
+
+
+//print_r($$module_name_singular);
+//exit();
+
+
+
 if (isset($$module_name_singular)) {
     if (isset($$module_name_singular->meta_description)) {
         $meta_description_target = $$module_name_singular->meta_description;
+        if($geturl=='blog'){ 
+        $meta_img = $$module_name_singular->featured_image; 
+        $meta_img_target = asset($meta_img);
+         } else {
+            $meta_img_target = asset("img/Buccal-Fat-Removal-Cheek-Reduction-1-1024x683.jpg");
+         }      
+        
     }
 }
 
@@ -40,7 +61,7 @@ switch ($meta_page_type) {
     default:
         echo "";
 }
-?>
+?> 
 
 <!-- OG Meta -->
 <meta property="og:title" content="@yield('title') | {{ config('app.name') }}" />
@@ -59,3 +80,6 @@ switch ($meta_page_type) {
 <meta name="twitter:creator" content="<?= url()->current() ?>">
 <meta name="twitter:image" content="<?= $meta_img_target ?>">
 <meta name="twitter:url" content="<?= url()->full() ?>" />
+
+
+
