@@ -14,20 +14,28 @@ $params     = explode("/", $request);
   $geturl = $params[1];
 
 
-//print_r($$module_name_singular);
-//exit();
+// print_r($$module_name_singular);
+// exit();
 
 
 
 if (isset($$module_name_singular)) {
     if (isset($$module_name_singular->meta_description)) {
         $meta_description_target = $$module_name_singular->meta_description;
-        if($geturl=='blog'){ 
-        $meta_img = $$module_name_singular->featured_image; 
-        $meta_img_target = asset($meta_img);
-         } else {
-            $meta_img_target = asset("img/Buccal-Fat-Removal-Cheek-Reduction-1-1024x683.jpg");
-         }      
+        // if($geturl=='blog'){ 
+        // $meta_img = $$module_name_singular->featured_image; 
+        // $meta_img_target = asset($meta_img);
+        //  } else {
+        //     $meta_img_target = asset("img/Buccal-Fat-Removal-Cheek-Reduction-1-1024x683.jpg");
+        //  }      
+
+         
+            if(isset($$module_name_singular->featured_image)){
+            $meta_img = $$module_name_singular->featured_image; 
+            $meta_img_target = asset($meta_img);
+             } else {
+                $meta_img_target = asset("img/Buccal-Fat-Removal-Cheek-Reduction-1-1024x683.jpg");
+             }  
         
     }
 }
