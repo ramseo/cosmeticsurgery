@@ -59,7 +59,7 @@
             </li>
             <!-- <li class="nav-item remove-default-active-cls nav-switch">
                 <a class="nav-link ancr" data-toggle="tab" href="#doctor-results" aria-expanded="false">
-                    Results.
+                    Results
                 </a>
             </li> -->
         </ul>
