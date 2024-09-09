@@ -261,7 +261,7 @@
 
 <?php if ($all_result_category->isNotEmpty()) { ?>
     <!-- before after results -->
-    <section class="before-after-cls">
+    <!-- <section class="before-after-cls">
         <div class="container-fluid mtab pt-4 pb-4" style="background-color:#f8f8f8">
             <div class="container">
                 <p class="identity text-center">
@@ -270,7 +270,7 @@
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item active">
                         <a id="all_tab" class="nav-link active ancr" data-toggle="tab" href="#all" aria-expanded="true">
-                            All 1
+                            All 
                         </a>
                     </li>
                     <?php
@@ -333,7 +333,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- before after results -->
 <?php } ?>
 

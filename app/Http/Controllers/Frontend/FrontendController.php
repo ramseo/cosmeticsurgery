@@ -329,7 +329,7 @@ class FrontendController extends Controller
                    // echo $message;
                 //exit();
             
-            $header = "From:info@plasticsurgery.com \r\n";  
+            $header = "From:info@cosmeticsurgery.in \r\n";  
             $header .= "MIME-Version: 1.0 \r\n";  
             $header .= "Content-type: text/html;charset=UTF-8 \r\n";  
             
