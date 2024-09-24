@@ -99,16 +99,25 @@
     </div>
 </div>
 
+  <!-- Profile content start -->
 <div class="container-fluid" id="doc-content">
     <div class="container">
         <div class="row">
             <div class="col padd-null">
-                <?= $profile_data->content ?>
+
+                    <div class="col">
+                    <p class="identity">ABOUT Us</p>
+                    <p>Bio Content will be updated soon</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    </div>
+                
+                <!-- <?= $profile_data->content ?> -->
             </div>
         </div>
     </div>
 </div>
-
+<!-- Profile content start -->
 
 <div class="container-fluid">
     <div class="container">
@@ -260,7 +269,7 @@
 </div>
 
 <?php if ($all_result_category->isNotEmpty()) { ?>
-    <!-- before after results -->
+    <!-- before after results .-->
     <!-- <section class="before-after-cls">
         <div class="container-fluid mtab pt-4 pb-4" style="background-color:#f8f8f8">
             <div class="container">

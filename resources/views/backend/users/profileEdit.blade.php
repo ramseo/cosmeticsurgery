@@ -54,7 +54,7 @@
             </li>
              <li class="nav-item remove-default-active-cls nav-switch">
                 <a class="nav-link ancr" data-toggle="tab" href="#doctor-content" aria-expanded="false">
-                    Profile Content
+                    Profile Content.
                 </a>
             </li>
           <!--  <li class="nav-item remove-default-active-cls nav-switch">
