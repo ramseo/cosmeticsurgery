@@ -36,7 +36,7 @@
                     </small>
                 </h4>
                 <div class="small text-muted">
-                    Surgeons Management 
+                    Surgeons Management
                 </div>
             </div>
             <div class="col-4">
@@ -49,12 +49,12 @@
         <ul class="nav nav-tabs my-4" role="tablist">
             <li class="nav-item default-active-cls nav-switch active">
                 <a class="nav-link default-active-cls active ancr" data-toggle="tab" href="#home" aria-expanded="true">
-                    Profile Details
+                    Profile Detail.
                 </a>
             </li>
              <li class="nav-item remove-default-active-cls nav-switch">
                 <a class="nav-link ancr" data-toggle="tab" href="#doctor-content" aria-expanded="false">
-                    Profile Content.
+                    Profile Content
                 </a>
             </li>
           <!--  <li class="nav-item remove-default-active-cls nav-switch">

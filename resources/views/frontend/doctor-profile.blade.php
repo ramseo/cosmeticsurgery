@@ -105,14 +105,14 @@
         <div class="row">
             <div class="col padd-null">
 
-                    <div class="col">
-                    <p class="identity">ABOUT Us</p>
+                    <!-- <div class="col">
+                    <p class="identity">ABOUT Us.</p>
                     <p>Bio Content will be updated soon</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
-                    </div>
+                    </div> -->
                 
-                <!-- <?= $profile_data->content ?> -->
+                <?= $profile_data->content ?>
             </div>
         </div>
     </div>
