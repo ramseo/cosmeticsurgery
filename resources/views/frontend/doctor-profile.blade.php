@@ -106,7 +106,7 @@
             <div class="col padd-null">
 
                     <!-- <div class="col">
-                    <p class="identity">ABOUT Us.</p>
+                    <p class="identity">ABOUT Us</p>
                     <p>Bio Content will be updated soon</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
@@ -350,7 +350,7 @@
 $getDocPosts = getDocPosts($doctor_details->first_name . " " . $doctor_details->last_name);
 if ($getDocPosts->isNotEmpty()) {
 ?>
-    <!-- <section class="blog-list-half section-padding sub-bg">
+    <section class="blog-list-half section-padding sub-bg">
         <div class="container">
             <p class="identity text-center">
                 Dr. <?= $doctor_details->first_name . " " . $doctor_details->last_name . " " . ":" . " " . "Posts" ?>
@@ -400,7 +400,7 @@ if ($getDocPosts->isNotEmpty()) {
                 <?php } ?>
             </div>
         </div>
-    </section> -->
+    </section>
 <?php } ?>
 
 
