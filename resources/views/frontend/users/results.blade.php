@@ -34,7 +34,7 @@
                     <div class="one">
                         <h4 class="card-title mb-0">
                             <i class="c-icon cil-people"></i>
-                            Result Categories
+                            Result Categories.
                             <small class="text-muted">
                                 Data Table.
                             </small>
