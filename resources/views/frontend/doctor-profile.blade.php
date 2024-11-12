@@ -129,7 +129,7 @@
 
                 <div class="pull-right profile-write-review">
                     <a href="#" data-toggle="modal" data-target="#reviewModal">
-                        Write a Review
+                        Write a Review.
                         <i class="fa fa-pencil" aria-hidden="true"></i>
                     </a>
                 </div>

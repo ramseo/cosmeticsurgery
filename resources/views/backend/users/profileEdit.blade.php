@@ -49,7 +49,7 @@
         <ul class="nav nav-tabs my-4" role="tablist">
             <li class="nav-item default-active-cls nav-switch active">
                 <a class="nav-link default-active-cls active ancr" data-toggle="tab" href="#home" aria-expanded="true">
-                    Profile Detail
+                    Profile Detail.
                 </a>
             </li>
              <li class="nav-item remove-default-active-cls nav-switch">
