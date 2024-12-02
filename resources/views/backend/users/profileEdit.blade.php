@@ -49,7 +49,7 @@
         <ul class="nav nav-tabs my-4" role="tablist">
             <li class="nav-item default-active-cls nav-switch active">
                 <a class="nav-link default-active-cls active ancr" data-toggle="tab" href="#home" aria-expanded="true">
-                    Profile Detail.
+                    Profile Detail
                 </a>
             </li>
              <li class="nav-item remove-default-active-cls nav-switch">
@@ -57,11 +57,11 @@
                     Profile Content
                 </a>
             </li>
-          <!--  <li class="nav-item remove-default-active-cls nav-switch">
+           <li class="nav-item remove-default-active-cls nav-switch">
                 <a class="nav-link ancr" data-toggle="tab" href="#doctor-results" aria-expanded="false">
                     Results.
                 </a>
-            </li> -->
+            </li>
         </ul>
 
         {{ html()->modelForm($userprofile, 'PATCH', route('backend.users.profileUpdate', $$module_name_singular->id))->class('form-horizontal')->attributes(['enctype'=>"multipart/form-data"])->open() }}
